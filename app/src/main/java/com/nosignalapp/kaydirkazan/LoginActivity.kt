@@ -1,8 +1,10 @@
 package com.nosignalapp.kaydirkazan
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -35,7 +37,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         login_button.setOnClickListener {
             //Abi bendeki view'da login butonuna tıklandı.Sen sadece bana hangi butona tıklanıldığını
             //söylememi istedin.Kalan işleri sen kendin hallet diyor.
-            loginActivityPresenter.buton_login_clicked(
+            loginActivityPresenter.buttonLoginClicked(
                 login_email.text.toString(),
                 login_password.text.toString(),
                 mAuth
@@ -43,7 +45,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         }
 
         register_button.setOnClickListener {
-            loginActivityPresenter.buton_register_clicked(
+            loginActivityPresenter.buttonRegisterClicked(
                 login_email.text.toString(),
                 login_password.text.toString(),
                 mAuth
@@ -56,6 +58,16 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     }
 
     override fun progressBarPassive() {
-        progress_bar.visibility = View.INVISIBLE
+        progress_bar.visibility = View.GONE
+    }
+
+    override fun showToast(message: String) {
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show()
+    }
+
+    override fun navigationHome() {
+        var intent=Intent(this,HomeActivity::class.java)
+        startActivity(intent)
+
     }
 }

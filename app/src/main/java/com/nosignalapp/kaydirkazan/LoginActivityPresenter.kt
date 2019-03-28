@@ -1,9 +1,10 @@
 package com.nosignalapp.kaydirkazan
 
+import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 
 //direk class oluştururken constructor tanımlaması yapabiliyoruz.Misal burada olduğu gibi
-class LoginActivityPresenter(var model: LoginActivityModel) : LoginContract.Presenter {
+class LoginActivityPresenter(var model: LoginActivityModel) : LoginContract.Presenter,LoginContract.FirebaseLoginCallback {
 
     //mView ile daha sonra işlemler yapacağız.Örneğin ekranda progress bar gösterme gizleme gibi
     //lateinit olarak tanımlama sebebimizde bunu constructor ile tanımlama yapacağız diyoruz
@@ -21,23 +22,28 @@ class LoginActivityPresenter(var model: LoginActivityModel) : LoginContract.Pres
         mView.clicked()
     }
 
-    override fun buton_login_clicked(email: String, password: String, auth: FirebaseAuth) {
+    override fun buttonLoginClicked(email: String, password: String, auth: FirebaseAuth) {
         mView.progressBarActive()
 
-        model.giris_yap(email, password, auth)
-
-        mView.progressBarPassive()
+        model.girisYap(email, password, auth,this)
 
     }
 
-    override fun buton_register_clicked(email: String, password: String, auth: FirebaseAuth) {
+
+
+    override fun buttonRegisterClicked(email: String, password: String, auth: FirebaseAuth) {
         mView.progressBarActive()
 
-        model.kayit_ol(email, password, auth)
-
-        mView.progressBarPassive()
+        model.kayitOl(email, password, auth,this)
 
     }
 
+    override fun onResult(message: String) {
+        mView.progressBarPassive()
+
+        mView.showToast(message)
+
+        mView.navigationHome()
+    }
 
 }

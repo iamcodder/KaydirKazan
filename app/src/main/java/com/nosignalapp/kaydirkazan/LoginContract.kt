@@ -4,7 +4,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 interface LoginContract {
 
-    interface View{
+    interface View {
 
         fun bindViews()
 
@@ -14,16 +14,28 @@ interface LoginContract {
 
         fun progressBarPassive()
 
+        fun showToast(message: String)
+
+        fun navigationHome()
+
     }
 
-    interface Presenter{
+    interface Presenter {
 
         fun setView(view: View)
 
         fun created()
 
-        fun buton_login_clicked(email:String, password:String, auth: FirebaseAuth)
+        fun buttonLoginClicked(email: String, password: String, auth: FirebaseAuth)
 
-        fun buton_register_clicked(email: String, password: String,auth: FirebaseAuth)
+        fun buttonRegisterClicked(email: String, password: String, auth: FirebaseAuth)
+
     }
+
+    interface FirebaseLoginCallback{
+
+        fun onResult(message:String)
+    }
+
+
 }

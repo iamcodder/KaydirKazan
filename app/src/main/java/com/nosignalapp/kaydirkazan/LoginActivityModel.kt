@@ -1,41 +1,47 @@
 package com.nosignalapp.kaydirkazan
 
-import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 
-class LoginActivityModel {
+class LoginActivityModel{
 
-    var donus_degeri: Boolean = false
 
-    fun giris_yap(email: String, password: String, mAuth: FirebaseAuth): Boolean {
 
-        mAuth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener {
-                donus_degeri = if (it.isSuccessful) {
-                    Log.d("Süleyman", "isSuccesfull")
-                    true
-                } else {
-                    Log.d("Süleyman", "isError")
-                    false
+    fun girisYap(email: String, password: String, mAuth: FirebaseAuth,loginCallBack:LoginContract.FirebaseLoginCallback){
+
+        if (email.isNotEmpty() && password.isNotEmpty()) {
+            mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener {
+                if (it.isSuccessful)
+                {
+                    loginCallBack.onResult("Giriş Yapıldı")
+                }
+                else
+                {
+                    loginCallBack.onResult(it.exception?.localizedMessage.toString())
                 }
             }
-        return donus_degeri
+        }
     }
 
-    fun kayit_ol(email: String, password: String, mAuth: FirebaseAuth): Boolean {
 
 
-        mAuth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener {
-                donus_degeri = if (it.isSuccessful) {
-                    Log.d("Süleyman", "mmauth isSuccessful")
-                    true
-                } else {
-                    Log.d("Süleyman", "mmauth isFail")
-                    false
+
+    fun kayitOl(email: String, password: String, mAuth: FirebaseAuth,loginCallBack:LoginContract.FirebaseLoginCallback){
+
+
+        if (email.isNotEmpty() && password.isNotEmpty()) {
+            mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener {
+                    if (it.isSuccessful)
+                    {
+                        loginCallBack.onResult("Kayıt Yapıldı")
+                    }
+                     else
+                    {
+                        loginCallBack.onResult(it.exception?.localizedMessage.toString())
+                    }
                 }
-            }
-        return donus_degeri
+        }
     }
 
 
