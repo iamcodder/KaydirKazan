@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.nosignalapp.kaydirkazan.Contract.LoginContract
+import com.nosignalapp.kaydirkazan.Model.LoginActivityModel
+import com.nosignalapp.kaydirkazan.Presenter.LoginActivityPresenter
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(), LoginContract.View {
@@ -26,8 +29,6 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
 
     override fun bindViews() {
         mAuth = FirebaseAuth.getInstance()
-        login_email.setText("me.iamcodder@gmail.com")
-        login_password.setText("1234321")
     }
 
     override fun clicked() {
@@ -66,7 +67,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     }
 
     override fun navigationHome() {
-        var intent=Intent(this,HomeActivity::class.java)
+        intent=Intent(this,HomeActivity::class.java)
         startActivity(intent)
 
     }
