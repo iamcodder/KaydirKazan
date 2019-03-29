@@ -22,6 +22,9 @@ class LoginActivityModel{
                 }
             }
         }
+        else{
+            loginCallBack.onResult("Hatalı alanları düzeltin",false)
+        }
     }
 
 
@@ -42,6 +45,9 @@ class LoginActivityModel{
                         loginCallBack.onResult(it.exception?.localizedMessage.toString(),false)
                     }
                 }
+            }
+        else{
+            loginCallBack.onResult("Hatalı alanları düzeltin",false)
         }
     }
 

@@ -6,7 +6,11 @@ interface SoruContract {
 
         fun bindViews()
 
-        fun clickControl()
+        fun cardTasarimi()
+
+        fun recyclerSetle()
+
+        fun gameOver()
 
     }
 
@@ -15,5 +19,7 @@ interface SoruContract {
         fun setView(view:View)
 
         fun created()
+
+        fun falseAnswer()
     }
 }
