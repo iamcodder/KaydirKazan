@@ -34,7 +34,9 @@ interface LoginContract {
 
     interface FirebaseLoginCallback{
 
-        fun onResult(message:String,isLogin:Boolean)
+        fun onLoginResult(message:String,isLogin:Boolean)
+
+        fun onRegisterResult(message:String,isRegister:Boolean)
     }
 
 

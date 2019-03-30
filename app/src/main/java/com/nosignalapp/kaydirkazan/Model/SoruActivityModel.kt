@@ -1,6 +1,6 @@
 package com.nosignalapp.kaydirkazan.Model
 
-import android.util.Log
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.nosignalapp.kaydirkazan.Contract.SoruContract
 import com.google.firebase.database.DataSnapshot
@@ -22,8 +22,9 @@ class SoruActivityModel(soruTuru:String,firebaseDatabase: FirebaseDatabase) {
 
                 for (ds in dataSnapshot.children) {
 
-                    val soruNesnesi = ds.getValue(soruModel::class.java)!!
+                    val soruNesnesi = ds.getValue(soruModel::class.java)
 
+                    if(soruNesnesi!=null)
                     soruListesi.add(soruNesnesi)
 
                 }
@@ -39,4 +40,13 @@ class SoruActivityModel(soruTuru:String,firebaseDatabase: FirebaseDatabase) {
 
     }
 
+    fun rekorKirildi(rekorSayisi:Int,user: userModel,mAuth:FirebaseAuth){
+        user.yuksekPuan=rekorSayisi.toString()
+
+        val uuid: String = mAuth.currentUser!!.uid
+
+        val mDatabase: FirebaseDatabase = FirebaseDatabase.getInstance()
+        mDatabase.reference.child("oyun").child("kullanicilar").child(uuid).child("yuksekPuan").setValue("${rekorSayisi}")
+
+    }
 }

@@ -1,10 +1,11 @@
 package com.nosignalapp.kaydirkazan.Model
 
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.FirebaseDatabase
 import com.nosignalapp.kaydirkazan.Contract.LoginContract
 
 class LoginActivityModel{
-
 
 
     fun girisYap(email: String, password: String, mAuth: FirebaseAuth,loginCallBack: LoginContract.FirebaseLoginCallback){
@@ -14,42 +15,52 @@ class LoginActivityModel{
                 .addOnCompleteListener {
                 if (it.isSuccessful)
                 {
-                    loginCallBack.onResult("Giriş Yapıldı",true)
+                    loginCallBack.onLoginResult("Giriş Yapıldı",true)
                 }
                 else
                 {
-                    loginCallBack.onResult(it.exception?.localizedMessage.toString(),false)
+                    loginCallBack.onLoginResult(it.exception?.localizedMessage.toString(),false)
                 }
             }
         }
         else{
-            loginCallBack.onResult("Hatalı alanları düzeltin",false)
+            loginCallBack.onLoginResult("Hatalı alanları düzeltin",false)
         }
     }
 
-
-
-
     fun kayitOl(email: String, password: String, mAuth: FirebaseAuth,loginCallBack: LoginContract.FirebaseLoginCallback){
-
 
         if (email.isNotEmpty() && password.isNotEmpty()) {
             mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener {
                     if (it.isSuccessful)
                     {
-                        loginCallBack.onResult("Kayıt Yapıldı",true)
+                        dbyeProfiliYaz(email,mAuth,loginCallBack)
                     }
                      else
                     {
-                        loginCallBack.onResult(it.exception?.localizedMessage.toString(),false)
+                        loginCallBack.onRegisterResult(it.exception?.localizedMessage.toString(),false)
                     }
                 }
             }
         else{
-            loginCallBack.onResult("Hatalı alanları düzeltin",false)
+            loginCallBack.onRegisterResult("Hatalı alanları düzeltin",false)
         }
     }
 
+    fun dbyeProfiliYaz(email: String,mAuth: FirebaseAuth,loginCallBack: LoginContract.FirebaseLoginCallback){
 
+        if(mAuth.currentUser!=null) {
+
+            val fUser=mAuth.currentUser
+
+            val uuid: String = fUser!!.uid
+            val mDatabase: FirebaseDatabase = FirebaseDatabase.getInstance()
+
+            mDatabase.reference.child("oyun").child("kullanicilar").child(uuid).child("email").setValue(email)
+            mDatabase.reference.child("oyun").child("kullanicilar").child(uuid).child("yuksekPuan").setValue("0")
+
+            loginCallBack.onRegisterResult("Kayıt Yapıldı",true)
+        }
+    }
 }

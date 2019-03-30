@@ -1,5 +1,7 @@
 package com.nosignalapp.kaydirkazan.Contract
 
+import com.nosignalapp.kaydirkazan.Model.userModel
+
 interface HomeContract {
 
     interface View{
@@ -7,6 +9,10 @@ interface HomeContract {
         fun bindViews()
 
         fun clickControl()
+
+        fun showPuan(user: userModel)
+
+        fun startGame()
 
     }
 
@@ -16,7 +22,15 @@ interface HomeContract {
 
         fun created()
 
+        fun fetchDataOnFirebase()
 
+        fun startGameButton()
+
+    }
+
+    interface FirebaseFetchCallBack{
+
+        fun onFetchResult(user:userModel)
 
     }
 }

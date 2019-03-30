@@ -17,6 +17,7 @@ class HomeActivity : AppCompatActivity() ,HomeContract.View {
 
     lateinit var presenter:HomeActivityPresenter
     lateinit var mUser: FirebaseUser
+    lateinit var mAuth: FirebaseAuth
     lateinit var mKullanici:userModel
     lateinit var iintent:Intent
 
@@ -24,24 +25,36 @@ class HomeActivity : AppCompatActivity() ,HomeContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        presenter=HomeActivityPresenter(HomeActivityModel())
+        mAuth=FirebaseAuth.getInstance()
+
+        presenter=HomeActivityPresenter(HomeActivityModel(mAuth))
         presenter.setView(this)
         presenter.created()
+        presenter.fetchDataOnFirebase()
 
     }
 
     override fun bindViews() {
         mUser= FirebaseAuth.getInstance().currentUser!!
-        mKullanici=userModel(mUser.email.toString(),mUser.uid)
+        mKullanici=userModel()
         iintent= Intent(this,SoruActivity::class.java)
     }
 
     override fun clickControl() {
 
         button_oyna.setOnClickListener(View.OnClickListener {
-            iintent.putExtra("kullanıcı bilgisi",mKullanici)
-            startActivity(iintent)
+            presenter.startGameButton()
         })
+    }
+
+    override fun showPuan(user: userModel) {
+        activity_home_puan.text = user.yuksekPuan
+        this.mKullanici=user
+    }
+
+    override fun startGame() {
+        iintent.putExtra("kullanıcı bilgisi",this.mKullanici)
+        startActivity(iintent)
     }
 
 }

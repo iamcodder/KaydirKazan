@@ -40,12 +40,21 @@ class LoginActivityPresenter(var model: LoginActivityModel) : LoginContract.Pres
 
     }
 
-    override fun onResult(message: String,isLogin:Boolean) {
+    override fun onLoginResult(message: String, isLogin: Boolean) {
         mView.progressBarPassive()
 
         mView.showToast(message)
 
         if(isLogin) mView.navigationHome()
+    }
+
+    override fun onRegisterResult(message: String,isRegister:Boolean) {
+
+        mView.progressBarPassive()
+
+        mView.showToast(message)
+
+        if (isRegister) mView.navigationHome()
     }
 
 }

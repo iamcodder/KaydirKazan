@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateInterpolator
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.nosignalapp.kaydirkazan.Contract.SoruContract
 import com.nosignalapp.kaydirkazan.Model.SoruActivityAdapter
@@ -29,15 +30,15 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     lateinit var adapter:SoruActivityAdapter
     lateinit var liste:ArrayList<soruModel>
     lateinit var swipeSettings:SwipeAnimationSetting
-    lateinit var firebaseDatabase: FirebaseDatabase
+    lateinit var mAuth:FirebaseAuth
+    var firebaseDatabase: FirebaseDatabase = FirebaseDatabase.getInstance()
     var gelenBundle:Bundle? = null
     var ekrandakiKartKonumu:Int = 0
+    var dogruSayisi:Int=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_soru)
-
-        firebaseDatabase= FirebaseDatabase.getInstance()
 
 
         var isim:String=""
@@ -63,6 +64,7 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
 
         liste = ArrayList()
 
+        mAuth= FirebaseAuth.getInstance()
     }
 
 
@@ -100,11 +102,30 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
 
     }
 
+    override fun progressShow() {
+        activity_soru_progressBar.visibility=View.VISIBLE
+    }
+
+    override fun progressHide() {
+        activity_soru_progressBar.visibility=View.GONE
+    }
+
+    override fun trueAnswerNumber(dogruSayisi: Int) {
+
+        activity_soru_puan_PUAN.text=dogruSayisi.toString()
+
+    }
+
     //oyun bittiğinde yapılacak olanlar
     override fun gameOver() {
         this.liste.clear()
         activity_soru_cardStackView.removeAllViewsInLayout()
         Toast.makeText(this,"Game Over",Toast.LENGTH_SHORT).show()
+
+        if(dogruSayisi>this.mKullanici.yuksekPuan.toInt()){
+            presenter.beatRecord(dogruSayisi,this.mKullanici,mAuth)
+        }
+        dogruSayisi=0
     }
 
 
@@ -124,6 +145,8 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
                 "Right" ->
                     if (liste[ekrandakiKartKonumu].sagCevap == liste[ekrandakiKartKonumu].dogruCevap) {
                         Toast.makeText(this, "Doğru Cevap", Toast.LENGTH_SHORT).show()
+                        dogruSayisi++
+                        presenter.trueAnswer(this.dogruSayisi)
                     } else {
                         presenter.falseAnswer()
                         Toast.makeText(this, "Yanlış Cevap", Toast.LENGTH_SHORT).show()
@@ -132,6 +155,8 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
                 "Left" ->
                     if (liste[ekrandakiKartKonumu].solCevap == liste[ekrandakiKartKonumu].dogruCevap) {
                         Toast.makeText(this, "Doğru Cevap", Toast.LENGTH_SHORT).show()
+                        dogruSayisi++
+                        presenter.trueAnswer(this.dogruSayisi)
                     } else {
                         presenter.falseAnswer()
                         Toast.makeText(this, "Yanlış Cevap", Toast.LENGTH_SHORT).show()
