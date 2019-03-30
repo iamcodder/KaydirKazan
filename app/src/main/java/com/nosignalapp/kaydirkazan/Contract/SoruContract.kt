@@ -1,5 +1,7 @@
 package com.nosignalapp.kaydirkazan.Contract
 
+import com.nosignalapp.kaydirkazan.Model.soruModel
+
 interface SoruContract {
 
     interface View{
@@ -8,7 +10,7 @@ interface SoruContract {
 
         fun cardTasarimi()
 
-        fun recyclerSetle()
+        fun recyclerSetle(soruListesi: ArrayList<soruModel>)
 
         fun gameOver()
 
@@ -21,5 +23,10 @@ interface SoruContract {
         fun created()
 
         fun falseAnswer()
+    }
+
+    interface FirebaseFetch {
+
+        fun listeyiGetir(soruListesi:ArrayList<soruModel> )
     }
 }

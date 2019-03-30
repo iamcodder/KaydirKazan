@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateInterpolator
 import android.widget.Toast
+import com.google.firebase.database.FirebaseDatabase
 import com.nosignalapp.kaydirkazan.Contract.SoruContract
 import com.nosignalapp.kaydirkazan.Model.SoruActivityAdapter
 import com.nosignalapp.kaydirkazan.Model.SoruActivityModel
@@ -16,8 +17,9 @@ import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
 import com.yuyakaido.android.cardstackview.SwipeAnimationSetting
-import kotlinx.android.synthetic.*
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_soru.*
+import java.util.*
 
 class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
 
@@ -27,6 +29,7 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     lateinit var adapter:SoruActivityAdapter
     lateinit var liste:ArrayList<soruModel>
     lateinit var swipeSettings:SwipeAnimationSetting
+    lateinit var firebaseDatabase: FirebaseDatabase
     var gelenBundle:Bundle? = null
     var ekrandakiKartKonumu:Int = 0
 
@@ -34,7 +37,21 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_soru)
 
-        presenter= SoruActivityPresenter(SoruActivityModel())
+        firebaseDatabase= FirebaseDatabase.getInstance()
+
+
+        var isim:String=""
+        val ran = Random()
+        val x = ran.nextInt(4)
+
+        when(x){
+            0 -> isim="dunyaSorulari"
+            1 -> isim="eserler"
+            2 -> isim="neZamanKuruldu"
+            3 -> isim="tahminEt"
+        }
+
+        presenter= SoruActivityPresenter(SoruActivityModel(isim,firebaseDatabase))
         presenter.setView(this)
         presenter.created()
 
@@ -45,18 +62,16 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         if(gelenBundle!=null)  mKullanici= gelenBundle!!.getSerializable("kullanıcı bilgisi") as userModel
 
         liste = ArrayList()
+
     }
 
 
-    override fun recyclerSetle() {
-        liste.clear()
+    override fun recyclerSetle(soruListesi: ArrayList<soruModel>) {
 
-        liste.add(soruModel("Süleyman sezer kimdir?","Babadır","Produr","Produr"))
-        liste.add(soruModel("Kotlin kaç yılında Google desteği almıştır?","2017","2016","2017"))
-        liste.add(soruModel("Sahibinden.com ne zaman piyasaya çıkmıştır?","2000","2007","2000"))
+        this.liste=soruListesi
 
         cardStackManager= CardStackLayoutManager(this,this)
-        adapter= SoruActivityAdapter(liste)
+        adapter= SoruActivityAdapter(this.liste)
         activity_soru_cardStackView.layoutManager=cardStackManager
         activity_soru_cardStackView.adapter=adapter
     }
@@ -79,12 +94,15 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         cardStackManager.setSwipeThreshold(0.2f)
 
         //dikeyde kaydırılmayacağını , yatayda kaydırma olacağını belirtiyoruz
-        cardStackManager.setCanScrollVertical(false);
-        cardStackManager.setCanScrollHorizontal(true);
+        cardStackManager.setCanScrollVertical(false)
+        cardStackManager.setCanScrollHorizontal(true)
+
+
     }
 
     //oyun bittiğinde yapılacak olanlar
     override fun gameOver() {
+        this.liste.clear()
         activity_soru_cardStackView.removeAllViewsInLayout()
         Toast.makeText(this,"Game Over",Toast.LENGTH_SHORT).show()
     }
