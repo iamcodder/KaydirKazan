@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.nosignalapp.kaydirkazan.Contract.LoginContract
@@ -55,11 +56,15 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     }
 
     override fun progressBarActive() {
-        progress_bar.visibility = View.VISIBLE
+
+        login_animation.visibility=View.VISIBLE
+        login_animation.playAnimation()
+
     }
 
     override fun progressBarPassive() {
-        progress_bar.visibility = View.GONE
+        login_animation.visibility=View.GONE
+        login_animation.cancelAnimation()
     }
 
     override fun showToast(message: String) {

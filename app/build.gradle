@@ -41,6 +41,10 @@ dependencies {
     //CardStacView
     implementation "com.yuyakaido.android:card-stack-view:2.2.3"
 
+    //Lottie animation
+    implementation "com.airbnb.android:lottie:3.0.0"
+
+
 
 }
 apply plugin: 'com.google.gms.google-services'

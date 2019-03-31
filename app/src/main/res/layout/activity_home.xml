@@ -33,12 +33,11 @@
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.5" android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp" app:cornerRadius="3dp"
-            android:elevation="3dp" android:text="Kaydır Kazan"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_marginEnd="16dp" app:cornerRadius="6dp" android:text="Kaydır Kazan"
+            style="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:id="@+id/button_oyna" android:textSize="18sp" android:textStyle="bold"
             android:textAlignment="center" app:icon="@drawable/slide_logo"
-            android:padding="10dp"/>
+            android:padding="10dp" android:textColor="@color/common_google_signin_btn_text_dark_default"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

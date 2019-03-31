@@ -1,7 +1,6 @@
 package com.nosignalapp.kaydirkazan.Model
 
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
 import com.nosignalapp.kaydirkazan.Contract.LoginContract
 
@@ -59,6 +58,7 @@ class LoginActivityModel{
 
             mDatabase.reference.child("oyun").child("kullanicilar").child(uuid).child("email").setValue(email)
             mDatabase.reference.child("oyun").child("kullanicilar").child(uuid).child("yuksekPuan").setValue("0")
+            mDatabase.reference.child("oyun").child("kullanicilar").child(uuid).child("uuid").setValue(uuid)
 
             loginCallBack.onRegisterResult("Kayıt Yapıldı",true)
         }
