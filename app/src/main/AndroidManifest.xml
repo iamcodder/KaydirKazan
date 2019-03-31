@@ -9,11 +9,14 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".SoruActivity">
+        <activity android:name=".Activity.GameOverActivity"
+        android:theme="@style/CustomGameOverStyle">
         </activity>
-        <activity android:name=".HomeActivity">
+        <activity android:name=".Activity.SoruActivity">
         </activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".Activity.HomeActivity">
+        </activity>
+        <activity android:name=".Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
