@@ -121,13 +121,14 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     override fun gameOver() {
 //        this.liste.clear()
 //        activity_soru_cardStackView.removeAllViewsInLayout()
-        Toast.makeText(this,"Game Over",Toast.LENGTH_SHORT).show()
 
-        if(dogruSayisi>this.mKullanici.yuksekPuan.toInt()){
-            presenter.beatRecord(dogruSayisi,this.mKullanici,mAuth)
-        }
 
-        var intent=Intent(this,GameOverActivity::class.java)
+        //eğer rekorsa firebase bu komutla yazıyoruz
+//        if(dogruSayisi>this.mKullanici.yuksekPuan.toInt()){
+//            presenter.beatRecord(dogruSayisi,this.mKullanici,mAuth)
+//        }
+
+        val intent=Intent(this,GameOverActivity::class.java)
         intent.putExtra("dogruSayisi",dogruSayisi.toInt())
         intent.putExtra("rekor",this.mKullanici.yuksekPuan.toInt())
         startActivity(intent)

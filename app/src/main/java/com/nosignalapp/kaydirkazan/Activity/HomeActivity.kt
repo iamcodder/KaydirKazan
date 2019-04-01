@@ -57,4 +57,8 @@ class HomeActivity : AppCompatActivity() ,HomeContract.View {
         startActivity(iintent)
     }
 
+    override fun onBackPressed() {
+
+    }
+
 }

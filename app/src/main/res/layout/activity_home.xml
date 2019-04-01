@@ -33,8 +33,7 @@
                                            app:layout_constraintTop_toTopOf="@+id/materialCardView"
                                            app:layout_constraintBottom_toBottomOf="@+id/materialCardView"
                                            app:layout_constraintEnd_toStartOf="@+id/materialCardView"
-                                           app:layout_constraintStart_toStartOf="parent"
-                                           android:layout_marginStart="8dp"/>
+    />
 
     <com.google.android.material.button.MaterialButton
             android:layout_width="0dp"

@@ -37,6 +37,6 @@ class SoruActivityPresenter (var model:SoruActivityModel) : SoruContract.Present
     }
 
     override fun beatRecord(dogruSayisi: Int, user: userModel, mAuth: FirebaseAuth) {
-        model.rekorKirildi(dogruSayisi,user,mAuth)
+//        model.rekorKirildi(dogruSayisi,user,mAuth)
     }
 }

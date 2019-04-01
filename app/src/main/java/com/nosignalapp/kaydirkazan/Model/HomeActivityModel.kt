@@ -1,6 +1,5 @@
 package com.nosignalapp.kaydirkazan.Model
 
-import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.nosignalapp.kaydirkazan.Contract.HomeContract

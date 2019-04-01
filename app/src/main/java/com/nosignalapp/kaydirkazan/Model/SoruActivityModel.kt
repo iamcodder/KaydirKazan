@@ -40,13 +40,13 @@ class SoruActivityModel(soruTuru:String,firebaseDatabase: FirebaseDatabase) {
 
     }
 
-    fun rekorKirildi(rekorSayisi:Int,user: userModel,mAuth:FirebaseAuth){
-        user.yuksekPuan=rekorSayisi.toString()
-
-        val uuid: String = mAuth.currentUser!!.uid
-
-        val mDatabase: FirebaseDatabase = FirebaseDatabase.getInstance()
-        mDatabase.reference.child("oyun").child("kullanicilar").child(uuid).child("yuksekPuan").setValue("${rekorSayisi}")
-
-    }
+//    fun rekorKirildi(rekorSayisi:Int,user: userModel,mAuth:FirebaseAuth){
+//        user.yuksekPuan=rekorSayisi.toString()
+//
+//        val uuid: String = mAuth.currentUser!!.uid
+//
+//        val mDatabase: FirebaseDatabase = FirebaseDatabase.getInstance()
+//        mDatabase.reference.child("oyun").child("kullanicilar").child(uuid).child("yuksekPuan").setValue("${rekorSayisi}")
+//
+//    }
 }
