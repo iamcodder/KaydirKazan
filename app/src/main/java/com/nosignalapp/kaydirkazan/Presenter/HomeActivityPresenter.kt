@@ -29,4 +29,8 @@ class HomeActivityPresenter (var model:HomeActivityModel): HomeContract.Presente
         mView.startGame()
     }
 
+    override fun logineGit() {
+        mView.startLogin()
+    }
+
 }

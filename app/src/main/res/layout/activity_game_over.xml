@@ -7,20 +7,41 @@
         android:layout_height="match_parent"
         tools:context=".Activity.GameOverActivity">
 
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/guide_soldan_yuzdebes"
+                                                android:orientation="vertical"
+                                                app:layout_constraintGuide_percent="0.05"/>
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/guide_sagdan_yuzdebes"
+                                                android:orientation="vertical"
+                                                app:layout_constraintGuide_percent="0.95"/>
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/guide_ustten_yuzdebes"
+                                                android:orientation="horizontal"
+                                                app:layout_constraintGuide_percent="0.10"/>
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/gui_ikiyebolme"
+                                                android:orientation="horizontal"
+                                                app:layout_constraintGuide_percent="0.55"/>
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/guide_usttenyetmisbes"
+                                                android:orientation="horizontal"
+                                                app:layout_constraintGuide_percent="0.75"/>
+
+
     <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/activity_gameOver_lottie"
-            android:layout_width="0dp"
-            android:layout_height="500dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintHorizontal_bias="0.5"
-    />
+            app:layout_constraintTop_toTopOf="@+id/guide_ustten_yuzdebes"
+            app:layout_constraintBottom_toTopOf="@+id/gui_ikiyebolme"
+            app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdebes"
+            app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdebes"/>
 
     <com.google.android.material.button.MaterialButton
-            android:layout_width="411dp"
+            android:layout_width="0dp"
 
             android:layout_height="wrap_content"
 
@@ -30,13 +51,12 @@
             android:id="@+id/game_over_devam_et" android:textSize="18sp" android:textStyle="bold"
             android:textAlignment="center"
             android:padding="10dp" android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/activity_gameOver_lottie"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/game_over_menuye_don"/>
+            app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdebes"
+            app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdebes"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/guide_usttenyetmisbes"/>
     <com.google.android.material.button.MaterialButton
-            android:layout_width="411dp"
+            android:layout_width="0dp"
 
             android:layout_height="wrap_content"
 
@@ -47,10 +67,9 @@
             android:textAlignment="center"
             android:padding="10dp" android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:id="@+id/game_over_menuye_don"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/game_over_devam_et"/>
+            app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdebes"
+            app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdebes"
+            app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="@+id/guide_usttenyetmisbes"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

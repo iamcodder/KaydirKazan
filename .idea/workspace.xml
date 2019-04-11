@@ -2,7 +2,10 @@
 <project version="4">
   <component name="AndroidLayouts">
     <shared>
-      <config />
+      <config>
+        <device id="pixel" />
+        <device id="Nexus 7" />
+      </config>
     </shared>
   </component>
   <component name="AndroidLogFilters">
@@ -43,98 +46,87 @@
     <session id="1496610934">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="12" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.18" value="2" />
+          <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.28" value="1" />
+          <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="8" />
           <entry key="gradle" value="11" />
-          <entry key="java" value="4" />
-          <entry key="json" value="20" />
-          <entry key="kt" value="223" />
-          <entry key="xml" value="82" />
+          <entry key="java" value="7" />
+          <entry key="json" value="23" />
+          <entry key="kt" value="266" />
+          <entry key="png" value="58" />
+          <entry key="svg" value="1" />
+          <entry key="xml" value="113" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="8" />
           <entry key="Groovy" value="11" />
-          <entry key="JAVA" value="4" />
-          <entry key="JSON" value="20" />
-          <entry key="Kotlin" value="223" />
-          <entry key="XML" value="82" />
+          <entry key="Image" value="58" />
+          <entry key="JAVA" value="7" />
+          <entry key="JSON" value="23" />
+          <entry key="Kotlin" value="266" />
+          <entry key="SVG" value="1" />
+          <entry key="XML" value="113" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="78" />
           <entry key="java" value="20" />
-          <entry key="kt" value="11333" />
-          <entry key="txt" value="175" />
-          <entry key="xml" value="1269" />
+          <entry key="kt" value="12495" />
+          <entry key="txt" value="479" />
+          <entry key="xml" value="1335" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="78" />
           <entry key="JAVA" value="20" />
-          <entry key="Kotlin" value="11333" />
-          <entry key="PLAIN_TEXT" value="175" />
-          <entry key="XML" value="1269" />
+          <entry key="Kotlin" value="12495" />
+          <entry key="PLAIN_TEXT" value="479" />
+          <entry key="XML" value="1335" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/GameOverActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="43" column="61" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
-              <folding>
-                <element signature="e#46#485#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/HomeActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/SoruActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1567">
-              <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_game_over.xml">
-          <provider selected="true" editor-type-id="android-designer2" />
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="1040">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="560">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
+          <provider selected="true" editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_soru.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="91" column="81" selection-start-line="91" selection-start-column="81" selection-end-line="91" selection-end-column="81" />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer2" />
         </entry>
       </file>
     </leaf>
@@ -149,6 +141,11 @@
         <option value="Kotlin Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>killBack</find>
+    </findStrings>
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -2567,38 +2564,38 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/soruModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Contract/LoginContract.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Presenter/LoginActivityPresenter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Contract/HomeContract.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Presenter/HomeActivityPresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/userModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/HomeActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Contract/SoruContract.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/SoruActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/LoginActivityModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/LoginActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/soru_karti.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_soru.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/LoginActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Fragment/GameOverFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_game_over.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Fragment/GameOverScreenFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_game_over_screen.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/GameOverDialog.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/HomeActivityModel.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/SoruActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Contract/GameOverContract.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/GameOverModel.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/SoruActivityModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Presenter/SoruActivityPresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Presenter/GameOverPresenter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/SoruActivityModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_game_over.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/HomeActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/HomeActivityModel.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/GameOverActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/LoginActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Presenter/HomeActivityPresenter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Contract/HomeContract.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/HomeActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/soru_karti.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/SoruActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_soru.xml" />
       </list>
     </option>
   </component>
@@ -2610,12 +2607,76 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="KaydirKazan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KaydirKazan" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="KaydirKazan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KaydirKazan" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="KaydirKazan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KaydirKazan" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KaydirKazan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KaydirKazan" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KaydirKazan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KaydirKazan" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KaydirKazan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KaydirKazan" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="drawable-hdpi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KaydirKazan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KaydirKazan" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="drawable-xxhdpi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KaydirKazan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KaydirKazan" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="drawable-xxxhdpi" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2651,26 +2712,25 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="kaydirkazan" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="Contract" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KaydirKazan" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="kaydirkazan" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KaydirKazan" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="kaydirkazan" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="Presenter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="KaydirKazan" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="KaydirKazan" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="KaydirKazan" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="true" type="c431d0b8:AndroidResGroupNode" />
             </path>
             <path>
               <item name="KaydirKazan" type="1abcf292:AndroidViewProjectNode" />
@@ -2694,28 +2754,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="KaydirKazan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KaydirKazan" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="KaydirKazan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KaydirKazan" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="KaydirKazan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KaydirKazan" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2728,6 +2766,13 @@
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Android\KaydirKazan\app\src\main\res\drawable-xxxhdpi" />
+      <recent name="D:\Android\KaydirKazan\app\src\main\res\drawable-xxhdpi" />
+      <recent name="D:\Android\KaydirKazan\app\src\main\res\drawable-xhdpi" />
+      <recent name="D:\Android\KaydirKazan\app\src\main\res\drawable-mdpi" />
+      <recent name="D:\Android\KaydirKazan\app\src\main\res\drawable-hdpi" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.nosignalapp.kaydirkazan.Activity" />
       <recent name="com.nosignalapp.kaydirkazan.Contract" />
@@ -2738,11 +2783,8 @@
       <recent name="com.nosignalapp.kaydirkazan.Activity" />
       <recent name="com.nosignalapp.kaydirkazan" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Android\KaydirKazan\app\src\main\res\raw" />
-      <recent name="D:\Android\KaydirKazan\app\src\main\res\drawable" />
-      <recent name="D:\Android\KaydirKazan\app" />
-      <recent name="D:\Android\KaydirKazan\app\src\main\java\com\nosignalapp\kaydirkazan" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Android\KaydirKazan\app\src\main\res\drawable-mdpi" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -2845,7 +2887,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19515885" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.19515885" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -2854,7 +2896,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Find" order="0" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="1" />
-      <window_info anchor="bottom" id="Logcat" order="2" weight="0.8101473" />
+      <window_info anchor="bottom" id="Logcat" order="2" weight="0.5253683" />
       <window_info anchor="bottom" id="TODO" order="3" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3584288" />
       <window_info anchor="bottom" id="Terminal" order="5" weight="0.3289689" />
@@ -2873,164 +2915,7 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Presenter/SoruActivityPresenter.kt</url>
-          <line>12</line>
-          <properties />
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-database-16.1.0.aar/c96aaa1f9c05d1ac8c8b43d818246a3f/jars/classes.jar!/com/google/firebase/database/core/ValueEventRegistration.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="103" selection-start-line="103" selection-end-line="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-database-16.1.0.aar/c96aaa1f9c05d1ac8c8b43d818246a3f/jars/classes.jar!/com/google/firebase/database/Query.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="160" selection-start-line="160" selection-end-line="160" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-database-16.1.0.aar/c96aaa1f9c05d1ac8c8b43d818246a3f/jars/classes.jar!/com/google/firebase/database/core/EventRegistration.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-firebase-database-16.1.0.aar/c96aaa1f9c05d1ac8c8b43d818246a3f/jars/classes.jar!/com/google/firebase/database/ValueEventListener.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/userModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/SoruActivityAdapter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="25" column="77" selection-start-line="25" selection-start-column="77" selection-end-line="25" selection-end-column="77" />
-          <folding>
-            <element signature="e#43#274#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Presenter/LoginActivityPresenter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-100">
-          <caret line="7" column="46" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="46" />
-          <folding>
-            <element signature="e#47#209#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/LoginActivityModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
-          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-          <folding>
-            <element signature="e#43#243#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/loginloading.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/hearanimation.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/leftarrow.json" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/rightarrow.json" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/walkingarrow.json" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/arrow.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/star.json" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/soru_karti.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="92" column="72" selection-start-line="92" selection-start-column="72" selection-end-line="92" selection-end-column="72" />
-          <folding>
-            <element signature="e#367#1250#0" />
-            <element signature="e#1256#2295#0" />
-            <element signature="e#2301#3357#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/sky.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="50" column="47" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/LoginActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Fragment/GameOverFragment.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_game_over.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_game_over_screen.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/GameOverDialog.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Fragment/GameOverScreenFragment.kt" />
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/data/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5">
@@ -3048,48 +2933,11 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/award.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/stars.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/stars.json" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Contract/LoginContract.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/HomeActivityModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding>
-            <element signature="e#43#182#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Contract/HomeContract.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="18" selection-start-line="20" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Contract/SoruContract.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="36" column="74" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="74" />
-          <folding>
-            <element signature="e#46#192#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3103,30 +2951,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/SoruActivityModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="42" selection-start-line="42" selection-start-column="2" selection-end-line="50" selection-end-column="7" />
-          <folding>
-            <element signature="e#43#231#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Contract/GameOverContract.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Presenter/SoruActivityPresenter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-          <folding>
-            <element signature="e#47#309#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3140,24 +2968,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Presenter/HomeActivityPresenter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="23" />
-          <folding>
-            <element signature="e#47#213#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="37" selection-start-line="37" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/soruModel.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
@@ -3165,45 +2975,231 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_soru.xml">
-      <provider editor-type-id="android-designer2" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/SoruActivityModel.kt">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/error.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_game_over.xml">
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="400">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/HomeActivityModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/iconexit.svg" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/slide_logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/slide_logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/slide_logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/slide_logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/slide_logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/app/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="5631" column="5" lean-forward="true" selection-start-line="5631" selection-start-column="5" selection-end-line="5631" selection-end-column="5" />
+          <folding>
+            <element signature="e#239888#239889#0" expanded="true" />
+            <element signature="e#239942#239943#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/java/lang/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2655">
+          <caret line="1494" column="23" selection-start-line="1494" selection-start-column="23" selection-end-line="1494" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/app/ActivityManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="3621" column="39" selection-start-line="3621" selection-start-column="16" selection-end-line="3621" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/LoginActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="76" column="28" lean-forward="true" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/HomeActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_game_over.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1040">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/SoruActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1567">
-          <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
+        <state relative-caret-position="287">
+          <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+          <folding>
+            <element signature="e#46#598#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/GameOverActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="43" column="61" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
+        <state relative-caret-position="360">
+          <caret line="44" column="95" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Presenter/HomeActivityPresenter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Contract/HomeContract.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/loginloading.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="42" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="47" column="47" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="47" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Contract/SoruContract.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
           <folding>
-            <element signature="e#46#485#0" expanded="true" />
+            <element signature="e#46#192#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Presenter/SoruActivityPresenter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+          <folding>
+            <element signature="e#47#309#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/SoruActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="e#46#1077#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/exit.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/exit.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/exit.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/exit.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/exit.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/soru_karti.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1660">
+          <caret line="83" column="72" selection-start-line="83" selection-start-column="72" selection-end-line="83" selection-end-column="72" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/award.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/award.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/award.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/award.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/truee.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/award.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_soru.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="91" column="81" selection-start-line="91" selection-start-column="81" selection-end-line="91" selection-end-column="81" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
   </component>
 </project>

@@ -79,4 +79,9 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         startActivity(intent)
 
     }
+
+    override fun onBackPressed() {
+        finishAffinity()
+        System.exit(0)
+    }
 }

@@ -1,9 +1,10 @@
 package com.nosignalapp.kaydirkazan.Activity
 
+import android.app.ActivityManager
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.nosignalapp.kaydirkazan.Contract.HomeContract
@@ -13,6 +14,8 @@ import com.nosignalapp.kaydirkazan.Presenter.HomeActivityPresenter
 import com.nosignalapp.kaydirkazan.R
 import kotlinx.android.synthetic.main.activity_home.*
 
+
+
 class HomeActivity : AppCompatActivity() ,HomeContract.View {
 
     lateinit var presenter:HomeActivityPresenter
@@ -20,6 +23,7 @@ class HomeActivity : AppCompatActivity() ,HomeContract.View {
     lateinit var mAuth: FirebaseAuth
     lateinit var mKullanici:userModel
     lateinit var iintent:Intent
+    var cikis_sayisi:Int=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,13 +46,16 @@ class HomeActivity : AppCompatActivity() ,HomeContract.View {
 
     override fun clickControl() {
 
-        button_oyna.setOnClickListener(View.OnClickListener {
+        button_oyna.setOnClickListener {
             presenter.startGameButton()
-        })
+        }
+        button_cikis_yap.setOnClickListener {
+            presenter.logineGit()
+        }
     }
 
     override fun showPuan(user: userModel) {
-        activity_home_puan.text = user.yuksekPuan
+        activity_home_puan.text = "Skor : ${user.yuksekPuan}"
         this.mKullanici=user
     }
 
@@ -57,7 +64,28 @@ class HomeActivity : AppCompatActivity() ,HomeContract.View {
         startActivity(iintent)
     }
 
+    override fun startLogin() {
+        val intent3 = Intent(this,LoginActivity::class.java)
+        intent3.flags= Intent.FLAG_ACTIVITY_CLEAR_TOP and Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent3)
+    }
+
     override fun onBackPressed() {
+
+//        val intent3 = Intent(Intent.ACTION_MAIN)
+//        intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+//        intent3.addCategory(Intent.CATEGORY_HOME)
+//        startActivity(intent3)
+
+        if(cikis_sayisi==1){
+            cikis_sayisi=0
+            finishAffinity()
+            System.exit(0)
+        }
+        else{
+            Toast.makeText(this,"Çıkmak için bir kere daha basın",Toast.LENGTH_SHORT).show()
+            cikis_sayisi++
+        }
 
     }
 

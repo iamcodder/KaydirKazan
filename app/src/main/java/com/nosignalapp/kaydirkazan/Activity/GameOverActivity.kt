@@ -17,6 +17,7 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View {
     var dogruSayisi:Int=0
     var rekor:Int=0
     lateinit var intent_home:Intent
+    lateinit var intent_soru:Intent
     lateinit var presenter:GameOverPresenter
     lateinit var mAuth: FirebaseAuth
 
@@ -56,10 +57,11 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View {
         if(this.dogruSayisi>this.rekor){
             activity_gameOver_lottie.setAnimation(R.raw.award)
             presenter.beatRecord(dogruSayisi,mAuth)
+
         }
 
         else{
-            activity_gameOver_lottie.setAnimation(R.raw.stars)
+            activity_gameOver_lottie.setAnimation(R.raw.error)
         }
 
     }

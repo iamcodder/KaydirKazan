@@ -47,9 +47,9 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         val x = ran.nextInt(4)
 
         when(x){
-            0 -> isim="dunyaSorulari"
-            1 -> isim="eserler"
-            2 -> isim="neZamanKuruldu"
+            0 -> isim="rekorlar"
+            1 -> isim="neZaman"
+            2 -> isim="genelKultur"
             3 -> isim="tahminEt"
         }
 
@@ -61,7 +61,10 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
 
     override fun bindViews() {
         gelenBundle=intent.extras
-        if(gelenBundle!=null)  mKullanici= gelenBundle!!.getSerializable("kullanıcı bilgisi") as userModel
+        if(gelenBundle!=null && gelenBundle!!.getSerializable("kullanıcı bilgisi")!=null)  {
+            mKullanici= gelenBundle!!.getSerializable("kullanıcı bilgisi") as userModel
+        }
+        activity_soru_rekor.text="Rekor : ${mKullanici.yuksekPuan}"
 
         liste = ArrayList()
 
@@ -113,20 +116,12 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
 
     override fun trueAnswerNumber(dogruSayisi: Int) {
 
-        activity_soru_puan_PUAN.text=dogruSayisi.toString()
+        activity_soru_puan_PUAN.text="Skor : ${dogruSayisi.toString()}"
 
     }
 
     //oyun bittiğinde yapılacak olanlar
     override fun gameOver() {
-//        this.liste.clear()
-//        activity_soru_cardStackView.removeAllViewsInLayout()
-
-
-        //eğer rekorsa firebase bu komutla yazıyoruz
-//        if(dogruSayisi>this.mKullanici.yuksekPuan.toInt()){
-//            presenter.beatRecord(dogruSayisi,this.mKullanici,mAuth)
-//        }
 
         val intent=Intent(this,GameOverActivity::class.java)
         intent.putExtra("dogruSayisi",dogruSayisi.toInt())

@@ -14,6 +14,8 @@ interface HomeContract {
 
         fun startGame()
 
+        fun startLogin()
+
     }
 
     interface Presenter{
@@ -25,6 +27,8 @@ interface HomeContract {
         fun fetchDataOnFirebase()
 
         fun startGameButton()
+
+        fun logineGit()
 
     }
 
