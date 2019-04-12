@@ -7,6 +7,8 @@
     <color name="colorPrimaryDark">#7300a7</color>
 
 
-    <color name="colorAccent">#974DB9</color>
+    <color name="colorAccent">#3A9392</color>
+
+    <color name="green">#3A9392</color>
 
 </resources>
