@@ -1,6 +1,7 @@
 package com.nosignalapp.kaydirkazan.Activity
 
 import android.content.Intent
+import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -20,6 +21,7 @@ import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
 import com.yuyakaido.android.cardstackview.SwipeAnimationSetting
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_soru.*
 import java.util.*
 
@@ -65,6 +67,11 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
             mKullanici= gelenBundle!!.getSerializable("kullanıcı bilgisi") as userModel
         }
         activity_soru_rekor.text="Rekor : ${mKullanici.yuksekPuan}"
+
+        var animation_drawable: AnimationDrawable = activity_soru_constraint.background as AnimationDrawable
+        animation_drawable.setEnterFadeDuration(1000)
+        animation_drawable.setExitFadeDuration(2000)
+        animation_drawable.start()
 
         liste = ArrayList()
 

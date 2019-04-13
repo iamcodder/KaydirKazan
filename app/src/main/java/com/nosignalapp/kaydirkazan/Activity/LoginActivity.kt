@@ -31,8 +31,8 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     override fun bindViews() {
         mAuth = FirebaseAuth.getInstance()
 
-        login_email.setText("me.iamcodder@gmail.com")
-        login_password.setText("1234321")
+//        login_email.setText("me.iamcodder@gmail.com")
+//        login_password.setText("1234321")
     }
 
     override fun clicked() {
@@ -55,6 +55,11 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
                 login_password.text.toString(),
                 mAuth
             )
+        }
+
+        guest_button.setOnClickListener {
+            intent=Intent(this, HomeActivity::class.java)
+            startActivity(intent)
         }
     }
 

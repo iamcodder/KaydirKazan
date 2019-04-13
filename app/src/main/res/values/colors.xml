@@ -7,8 +7,13 @@
     <color name="colorPrimaryDark">#7300a7</color>
 
 
-    <color name="colorAccent">#3A9392</color>
+    <color name="purple_light">#EA80FC</color>
 
-    <color name="green">#3A9392</color>
+
+    <color name="colorAccent">#000000</color>
+
+    <color name="green">#43A047</color>
+
+    <color name="pink">#FF6AD5</color>
 
 </resources>

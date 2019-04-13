@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/activity_soru_constraint"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Activity.SoruActivity">
+        tools:context=".Activity.SoruActivity"
+android:background="@drawable/animated_list">
 
     <androidx.cardview.widget.CardView
             android:id="@+id/activity_soru_puan_cardView"
