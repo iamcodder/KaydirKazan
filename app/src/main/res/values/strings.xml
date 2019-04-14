@@ -6,7 +6,7 @@
 
     <string name="kayit_ol">Kayıt Ol</string>
     <string name="giris_yap">Giriş Yap</string>
-    <string name="misafir_girisi">Misafir Girişi</string>
+    <string name="google_girisi">Google Girişi</string>
     <string name="cikis_yap">Çıkış Yap</string>
     <string name="hakkinda">Hakkında</string>
     <string name="email">Email</string>
