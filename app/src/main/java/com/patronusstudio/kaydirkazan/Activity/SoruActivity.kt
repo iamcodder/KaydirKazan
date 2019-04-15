@@ -132,6 +132,7 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         val intent=Intent(this,GameOverActivity::class.java)
         intent.putExtra("dogruSayisi",dogruSayisi.toInt())
         intent.putExtra("rekor",this.mKullanici.yuksekPuan.toInt())
+        intent.putExtra("cevaplananSoru",this.mKullanici.cevaplananSoruSayisi.toInt())
         startActivity(intent)
 
     }

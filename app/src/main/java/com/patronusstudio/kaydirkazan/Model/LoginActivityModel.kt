@@ -58,6 +58,7 @@ class LoginActivityModel{
 
             mDatabase.reference.child("oyun").child("kullanicilar").child(uuid).child("email").setValue(email)
             mDatabase.reference.child("oyun").child("kullanicilar").child(uuid).child("yuksekPuan").setValue("0")
+            mDatabase.reference.child("oyun").child("kullanicilar").child(uuid).child("cevaplananSoruSayisi").setValue("0")
             mDatabase.reference.child("oyun").child("kullanicilar").child(uuid).child("uuid").setValue(uuid)
 
             loginCallBack.onRegisterResult("Kayıt Yapıldı",true)

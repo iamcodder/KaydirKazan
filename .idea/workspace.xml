@@ -49,7 +49,7 @@
     <session id="1496610934">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
+          <entry key="project.closed" value="21" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.14" value="1" />
@@ -77,7 +77,7 @@
           <entry key="iml" value="1" />
           <entry key="java" value="8" />
           <entry key="json" value="30" />
-          <entry key="kt" value="302" />
+          <entry key="kt" value="314" />
           <entry key="png" value="74" />
           <entry key="svg" value="1" />
           <entry key="xml" value="204" />
@@ -91,7 +91,7 @@
           <entry key="Image" value="74" />
           <entry key="JAVA" value="8" />
           <entry key="JSON" value="30" />
-          <entry key="Kotlin" value="302" />
+          <entry key="Kotlin" value="314" />
           <entry key="SVG" value="1" />
           <entry key="XML" value="204" />
         </counts>
@@ -100,7 +100,7 @@
         <counts>
           <entry key="gradle" value="113" />
           <entry key="java" value="20" />
-          <entry key="kt" value="14120" />
+          <entry key="kt" value="14588" />
           <entry key="kts" value="78" />
           <entry key="txt" value="910" />
           <entry key="xml" value="2856" />
@@ -110,7 +110,7 @@
         <counts>
           <entry key="Groovy" value="113" />
           <entry key="JAVA" value="20" />
-          <entry key="Kotlin" value="14198" />
+          <entry key="Kotlin" value="14666" />
           <entry key="PLAIN_TEXT" value="910" />
           <entry key="XML" value="2856" />
         </counts>
@@ -119,45 +119,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/LoginActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
-              <folding>
-                <element signature="e#49#539#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Contract/LoginContract.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Presenter/LoginActivityPresenter.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/GameOverActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+            <state relative-caret-position="375">
+              <caret line="105" column="9" lean-forward="true" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/LoginActivityModel.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/SoruActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="71" column="43" selection-start-line="71" selection-start-column="43" selection-end-line="71" selection-end-column="43" />
-              <folding>
-                <element signature="e#355#944#0" />
-                <element signature="e#1066#1698#0" />
-              </folding>
+            <state relative-caret-position="269">
+              <caret line="132" column="58" selection-start-line="132" selection-start-column="58" selection-end-line="132" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -2591,11 +2566,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/userModel.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/HomeActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Contract/SoruContract.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/SoruActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/LoginActivityModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/LoginActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Fragment/GameOverFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_game_over.xml" />
@@ -2626,7 +2596,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/SoruActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/soru_karti.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/LoginActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/soruModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/SoruActivityModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_game_over.xml" />
@@ -2635,13 +2604,19 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/UygulamaHakkinda.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_uygulama_hakkinda.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/GameOverActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/HomeActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/LoginActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Contract/LoginContract.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/LoginActivityModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Presenter/LoginActivityPresenter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/LoginActivityModel.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Contract/GameOverContract.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/GameOverModel.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Presenter/GameOverPresenter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/soruModel.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/userModel.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/SoruActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/GameOverActivity.kt" />
       </list>
     </option>
   </component>
@@ -2953,54 +2928,11 @@
       <window_info anchor="right" id="Preview" order="4" weight="0.34039333" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21785174" />
-      <window_info id="Structure" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Build Variants" order="4" side_tool="true" />
-      <window_info id="Image Layers" order="5" />
-      <window_info id="Designer" order="6" />
-      <window_info id="Capture Tool" order="7" />
-      <window_info anchor="bottom" id="Find" order="0" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="1" weight="0.7708674" />
-      <window_info anchor="bottom" id="Logcat" order="2" weight="0.8396072" />
-      <window_info anchor="bottom" id="TODO" order="3" weight="0.3289689" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.3584288" />
-      <window_info anchor="bottom" id="Terminal" order="5" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Build" order="8" weight="0.38297874" />
-      <window_info anchor="bottom" id="Android Profiler" order="9" />
-      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" weight="0.32980332" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Gradle" order="2" weight="0.32980332" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Preview" order="4" weight="0.34039333" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/truee.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/animated_background_3.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="33" selection-start-line="11" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/animated_background_4.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="30" selection-start-line="11" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/animated_background_2.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -3110,13 +3042,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_award2.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/soruModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
@@ -3139,23 +3064,6 @@
           <caret line="17" column="69" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="69" />
           <folding>
             <element signature="e#376#394#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/GameOverModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/SoruActivityModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-          <folding>
-            <element signature="e#543#1376#0" />
           </folding>
         </state>
       </provider>
@@ -3221,20 +3129,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/SoruActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="887">
-          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/GameOverActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Contract/HomeContract.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -3274,9 +3168,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Presenter/LoginActivityPresenter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/LoginActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
+        <state relative-caret-position="1123">
           <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
           <folding>
             <element signature="e#49#539#0" expanded="true" />
@@ -3284,10 +3185,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/SoruActivityModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/LoginActivityModel.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="71" column="43" selection-start-line="71" selection-start-column="43" selection-end-line="71" selection-end-column="43" />
+        <state relative-caret-position="440">
+          <caret line="60" column="107" selection-start-line="60" selection-start-column="107" selection-end-line="60" selection-end-column="107" />
           <folding>
             <element signature="e#355#944#0" />
             <element signature="e#1066#1698#0" />
@@ -3295,10 +3203,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Presenter/LoginActivityPresenter.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/GameOverModel.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+        <state relative-caret-position="380">
+          <caret line="20" column="103" selection-start-line="20" selection-start-column="103" selection-end-line="20" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Presenter/GameOverPresenter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Contract/GameOverContract.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/soruModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/userModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/SoruActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="132" column="58" selection-start-line="132" selection-start-column="58" selection-end-line="132" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/GameOverActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="105" column="9" lean-forward="true" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
         </state>
       </provider>
     </entry>

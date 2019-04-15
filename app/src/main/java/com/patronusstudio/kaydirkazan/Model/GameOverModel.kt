@@ -14,5 +14,13 @@ class GameOverModel {
 
     }
 
+    fun cevaplananSoruSayisiniArttir(soruSayisi:Int,mAuth: FirebaseAuth){
+        val uuid: String = mAuth.currentUser!!.uid
+
+        val mDatabase: FirebaseDatabase = FirebaseDatabase.getInstance()
+        mDatabase.reference.child("oyun").child("kullanicilar").child(uuid).child("cevaplananSoruSayisi").setValue("$soruSayisi")
+
+    }
+
 
 }

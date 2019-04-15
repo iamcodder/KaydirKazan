@@ -21,4 +21,8 @@ class GameOverPresenter(var model:GameOverModel) : GameOverContract.Presenter {
     override fun beatRecord(dogruSayisi: Int, mAuth: FirebaseAuth) {
         model.rekoruYaz(dogruSayisi,mAuth)
     }
+
+    override fun increaseRepliesAnswew(soruSayisi: Int, mAuth: FirebaseAuth) {
+        model.cevaplananSoruSayisiniArttir(soruSayisi,mAuth)
+    }
 }

@@ -39,6 +39,7 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
     var gelenBundle:Bundle? = null
     var dogruSayisi:Int=0
     var rekor:Int=0
+    var cevaplananSoruMiktari:Int=0
     lateinit var intent_home:Intent
     lateinit var presenter:GameOverPresenter
     lateinit var mAuth: FirebaseAuth
@@ -68,6 +69,7 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
         gelenBundle=intent.extras
         dogruSayisi = gelenBundle!!.getInt("dogruSayisi")
         rekor = gelenBundle!!.getInt("rekor")
+        cevaplananSoruMiktari = gelenBundle!!.getInt("cevaplananSoru")
         mAuth= FirebaseAuth.getInstance()
         intent_home=Intent(this,HomeActivity::class.java)
     }
@@ -87,19 +89,18 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
             else{
                 loadRewardedVideoAd()
             }
-
         }
-
     }
 
-
     override fun kontrolEt() {
+        cevaplananSoruMiktari += dogruSayisi
+        cevaplananSoruMiktari++
+        presenter.increaseRepliesAnswew(cevaplananSoruMiktari,this.mAuth)
+
         if(this.dogruSayisi>this.rekor){
             activity_gameOver_lottie.setAnimation(R.raw.award)
             presenter.beatRecord(dogruSayisi,mAuth)
-
         }
-
         else{
             activity_gameOver_lottie.setAnimation(R.raw.error)
         }

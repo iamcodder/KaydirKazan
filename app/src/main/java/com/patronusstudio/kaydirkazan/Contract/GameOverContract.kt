@@ -21,5 +21,7 @@ interface GameOverContract {
         fun created()
 
         fun beatRecord(dogruSayisi: Int, mAuth: FirebaseAuth)
+
+        fun increaseRepliesAnswew(soruSayisi:Int,mAuth: FirebaseAuth)
     }
 }
