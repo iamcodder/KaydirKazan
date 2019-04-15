@@ -45,7 +45,7 @@
 
             android:layout_height="wrap_content"
 
-            app:cornerRadius="6dp" android:text="Devam Et"
+            app:cornerRadius="6dp" android:text="@string/devam_et"
             style="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:id="@+id/game_over_devam_et" android:textSize="18sp" android:textStyle="bold"
@@ -60,7 +60,7 @@
 
             android:layout_height="wrap_content"
 
-            app:cornerRadius="6dp" android:text="Menüye Dön"
+            app:cornerRadius="6dp" android:text="@string/menuye_don"
             style="@color/colorAccent"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:textSize="18sp" android:textStyle="bold"

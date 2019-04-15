@@ -53,6 +53,11 @@ class HomeActivity : AppCompatActivity() ,HomeContract.View {
         button_oyna.setOnClickListener {
             presenter.startGameButton()
         }
+
+        button_uygulama_hakkinda.setOnClickListener {
+            startActivity(Intent(this,UygulamaHakkinda::class.java))
+        }
+
         button_cikis_yap.setOnClickListener {
             presenter.logineGit()
         }
@@ -72,14 +77,11 @@ class HomeActivity : AppCompatActivity() ,HomeContract.View {
         val intent3 = Intent(this,LoginActivity::class.java)
         intent3.flags= Intent.FLAG_ACTIVITY_CLEAR_TOP and Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(intent3)
+        mAuth.signOut()
+
     }
 
     override fun onBackPressed() {
-
-//        val intent3 = Intent(Intent.ACTION_MAIN)
-//        intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-//        intent3.addCategory(Intent.CATEGORY_HOME)
-//        startActivity(intent3)
 
         if(cikis_sayisi==1){
             cikis_sayisi=0

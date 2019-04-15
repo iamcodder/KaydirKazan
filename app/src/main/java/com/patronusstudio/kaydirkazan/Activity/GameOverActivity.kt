@@ -33,6 +33,7 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
     }
     override fun onRewardedVideoStarted() {}
     override fun onRewardedVideoAdFailedToLoad(p0: Int) {
+        Log.d("Sülo",p0.toString())
     }
 
     var gelenBundle:Bundle? = null
@@ -84,7 +85,7 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
                 rewardedAd.show()
             }
             else{
-
+                loadRewardedVideoAd()
             }
 
         }

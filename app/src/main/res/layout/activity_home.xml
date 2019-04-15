@@ -45,7 +45,7 @@
             android:id="@+id/button_oyna"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/kaydir_kazan"
+            android:text="@string/hadi_kaydiralim"
             android:textAlignment="center"
             android:padding="10dp"
             app:icon="@drawable/slide_logo"
@@ -54,7 +54,7 @@
             app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdeon"
             app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdeon"
             app:layout_constraintHorizontal_bias="0.0" android:layout_marginBottom="12dp"
-            app:layout_constraintBottom_toTopOf="@+id/button_hakkinda"/>
+            app:layout_constraintBottom_toTopOf="@+id/button_uygulama_hakkinda" android:fontFamily="@font/oleo_script"/>
     <com.google.android.material.button.MaterialButton
             android:id="@+id/button_cikis_yap"
             android:layout_width="0dp"
@@ -67,20 +67,21 @@
 
             app:layout_constraintBottom_toTopOf="@+id/guide_alttan_yuzdeon"
             app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdeon"
-            app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdeon"/>
+            app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdeon" android:fontFamily="@font/oleo_script"/>
 
     <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_hakkinda"
+            android:id="@+id/button_uygulama_hakkinda"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/hakkinda"
+            android:text="@string/uygulama_hakkinda"
             android:textAlignment="center"
-            app:icon="@drawable/user"
+            app:icon="@drawable/ic_thumbs_up_down_black_24dp"
             android:padding="10dp"
             app:backgroundTint="@drawable/button_background"
             app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdeon"
             app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdeon"
-            android:layout_marginBottom="12dp" app:layout_constraintBottom_toTopOf="@+id/button_cikis_yap"/>
+            android:layout_marginBottom="12dp" app:layout_constraintBottom_toTopOf="@+id/button_cikis_yap"
+            android:fontFamily="@font/oleo_script"/>
 
     <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                                 android:id="@+id/guide_soldan_yuzdeon"

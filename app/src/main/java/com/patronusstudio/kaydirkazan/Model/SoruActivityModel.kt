@@ -14,6 +14,7 @@ class SoruActivityModel(soruTuru:String,firebaseDatabase: FirebaseDatabase) {
         .child(soruTuru)
 
 
+
     fun butunSorulariCek(listeyiDondur:SoruContract.FirebaseFetch){
 
         try {
@@ -48,20 +49,20 @@ class SoruActivityModel(soruTuru:String,firebaseDatabase: FirebaseDatabase) {
 
     fun soruListesiRandom(soruListesi:ArrayList<soruModel>,listeyiDondur:SoruContract.FirebaseFetch){
 
-        var dondurulecekListe:ArrayList<soruModel> = ArrayList<soruModel>()
-        var soruListesi_child_sayisi:Int=soruListesi.size
+        var dondurulecekListe:ArrayList<soruModel> = ArrayList()
+        dondurulecekListe.clear()
 
-        for(i in 0 until soruListesi.size){
+        var soruListesi_child_sayisi:Int=(soruListesi.size)-1
+
+        for(i in 0..soruListesi_child_sayisi){
 
             var randomSayi = (0..soruListesi_child_sayisi).random()
 
             dondurulecekListe.add(soruListesi[randomSayi])
             soruListesi.removeAt(randomSayi)
 
-            soruListesi_child_sayisi=soruListesi.size-1
-            if(soruListesi_child_sayisi==-1){
-                soruListesi_child_sayisi=0
-            }
+            soruListesi_child_sayisi=(soruListesi.size)-1
+
         }
         listeyiDondur.listeyiGetir(dondurulecekListe)
 

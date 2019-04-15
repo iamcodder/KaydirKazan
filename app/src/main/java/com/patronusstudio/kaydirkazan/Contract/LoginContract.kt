@@ -30,6 +30,8 @@ interface LoginContract {
 
         fun buttonRegisterClicked(email: String, password: String, auth: FirebaseAuth)
 
+        fun buttonForgetPasswordClicked(email:String,auth:FirebaseAuth)
+
     }
 
     interface FirebaseLoginCallback{
@@ -37,6 +39,8 @@ interface LoginContract {
         fun onLoginResult(message:String,isLogin:Boolean)
 
         fun onRegisterResult(message:String,isRegister:Boolean)
+
+        fun onPasswordResetResult(message: String)
     }
 
 

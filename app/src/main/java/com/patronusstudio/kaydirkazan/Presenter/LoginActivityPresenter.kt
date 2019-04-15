@@ -28,9 +28,17 @@ class LoginActivityPresenter(var model: LoginActivityModel) : LoginContract.Pres
         mView.progressBarActive()
 
         model.girisYap(email, password, auth,this)
-
     }
 
+    override fun buttonForgetPasswordClicked(email: String, auth: FirebaseAuth) {
+        model.sifremiUnuttum(email,auth,this)
+        mView.progressBarActive()
+    }
+
+    override fun onPasswordResetResult(message: String) {
+        mView.showToast(message)
+        mView.progressBarPassive()
+    }
 
 
     override fun buttonRegisterClicked(email: String, password: String, auth: FirebaseAuth) {

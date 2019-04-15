@@ -63,4 +63,19 @@ class LoginActivityModel{
             loginCallBack.onRegisterResult("Kayıt Yapıldı",true)
         }
     }
+
+    fun sifremiUnuttum(email: String,mAuth: FirebaseAuth,loginCallBack: LoginContract.FirebaseLoginCallback){
+
+        if(email!=""){
+            mAuth.sendPasswordResetEmail(email)
+                .addOnSuccessListener {
+                    loginCallBack.onPasswordResetResult("Emailinizi kontrol edin")
+            }
+                .addOnFailureListener {
+                    loginCallBack.onPasswordResetResult(it.localizedMessage.toString())
+                }
+
+        }
+    }
+
 }

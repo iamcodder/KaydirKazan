@@ -2,8 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.patronusstudio.kaydirkazan">
 
-    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
-
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
 
     <application
             android:allowBackup="true"
@@ -12,19 +11,23 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".Activity.UygulamaHakkinda">
+        </activity>
 
         <meta-data
                 android:name="com.google.android.gms.ads.APPLICATION_ID"
                 android:value="ca-app-pub-1818679104699845~3155151657"/>
+        <meta-data android:name="preloaded_fonts" android:resource="@array/preloaded_fonts"/>
 
-        <activity android:name="com.patronusstudio.kaydirkazan.Activity.GameOverActivity"
-        android:theme="@style/CustomGameOverStyle">
+        <activity
+                android:name=".Activity.GameOverActivity"
+                android:theme="@style/CustomGameOverStyle">
         </activity>
-        <activity android:name="com.patronusstudio.kaydirkazan.Activity.SoruActivity">
+        <activity android:name=".Activity.SoruActivity">
         </activity>
-        <activity android:name="com.patronusstudio.kaydirkazan.Activity.HomeActivity">
+        <activity android:name=".Activity.HomeActivity">
         </activity>
-        <activity android:name="com.patronusstudio.kaydirkazan.Activity.LoginActivity">
+        <activity android:name=".Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

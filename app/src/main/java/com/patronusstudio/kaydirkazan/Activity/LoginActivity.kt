@@ -30,16 +30,17 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
 
     override fun bindViews() {
         mAuth = FirebaseAuth.getInstance()
-
-//        login_email.setText("me.iamcodder@gmail.com")
-//        login_password.setText("1234321")
+        if (mAuth.currentUser!=null){
+            startActivity(Intent(this,HomeActivity::class.java))
+            finish()
+        }
     }
 
     override fun clicked() {
         //View tıklama işlemini dinlemeye koyuluyor.
         //Örneğin burada login butonuna basılırsa ;
 
-        login_button.setOnClickListener {
+        login_activity_login_button.setOnClickListener {
             //Abi bendeki view'da login butonuna tıklandı.Sen sadece bana hangi butona tıklanıldığını
             //söylememi istedin.Kalan işleri sen kendin hallet diyor.
             loginActivityPresenter.buttonLoginClicked(
@@ -49,7 +50,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
             )
         }
 
-        register_button.setOnClickListener {
+        login_activity_register_button.setOnClickListener {
             loginActivityPresenter.buttonRegisterClicked(
                 login_email.text.toString(),
                 login_password.text.toString(),
@@ -57,8 +58,12 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
             )
         }
 
-        google_login_button.setOnClickListener {
+        login_activity_google_girisi.setOnClickListener {
             Toast.makeText(this,"Henüz hazır değil",Toast.LENGTH_SHORT).show()
+        }
+
+        login_activity_sifremi_unuttum.setOnClickListener {
+            loginActivityPresenter.buttonForgetPasswordClicked(login_email.text.toString(),mAuth)
         }
     }
 
