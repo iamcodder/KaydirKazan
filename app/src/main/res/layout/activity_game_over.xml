@@ -18,15 +18,15 @@
     <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                                 android:id="@+id/guide_ustten_yuzdebes"
                                                 android:orientation="horizontal"
-                                                app:layout_constraintGuide_percent="0.10"/>
+                                                app:layout_constraintGuide_percent="0.1"/>
     <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                                 android:id="@+id/gui_ikiyebolme"
                                                 android:orientation="horizontal"
-                                                app:layout_constraintGuide_percent="0.55"/>
+                                                app:layout_constraintGuide_percent="0.5"/>
     <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                                 android:id="@+id/guide_usttenyetmisbes"
                                                 android:orientation="horizontal"
-                                                app:layout_constraintGuide_percent="0.75"/>
+                                                app:layout_constraintGuide_percent="0.9"/>
 
 
     <com.airbnb.lottie.LottieAnimationView
@@ -54,7 +54,8 @@
             app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdebes"
             app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdebes"
             app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/guide_usttenyetmisbes"/>
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/game_over_menuye_don"
+            android:fontFamily="@font/margarine"/>
     <com.google.android.material.button.MaterialButton
             android:layout_width="0dp"
 
@@ -69,7 +70,26 @@
             android:id="@+id/game_over_menuye_don"
             app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdebes"
             app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdebes"
-            app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="@+id/guide_usttenyetmisbes"/>
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toTopOf="@+id/guide_usttenyetmisbes" android:fontFamily="@font/margarine"/>
+
+    <com.google.android.material.card.MaterialCardView
+            android:id="@+id/activity_game_over_dogru_sonuc_cardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/game_over_devam_et"
+            app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdebes"
+            app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdebes"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="@+id/gui_ikiyebolme">
+        <TextView
+                android:id="@+id/activity_game_over_dogru_sonuc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/margarine"
+                android:gravity="center"/>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

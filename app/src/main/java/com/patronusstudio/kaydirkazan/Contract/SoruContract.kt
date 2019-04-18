@@ -22,6 +22,14 @@ interface SoruContract {
 
         fun gameOver()
 
+        fun finishTime()
+
+        fun startTimer()
+
+        fun resetTimer()
+
+        fun stopTimer()
+
     }
 
     interface Presenter{
@@ -34,7 +42,8 @@ interface SoruContract {
 
         fun falseAnswer()
 
-        fun beatRecord(dogruSayisi: Int,user: userModel,mAuth:FirebaseAuth)
+        fun overTime()
+
     }
 
     interface FirebaseFetch {

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateInterpolator
@@ -24,6 +25,8 @@ import com.yuyakaido.android.cardstackview.SwipeAnimationSetting
 import kotlinx.android.synthetic.main.activity_soru.*
 import java.util.*
 
+
+
 class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
 
     lateinit var presenter:SoruActivityPresenter
@@ -37,6 +40,19 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     var gelenBundle:Bundle? = null
     var ekrandakiKartKonumu:Int = 0
     var dogruSayisi:Int=0
+    var TOPLAM_SURE:Long=16000
+    var kalanSure:Long=0
+    var gecenSure:Long=0
+    var countDownTimer = object : CountDownTimer(TOPLAM_SURE, 1000) {
+        override fun onFinish() {
+            presenter.overTime()
+        }
+
+        override fun onTick(millisUntilFinished: Long) {
+            kalanSure= millisUntilFinished / 1000
+            textiGuncelle()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,13 +61,14 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
 
         var isim:String=""
         val ran = Random()
-        val x = ran.nextInt(4)
+        val x = ran.nextInt(5)
 
         when(x){
             0 -> isim="rekorlar"
             1 -> isim="neZaman"
             2 -> isim="genelKultur"
             3 -> isim="tahminEt"
+            4 -> isim="tahminEt"
         }
 
         presenter= SoruActivityPresenter(SoruActivityModel(isim,firebaseDatabase))
@@ -75,6 +92,11 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         liste = ArrayList()
 
         mAuth= FirebaseAuth.getInstance()
+
+        if(!activity_soru_meteor.isAnimating) activity_soru_meteor.playAnimation()
+
+
+
     }
 
 
@@ -112,12 +134,37 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
 
     }
 
+    override fun startTimer() {
+         countDownTimer.start()
+        gecenSure=System.currentTimeMillis()+TOPLAM_SURE
+        Log.d("Sülo",gecenSure.toString())
+    }
+    fun textiGuncelle(){
+        activity_soru_kalan_sure.text=this.kalanSure.toString()
+    }
+
+    override fun resetTimer() {
+          countDownTimer.cancel()
+        countDownTimer.start()
+    }
+
+    override fun stopTimer() {
+         countDownTimer.cancel()
+
+    }
+
     override fun progressShow() {
-        activity_soru_progressBar.visibility=View.VISIBLE
+        activity_soru_loading_infinity_bar.visibility=View.VISIBLE
+        activity_soru_loading_infinity_bar.playAnimation()
+        activity_soru_meteor.cancelAnimation()
+        activity_soru_meteor.visibility=View.GONE
     }
 
     override fun progressHide() {
-        activity_soru_progressBar.visibility=View.GONE
+        activity_soru_loading_infinity_bar.visibility=View.GONE
+        activity_soru_loading_infinity_bar.cancelAnimation()
+        activity_soru_meteor.playAnimation()
+        activity_soru_meteor.visibility=View.VISIBLE
     }
 
     override fun trueAnswerNumber(dogruSayisi: Int) {
@@ -128,19 +175,26 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
 
     //oyun bittiğinde yapılacak olanlar
     override fun gameOver() {
-
+        countDownTimer.cancel()
         val intent=Intent(this,GameOverActivity::class.java)
         intent.putExtra("dogruSayisi",dogruSayisi.toInt())
         intent.putExtra("rekor",this.mKullanici.yuksekPuan.toInt())
         intent.putExtra("cevaplananSoru",this.mKullanici.cevaplananSoruSayisi.toInt())
+        intent.putExtra("dogruCevap",this.liste[ekrandakiKartKonumu].dogruCevap.toString())
         startActivity(intent)
-
     }
 
+    override fun finishTime() {
+        val intent=Intent(this,GameOverActivity::class.java)
+        intent.putExtra("dogruSayisi",dogruSayisi.toInt())
+        intent.putExtra("rekor",this.mKullanici.yuksekPuan.toInt())
+        intent.putExtra("cevaplananSoru",this.mKullanici.cevaplananSoruSayisi.toInt())
+        intent.putExtra("dogruCevap","Malesef zaman doldu")
+        startActivity(intent)
+    }
 
     //geçilmiş olan kart
     override fun onCardDisappeared(view: View?, position: Int) {
-        Log.d("Süleyman","onCardDisappeared : $position")
     }
 
     //kartın kaydırılma oranı
@@ -183,6 +237,34 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     }
 
     override fun onCardRewound() {
+    }
+
+
+    override fun onPause() {
+        super.onPause()
+        activity_soru_meteor.cancelAnimation()
+        activity_soru_loading_infinity_bar.cancelAnimation()
+        countDownTimer.cancel()
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        activity_soru_meteor.cancelAnimation()
+        activity_soru_loading_infinity_bar.cancelAnimation()
+        countDownTimer.cancel()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        activity_soru_meteor.playAnimation()
+        countDownTimer.start()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        activity_soru_meteor.cancelAnimation()
+        countDownTimer.start()
     }
 
 

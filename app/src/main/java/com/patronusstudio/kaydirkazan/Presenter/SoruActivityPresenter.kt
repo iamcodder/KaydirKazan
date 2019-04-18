@@ -1,34 +1,36 @@
 package com.patronusstudio.kaydirkazan.Presenter
 
-import com.google.firebase.auth.FirebaseAuth
 import com.patronusstudio.kaydirkazan.Contract.SoruContract
 import com.patronusstudio.kaydirkazan.Model.SoruActivityModel
 import com.patronusstudio.kaydirkazan.Model.soruModel
-import com.patronusstudio.kaydirkazan.Model.userModel
 
-class SoruActivityPresenter (var model:SoruActivityModel) : SoruContract.Presenter,SoruContract.FirebaseFetch{
+class SoruActivityPresenter(var model: SoruActivityModel) : SoruContract.Presenter, SoruContract.FirebaseFetch {
 
-    lateinit var mView:SoruContract.View
+    lateinit var mView: SoruContract.View
 
     override fun setView(view: SoruContract.View) {
-        mView=view
+        mView = view
     }
 
     override fun created() {
         mView.bindViews()
         model.butunSorulariCek(this)
         mView.progressShow()
+        mView.stopTimer()
     }
 
     override fun listeyiGetir(soruListesi: ArrayList<soruModel>) {
         mView.recyclerSetle(soruListesi)
         mView.cardTasarimi()
         mView.progressHide()
+
+        mView.startTimer()
     }
 
-    override fun trueAnswer(dogruSayisi:Int) {
+    override fun trueAnswer(dogruSayisi: Int) {
 
         mView.trueAnswerNumber(dogruSayisi)
+        mView.resetTimer()
 
     }
 
@@ -36,7 +38,8 @@ class SoruActivityPresenter (var model:SoruActivityModel) : SoruContract.Present
         mView.gameOver()
     }
 
-    override fun beatRecord(dogruSayisi: Int, user: userModel, mAuth: FirebaseAuth) {
-//        model.rekorKirildi(dogruSayisi,user,mAuth)
+    override fun overTime() {
+        mView.finishTime()
     }
+
 }

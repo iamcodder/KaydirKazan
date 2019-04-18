@@ -77,6 +77,9 @@ class LoginActivityModel{
                 }
 
         }
+        else{
+            loginCallBack.onPasswordResetResult("Email girin")
+        }
     }
 
 }

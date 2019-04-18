@@ -31,13 +31,13 @@ class LoginActivityPresenter(var model: LoginActivityModel) : LoginContract.Pres
     }
 
     override fun buttonForgetPasswordClicked(email: String, auth: FirebaseAuth) {
-        model.sifremiUnuttum(email,auth,this)
         mView.progressBarActive()
+        model.sifremiUnuttum(email,auth,this)
     }
 
     override fun onPasswordResetResult(message: String) {
-        mView.showToast(message)
         mView.progressBarPassive()
+        mView.showToast(message)
     }
 
 

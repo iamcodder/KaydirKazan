@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--//app bar rengi-->
-    <color name="colorPrimary">#7300a7</color>
+    <color name="colorPrimary">#7300A7</color>
 
     <!--//widget rengi-->
     <color name="colorPrimaryDark">#7300a7</color>
@@ -15,5 +15,9 @@
     <color name="green">#43A047</color>
 
     <color name="pink">#FF6AD5</color>
+
+    <color name="turuncu">#F98146</color>
+
+    <color name="kirmizi">#FF3535</color>
 
 </resources>

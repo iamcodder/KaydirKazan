@@ -14,7 +14,6 @@ class HomeActivityPresenter (var model:HomeActivityModel): HomeContract.Presente
 
     override fun created() {
         mView.bindViews()
-        mView.clickControl()
     }
 
     override fun fetchDataOnFirebase() {
@@ -23,6 +22,7 @@ class HomeActivityPresenter (var model:HomeActivityModel): HomeContract.Presente
 
     override fun onFetchResult(user: userModel) {
         mView.showPuan(user)
+        mView.clickControl()
     }
 
     override fun startGameButton() {

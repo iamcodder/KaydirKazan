@@ -6,12 +6,11 @@
 
     <string name="kayit_ol">Kayıt Ol</string>
     <string name="giris_yap">Giriş Yap</string>
-    <string name="google_girisi">Google Girişi</string>
-    <string name="cikis_yap">CIKIS YAP</string>
+    <string name="cikis_yap">Çıkış Yap</string>
     <string name="uygulama_hakkinda">Uygulama Hakkında</string>
     <string name="email">Email</string>
     <string name="sifre">Şifre</string>
-    <string name="hadi_kaydiralim">HADI KAYDIRALIM</string>
+    <string name="hadi_kaydiralim">Oyna</string>
     <string name="devam_et">Devam Et (Reklam İçerir)</string>
     <string name="menuye_don">Menüye Dön</string>
 

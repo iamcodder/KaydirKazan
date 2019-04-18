@@ -6,17 +6,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <com.airbnb.lottie.LottieAnimationView android:layout_width="0dp" android:layout_height="0dp"
-                                           app:lottie_loop="true" app:lottie_autoPlay="true"
-                                           app:lottie_rawRes="@raw/meteor"
-                                           android:id="@+id/lottie_meteor"
-                                           app:layout_constraintStart_toStartOf="@+id/guideline"
-                                           app:layout_constraintBottom_toTopOf="@+id/soru_karti_tasarimi_ANA_cardview"
-                                           app:layout_constraintTop_toTopOf="parent"
-                                           app:layout_constraintEnd_toStartOf="@+id/guideline11"
-                                           android:layout_marginTop="8dp"/>
-
-
     <androidx.cardview.widget.CardView
             android:id="@+id/soru_karti_tasarimi_ANA_cardview"
             android:layout_width="0dp"
@@ -25,15 +14,16 @@
             app:cardElevation="10dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline3"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintBottom_toTopOf="@+id/guideline4" android:layout_marginBottom="16dp"
-    app:contentPadding="10dp">
+            app:contentPadding="10dp" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/soru_karti_tasarimi_SOL_cardview">
 
         <TextView
                 android:id="@+id/soru_karti_tasarimi_ANA_SORU"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:gravity="center"/>
+                android:gravity="center" android:fontFamily="@font/margarine"/>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -43,9 +33,11 @@
             app:cardCornerRadius="7dp"
             app:cardElevation="10dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline3"
-            app:layout_constraintStart_toStartOf="@+id/guideline2" app:layout_constraintTop_toTopOf="@+id/guideline4"
-            android:layout_marginTop="8dp"
-            app:contentPadding="10dp">
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:contentPadding="10dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
                 android:layout_width="wrap_content"
@@ -57,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:gravity="center"/>
+                android:gravity="center" android:fontFamily="@font/margarine"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -77,8 +69,8 @@
             app:cardElevation="10dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline3"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/soru_karti_tasarimi_SOL_cardview" android:layout_marginTop="16dp"
-            app:contentPadding="10dp">
+            app:contentPadding="10dp" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/soru_karti_tasarimi_SOL_cardview" android:layout_marginTop="8dp">
 
         <ImageView
                 android:layout_width="wrap_content"
@@ -89,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:gravity="center"/>
+                android:gravity="center" android:fontFamily="@font/margarine"/>
 
     </androidx.cardview.widget.CardView>
 
@@ -108,10 +100,6 @@
                                                 android:id="@+id/guideline3"
                                                 android:orientation="vertical"
                                                 app:layout_constraintGuide_percent="0.75"/>
-    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                                android:id="@+id/guideline4"
-                                                android:orientation="horizontal"
-                                                app:layout_constraintGuide_percent="0.45"/>
     <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                                 android:id="@+id/guideline"
                                                 android:orientation="vertical"

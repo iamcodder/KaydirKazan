@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/activity_soru_constraint"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_soru_constraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Activity.SoruActivity"
-android:background="@drawable/animated_list">
+        android:background="@drawable/animated_list">
 
     <androidx.cardview.widget.CardView
             android:id="@+id/activity_soru_puan_cardView"
@@ -16,9 +16,9 @@ android:background="@drawable/animated_list">
             app:cardCornerRadius="5dp"
             app:cardElevation="8dp"
             app:contentPadding="5dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline9"
+            app:layout_constraintBottom_toTopOf="@+id/guidel_ustten_yuzdeon"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline10" android:layout_marginEnd="8dp">
+            app:layout_constraintEnd_toStartOf="@+id/guide_yandan_yuzdeelli" android:layout_marginEnd="8dp">
 
         <TextView
                 android:id="@+id/activity_soru_puan_PUAN"
@@ -27,7 +27,7 @@ android:background="@drawable/animated_list">
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:text="Skor : 0"
-                android:textStyle="bold"/>
+                android:textStyle="bold" android:fontFamily="@font/margarine"/>
 
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
@@ -37,7 +37,7 @@ android:background="@drawable/animated_list">
             app:cardCornerRadius="5dp"
             app:cardElevation="8dp"
             app:contentPadding="5dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline9"
+            app:layout_constraintBottom_toTopOf="@+id/guidel_ustten_yuzdeon"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView2">
 
@@ -48,49 +48,89 @@ android:background="@drawable/animated_list">
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:text="Rekor : "
-                android:textStyle="bold"/>
+                android:textStyle="bold" android:fontFamily="@font/margarine"/>
 
     </androidx.cardview.widget.CardView>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="32dp" app:srcCompat="@drawable/award"
+            android:id="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/guide_yandan_yuzdeelli"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toTopOf="@+id/activity_soru_rekor_cardView"
+            app:layout_constraintBottom_toBottomOf="@+id/activity_soru_rekor_cardView"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="32dp" app:srcCompat="@drawable/truee" android:id="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/activity_soru_puan_cardView"
+            app:layout_constraintBottom_toBottomOf="@+id/activity_soru_puan_cardView"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintEnd_toStartOf="@+id/activity_soru_puan_cardView"/>
+
+    <com.airbnb.lottie.LottieAnimationView android:layout_width="395dp" android:layout_height="146dp"
+                                           android:id="@+id/activity_soru_meteor"
+                                           app:lottie_rawRes="@raw/meteor"
+                                           app:lottie_autoPlay="true"
+                                           app:lottie_loop="true"
+                                           app:layout_constraintStart_toStartOf="parent"
+                                           app:layout_constraintEnd_toEndOf="parent"
+                                           app:layout_constraintTop_toTopOf="@+id/guidel_ustten_yuzdeon"
+                                           app:layout_constraintBottom_toTopOf="@+id/guide_ustten_yuzdeotuz"/>
 
     <com.yuyakaido.android.cardstackview.CardStackView
             android:id="@+id/activity_soru_cardStackView"
             android:layout_width="0dp"
-            android:layout_height="644dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="437dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline9"/>
+            app:layout_constraintTop_toTopOf="@+id/guide_ustten_yuzdeotuz"
+            app:layout_constraintBottom_toTopOf="@+id/guide_alttan_yuzdedoksan"/>
 
-    <ProgressBar
-            android:id="@+id/activity_soru_progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
     <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                                android:id="@+id/guideline9"
+                                                android:id="@+id/guidel_ustten_yuzdeon"
                                                 android:orientation="horizontal"
                                                 app:layout_constraintGuide_percent="0.1"/>
     <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                                android:id="@+id/guideline10"
+                                                android:id="@+id/guide_yandan_yuzdeelli"
                                                 android:orientation="vertical"
                                                 app:layout_constraintGuide_percent="0.5"/>
-    <ImageView
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/guide_ustten_yuzdeotuz"
+                                                android:orientation="horizontal"
+                                                app:layout_constraintGuide_percent="0.3"/>
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/guide_alttan_yuzdedoksan"
+                                                android:orientation="horizontal"
+                                                app:layout_constraintGuide_percent="0.9"/>
+
+    <com.airbnb.lottie.LottieAnimationView android:layout_width="0dp" android:layout_height="0dp"
+                                           app:lottie_autoPlay="true" app:lottie_rawRes="@raw/loadingbar"
+                                           app:lottie_loop="true"
+                                           android:id="@+id/activity_soru_loading_infinity_bar"
+                                           app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                                           app:layout_constraintStart_toStartOf="@+id/guideline4"
+                                           app:layout_constraintTop_toTopOf="@+id/activity_soru_cardStackView"
+                                           app:layout_constraintBottom_toTopOf="@+id/guideline10"/>
+
+    <TextView
+            android:text="15"
             android:layout_width="wrap_content"
-            android:layout_height="0dp" app:srcCompat="@drawable/award"
-            android:id="@+id/imageView2"
-            app:layout_constraintStart_toStartOf="@+id/guideline10"
-            app:layout_constraintTop_toTopOf="@+id/activity_soru_rekor_cardView"
-            app:layout_constraintBottom_toBottomOf="@+id/activity_soru_rekor_cardView"
-            android:layout_marginStart="8dp"/>
-    <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp" app:srcCompat="@drawable/truee" android:id="@+id/imageView"
-            app:layout_constraintEnd_toStartOf="@+id/activity_soru_puan_cardView"
-            app:layout_constraintBottom_toBottomOf="@+id/activity_soru_puan_cardView"
-            app:layout_constraintTop_toTopOf="@+id/activity_soru_puan_cardView"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/activity_soru_kalan_sure" android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="@+id/guide_alttan_yuzdedoksan"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/guideline4"
+                                                android:orientation="vertical"
+                                                app:layout_constraintGuide_percent="0.3"/>
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/guideline9"
+                                                android:orientation="vertical"
+                                                app:layout_constraintGuide_percent="0.7"/>
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/guideline10"
+                                                android:orientation="horizontal"
+                                                app:layout_constraintGuide_percent="0.7"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

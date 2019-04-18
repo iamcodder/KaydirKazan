@@ -58,9 +58,6 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
             )
         }
 
-        login_activity_google_girisi.setOnClickListener {
-            Toast.makeText(this,"Henüz hazır değil",Toast.LENGTH_SHORT).show()
-        }
 
         login_activity_sifremi_unuttum.setOnClickListener {
             loginActivityPresenter.buttonForgetPasswordClicked(login_email.text.toString(),mAuth)
@@ -75,7 +72,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     }
 
     override fun progressBarPassive() {
-        login_animation.visibility=View.GONE
+        login_animation.visibility=View.INVISIBLE
         login_animation.cancelAnimation()
     }
 

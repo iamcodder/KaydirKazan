@@ -1,11 +1,11 @@
 package com.patronusstudio.kaydirkazan.Activity
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.reward.RewardItem
@@ -23,46 +23,64 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
     override fun onRewardedVideoAdClosed() {
         loadRewardedVideoAd()
     }
-    override fun onRewardedVideoAdLeftApplication() {}
-    override fun onRewardedVideoAdLoaded() {}
-    override fun onRewardedVideoAdOpened() {}
-    override fun onRewardedVideoCompleted() {}
+
+    override fun onRewardedVideoAdLeftApplication() {
+    }
+
+    override fun onRewardedVideoAdLoaded() {
+        Toast.makeText(this,"Reklam yüklendi.Tekrar basarak izlemeye geçin.",Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onRewardedVideoAdOpened() {
+    }
+
+    override fun onRewardedVideoCompleted() {
+    }
+
     override fun onRewarded(p0: RewardItem?) {
-        Toast.makeText(this,"Devam edebiliriz :)",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,"Devam edebilirsiniz.",Toast.LENGTH_SHORT).show()
         finish()
     }
-    override fun onRewardedVideoStarted() {}
+
+    override fun onRewardedVideoStarted() {
+    }
+
     override fun onRewardedVideoAdFailedToLoad(p0: Int) {
-        Log.d("Sülo",p0.toString())
+        Log.d("Süleyman",p0.toString())
     }
 
     var gelenBundle:Bundle? = null
     var dogruSayisi:Int=0
     var rekor:Int=0
     var cevaplananSoruMiktari:Int=0
+    var dogruCevap:String?=""
     lateinit var intent_home:Intent
     lateinit var presenter:GameOverPresenter
     lateinit var mAuth: FirebaseAuth
-    lateinit var rewardedAd: RewardedVideoAd
+//    private lateinit var mRewardedVideoAd: RewardedVideoAd
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_over)
-        MobileAds.initialize(this, "ca-app-pub-1818679104699845~3155151657")
-        rewardedAd=MobileAds.getRewardedVideoAdInstance(this)
-        rewardedAd.rewardedVideoAdListener = this
-        loadRewardedVideoAd()
+
 
         presenter= GameOverPresenter(GameOverModel())
         presenter.setView(this)
         presenter.created()
+
+//        MobileAds.initialize(this, "ca-app-pub-1818679104699845~3155151657")
+//
+//        // Use an activity context to get the rewarded video instance.
+//        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this)
+//        mRewardedVideoAd.rewardedVideoAdListener = this
+//        loadRewardedVideoAd()
+    }
+    private fun loadRewardedVideoAd() {
+//        mRewardedVideoAd.loadAd("ca-app-pub-1818679104699845/2852819194",
+//            AdRequest.Builder().addTestDevice("D239974A1C94D237A5745EC53CF138BE").build())
     }
 
-    private fun loadRewardedVideoAd() {
-        rewardedAd.loadAd("ca-app-pub-1818679104699845/2281053687",
-            AdRequest.Builder().addTestDevice("D239974A1C94D237A5745EC53CF138BE").build())
-    }
 
 
     override fun bindViews() {
@@ -70,6 +88,7 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
         dogruSayisi = gelenBundle!!.getInt("dogruSayisi")
         rekor = gelenBundle!!.getInt("rekor")
         cevaplananSoruMiktari = gelenBundle!!.getInt("cevaplananSoru")
+        dogruCevap= gelenBundle!!.getString("dogruCevap")
         mAuth= FirebaseAuth.getInstance()
         intent_home=Intent(this,HomeActivity::class.java)
     }
@@ -82,13 +101,12 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
         }
 
         game_over_devam_et.setOnClickListener {
+//            if (mRewardedVideoAd.isLoaded) {
+//                mRewardedVideoAd.show()
+//            }
+            finish()
 
-            if (rewardedAd.isLoaded) {
-                rewardedAd.show()
-            }
-            else{
-                loadRewardedVideoAd()
-            }
+
         }
     }
 
@@ -97,32 +115,43 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
         cevaplananSoruMiktari++
         presenter.increaseRepliesAnswew(cevaplananSoruMiktari,this.mAuth)
 
-        if(this.dogruSayisi>this.rekor){
+        if(dogruCevap.equals("Malesef zaman doldu")){
+            activity_gameOver_lottie.setAnimation(R.raw.error)
+            activity_game_over_dogru_sonuc.text="\n${dogruCevap.toString()}\n"
+            activity_game_over_dogru_sonuc_cardView.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_light))
+        }
+
+        else if(this.dogruSayisi>this.rekor){
             activity_gameOver_lottie.setAnimation(R.raw.award)
+            activity_game_over_dogru_sonuc.text="\nYanlış cevap vermiş olsanda kendi rekorunu kırdın.\nDoğru cevap ${dogruCevap} olacaktı.\nYinede tebrikler\n"
+
+            activity_game_over_dogru_sonuc_cardView.setBackgroundColor(ContextCompat.getColor(this, R.color.turuncu))
             presenter.beatRecord(dogruSayisi,mAuth)
         }
         else{
             activity_gameOver_lottie.setAnimation(R.raw.error)
+            activity_game_over_dogru_sonuc.text="\nYanlış cevap verdin.\nDoğru cevap ${dogruCevap} olacaktı.\n"
+            activity_game_over_dogru_sonuc_cardView.setBackgroundColor(ContextCompat.getColor(this, R.color.kirmizi))
         }
+
+    }
+
+    override fun onBackPressed() {
 
     }
 
     override fun onPause() {
         super.onPause()
-        rewardedAd.pause(this)
+//        mRewardedVideoAd.pause(this)
     }
 
     override fun onResume() {
         super.onResume()
-        rewardedAd.resume(this)
+//        mRewardedVideoAd.resume(this)
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        rewardedAd.destroy(this)
-    }
-
-    override fun onBackPressed() {
-
+//        mRewardedVideoAd.destroy(this)
     }
 }

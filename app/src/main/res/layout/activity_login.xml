@@ -25,7 +25,8 @@
             android:layout_width="0dp" android:id="@+id/textInputLayout"
             app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView"
             app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
-            app:layout_constraintEnd_toStartOf="@+id/guide_sag" app:layout_constraintStart_toStartOf="@+id/guide_sol">
+            app:layout_constraintEnd_toStartOf="@+id/guide_sag" app:layout_constraintStart_toStartOf="@+id/guide_sol"
+    >
 
         <EditText
                 android:id="@+id/login_email"
@@ -34,7 +35,8 @@
                 android:inputType="textEmailAddress"
                 tools:layout_editor_absoluteY="265dp"
                 tools:layout_editor_absoluteX="16dp"
-                android:hint="@string/email"/>
+                android:hint="@string/email"
+                android:fontFamily="@font/margarine"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -51,7 +53,8 @@
                 android:inputType="textPassword"
                 tools:layout_editor_absoluteY="342dp"
                 tools:layout_editor_absoluteX="16dp"
-                android:hint="@string/sifre"/>
+                android:fontFamily="@font/margarine"
+        android:hint="@string/sifre"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,7 +71,9 @@
 
             app:layout_constraintStart_toStartOf="@+id/guideline8" app:layout_constraintEnd_toStartOf="@+id/guide_sag"
             app:layout_constraintTop_toTopOf="@+id/login_activity_login_button"
-            app:layout_constraintHorizontal_bias="1.0" app:layout_constraintBottom_toBottomOf="@+id/login_activity_login_button"/>
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintBottom_toBottomOf="@+id/login_activity_login_button"
+            android:fontFamily="@font/margarine"/>
 
     <com.google.android.material.button.MaterialButton
             android:id="@+id/login_activity_login_button"
@@ -81,18 +86,8 @@
 
             app:layout_constraintEnd_toStartOf="@+id/guideline8"
             app:layout_constraintStart_toStartOf="@+id/guide_sol" android:layout_marginEnd="8dp"
-            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"/>
-
-    <com.google.android.material.button.MaterialButton
-            android:id="@+id/login_activity_google_girisi"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/google_girisi"
-            app:backgroundTint="@color/colorPrimary"
-            app:rippleColor="@color/green"
-            app:layout_constraintStart_toStartOf="@+id/guide_sol"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/login_activity_login_button"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8" android:layout_marginEnd="8dp"/>
+            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+            android:fontFamily="@font/margarine"/>
 
     <com.google.android.material.button.MaterialButton
             android:id="@+id/login_activity_sifremi_unuttum"
@@ -102,8 +97,8 @@
             app:backgroundTint="@color/colorPrimary"
             app:rippleColor="@color/green"
             app:layout_constraintTop_toBottomOf="@+id/login_activity_register_button" android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="@+id/guideline8" android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/guide_sag"/>
+            app:layout_constraintEnd_toStartOf="@+id/guide_sag" app:layout_constraintStart_toStartOf="@+id/guide_sol"
+            android:fontFamily="@font/margarine"/>
 
 
     <com.airbnb.lottie.LottieAnimationView android:layout_width="0dp" android:layout_height="0dp"

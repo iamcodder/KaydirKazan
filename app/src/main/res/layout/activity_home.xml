@@ -10,6 +10,15 @@
         android:background="@drawable/animated_list"
         tools:context=".Activity.HomeActivity">
 
+    <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="@+id/guide_ustten_yuzdeelli"
+            app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdeon"
+            app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdeon" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/button_oyna"/>
     <androidx.cardview.widget.CardView android:layout_width="wrap_content"
                                        android:layout_height="wrap_content"
                                        app:cardBackgroundColor="@color/purple_light" app:cardElevation="4dp"
@@ -27,7 +36,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdeon"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/guide_ustten_yuzdeon"
-        />
+                android:fontFamily="@font/margarine"/>
     </androidx.cardview.widget.CardView>
 
     <com.airbnb.lottie.LottieAnimationView android:layout_width="0dp" android:layout_height="0dp"
@@ -54,7 +63,8 @@
             app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdeon"
             app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdeon"
             app:layout_constraintHorizontal_bias="0.0" android:layout_marginBottom="12dp"
-            app:layout_constraintBottom_toTopOf="@+id/button_uygulama_hakkinda" android:fontFamily="@font/oleo_script"/>
+            app:layout_constraintBottom_toTopOf="@+id/button_uygulama_hakkinda"
+            android:fontFamily="@font/margarine"/>
     <com.google.android.material.button.MaterialButton
             android:id="@+id/button_cikis_yap"
             android:layout_width="0dp"
@@ -67,7 +77,7 @@
 
             app:layout_constraintBottom_toTopOf="@+id/guide_alttan_yuzdeon"
             app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdeon"
-            app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdeon" android:fontFamily="@font/oleo_script"/>
+            app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdeon" android:fontFamily="@font/margarine"/>
 
     <com.google.android.material.button.MaterialButton
             android:id="@+id/button_uygulama_hakkinda"
@@ -81,7 +91,7 @@
             app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdeon"
             app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdeon"
             android:layout_marginBottom="12dp" app:layout_constraintBottom_toTopOf="@+id/button_cikis_yap"
-            android:fontFamily="@font/oleo_script"/>
+            android:fontFamily="@font/margarine"/>
 
     <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                                 android:id="@+id/guide_soldan_yuzdeon"
