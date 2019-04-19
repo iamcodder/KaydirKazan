@@ -24,9 +24,7 @@ class HomeActivityModel(var mAuth: FirebaseAuth) {
                     if (newUser!=null && newUser.uuid == mAuth.uid) {
                         fetchResult.onFetchResult(newUser)
                     }
-
                 }
-
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
@@ -39,7 +37,7 @@ class HomeActivityModel(var mAuth: FirebaseAuth) {
     }
 
 
-    fun dbyeProfiliYaz(loginCallBack: HomeContract.FirebaseFetchCallBack){
+    fun dbyeProfiliYaz(mAuth: FirebaseAuth,loginCallBack: HomeContract.FirebaseFetchCallBack){
 
         if(mAuth.currentUser!=null) {
 

@@ -25,7 +25,7 @@ interface HomeContract {
 
         fun created()
 
-        fun loggedGoogle()
+        fun loggedGoogle(mAuth: FirebaseAuth)
 
         fun fetchDataOnFirebaseWithMAIL()
 

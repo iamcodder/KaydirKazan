@@ -40,7 +40,7 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
             presenter = HomeActivityPresenter(HomeActivityModel(mAuth))
             presenter.setView(this)
             presenter.created()
-            presenter.loggedGoogle()
+            presenter.loggedGoogle(mAuth)
 
         }
 

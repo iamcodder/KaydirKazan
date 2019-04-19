@@ -22,8 +22,8 @@ class HomeActivityPresenter (var model:HomeActivityModel): HomeContract.Presente
         model.fetchData(this)
     }
 
-    override fun loggedGoogle() {
-        model.dbyeProfiliYaz(this)
+    override fun loggedGoogle(mAuth:FirebaseAuth) {
+        model.dbyeProfiliYaz(mAuth,this)
     }
 
     override fun onFetchResult(user: userModel) {
