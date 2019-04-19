@@ -1,5 +1,6 @@
 package com.patronusstudio.kaydirkazan.Contract
 
+import com.google.firebase.auth.FirebaseAuth
 import com.patronusstudio.kaydirkazan.Model.userModel
 
 interface HomeContract {
@@ -24,7 +25,9 @@ interface HomeContract {
 
         fun created()
 
-        fun fetchDataOnFirebase()
+        fun loggedGoogle()
+
+        fun fetchDataOnFirebaseWithMAIL()
 
         fun startGameButton()
 
@@ -36,5 +39,6 @@ interface HomeContract {
 
         fun onFetchResult(user:userModel)
 
+        fun onWritedDb()
     }
 }

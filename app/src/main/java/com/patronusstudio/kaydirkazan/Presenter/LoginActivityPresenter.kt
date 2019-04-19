@@ -1,5 +1,6 @@
 package com.patronusstudio.kaydirkazan.Presenter
 
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.firebase.auth.FirebaseAuth
 import com.patronusstudio.kaydirkazan.Contract.LoginContract
 import com.patronusstudio.kaydirkazan.Model.LoginActivityModel
@@ -22,6 +23,8 @@ class LoginActivityPresenter(var model: LoginActivityModel) : LoginContract.Pres
         mView.bindViews()
         //click işlemlerinin yapıldığı kısmı da çalıştırıyoruz
         mView.clicked()
+
+        mView.configureGoogleSignIn()
     }
 
     override fun buttonLoginClicked(email: String, password: String, auth: FirebaseAuth) {
@@ -34,6 +37,15 @@ class LoginActivityPresenter(var model: LoginActivityModel) : LoginContract.Pres
         mView.progressBarActive()
         model.sifremiUnuttum(email,auth,this)
     }
+
+    override fun buttonGoogleSignInClicked() {
+        mView.signInWithGoogle()
+    }
+
+    override fun googleSignInDoing(acct: GoogleSignInAccount, auth: FirebaseAuth) {
+        model.googleGirişi(acct,auth,this)
+    }
+
 
     override fun onPasswordResetResult(message: String) {
         mView.progressBarPassive()
@@ -63,6 +75,15 @@ class LoginActivityPresenter(var model: LoginActivityModel) : LoginContract.Pres
         mView.showToast(message)
 
         if (isRegister) mView.navigationHome()
+    }
+
+    override fun onLoginResultWithGoogle(message: String, isLogin: Boolean) {
+        mView.progressBarPassive()
+
+        mView.showToast(message)
+
+        if(isLogin) mView.navigationHomeWithGoogle()
+
     }
 
 }

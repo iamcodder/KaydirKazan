@@ -23,6 +23,7 @@ import com.yuyakaido.android.cardstackview.CardStackListener
 import com.yuyakaido.android.cardstackview.Direction
 import com.yuyakaido.android.cardstackview.SwipeAnimationSetting
 import kotlinx.android.synthetic.main.activity_soru.*
+import maes.tech.intentanim.CustomIntent
 import java.util.*
 
 
@@ -40,9 +41,9 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     var gelenBundle:Bundle? = null
     var ekrandakiKartKonumu:Int = 0
     var dogruSayisi:Int=0
+
     var TOPLAM_SURE:Long=16000
     var kalanSure:Long=0
-    var gecenSure:Long=0
     var countDownTimer = object : CountDownTimer(TOPLAM_SURE, 1000) {
         override fun onFinish() {
             presenter.overTime()
@@ -84,7 +85,7 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         }
         activity_soru_rekor.text="Rekor : ${mKullanici.yuksekPuan}"
 
-        var animation_drawable: AnimationDrawable = activity_soru_constraint.background as AnimationDrawable
+        val animation_drawable: AnimationDrawable = activity_soru_constraint.background as AnimationDrawable
         animation_drawable.setEnterFadeDuration(1000)
         animation_drawable.setExitFadeDuration(2000)
         animation_drawable.start()
@@ -135,16 +136,14 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     }
 
     override fun startTimer() {
-         countDownTimer.start()
-        gecenSure=System.currentTimeMillis()+TOPLAM_SURE
-        Log.d("Sülo",gecenSure.toString())
+        countDownTimer.start()
     }
     fun textiGuncelle(){
         activity_soru_kalan_sure.text=this.kalanSure.toString()
     }
 
     override fun resetTimer() {
-          countDownTimer.cancel()
+        countDownTimer.cancel()
         countDownTimer.start()
     }
 
@@ -182,6 +181,8 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         intent.putExtra("cevaplananSoru",this.mKullanici.cevaplananSoruSayisi.toInt())
         intent.putExtra("dogruCevap",this.liste[ekrandakiKartKonumu].dogruCevap.toString())
         startActivity(intent)
+        CustomIntent.customType(this, "up-to-bottom")
+
     }
 
     override fun finishTime() {
@@ -191,6 +192,7 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         intent.putExtra("cevaplananSoru",this.mKullanici.cevaplananSoruSayisi.toInt())
         intent.putExtra("dogruCevap","Malesef zaman doldu")
         startActivity(intent)
+        CustomIntent.customType(this, "up-to-bottom")
     }
 
     //geçilmiş olan kart

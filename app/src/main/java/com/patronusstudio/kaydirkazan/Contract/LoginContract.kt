@@ -1,5 +1,6 @@
 package com.patronusstudio.kaydirkazan.Contract
 
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.firebase.auth.FirebaseAuth
 
 interface LoginContract {
@@ -10,6 +11,10 @@ interface LoginContract {
 
         fun clicked()
 
+        fun configureGoogleSignIn()
+
+        fun signInWithGoogle()
+
         fun progressBarActive()
 
         fun progressBarPassive()
@@ -17,6 +22,8 @@ interface LoginContract {
         fun showToast(message: String)
 
         fun navigationHome()
+
+        fun navigationHomeWithGoogle()
 
     }
 
@@ -32,11 +39,17 @@ interface LoginContract {
 
         fun buttonForgetPasswordClicked(email:String,auth:FirebaseAuth)
 
+        fun buttonGoogleSignInClicked()
+
+        fun googleSignInDoing(acct: GoogleSignInAccount,auth: FirebaseAuth)
+
     }
 
     interface FirebaseLoginCallback{
 
         fun onLoginResult(message:String,isLogin:Boolean)
+
+        fun onLoginResultWithGoogle(message:String,isLogin:Boolean)
 
         fun onRegisterResult(message:String,isRegister:Boolean)
 

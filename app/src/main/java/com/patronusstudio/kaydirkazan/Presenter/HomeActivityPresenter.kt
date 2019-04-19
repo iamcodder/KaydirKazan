@@ -1,10 +1,12 @@
 package com.patronusstudio.kaydirkazan.Presenter
 
+import com.google.firebase.auth.FirebaseAuth
 import com.patronusstudio.kaydirkazan.Contract.HomeContract
 import com.patronusstudio.kaydirkazan.Model.HomeActivityModel
 import com.patronusstudio.kaydirkazan.Model.userModel
 
 class HomeActivityPresenter (var model:HomeActivityModel): HomeContract.Presenter,HomeContract.FirebaseFetchCallBack {
+
 
     lateinit var mView:HomeContract.View
 
@@ -16,13 +18,21 @@ class HomeActivityPresenter (var model:HomeActivityModel): HomeContract.Presente
         mView.bindViews()
     }
 
-    override fun fetchDataOnFirebase() {
+    override fun fetchDataOnFirebaseWithMAIL() {
         model.fetchData(this)
+    }
+
+    override fun loggedGoogle() {
+        model.dbyeProfiliYaz(this)
     }
 
     override fun onFetchResult(user: userModel) {
         mView.showPuan(user)
         mView.clickControl()
+    }
+
+    override fun onWritedDb() {
+        model.fetchData(this)
     }
 
     override fun startGameButton() {

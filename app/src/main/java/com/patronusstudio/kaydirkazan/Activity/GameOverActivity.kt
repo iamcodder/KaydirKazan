@@ -17,6 +17,7 @@ import com.patronusstudio.kaydirkazan.Model.GameOverModel
 import com.patronusstudio.kaydirkazan.Presenter.GameOverPresenter
 import com.patronusstudio.kaydirkazan.R
 import kotlinx.android.synthetic.main.activity_game_over.*
+import maes.tech.intentanim.CustomIntent
 
 
 class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVideoAdListener {
@@ -98,6 +99,7 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
         game_over_menuye_don.setOnClickListener {
             intent_home.flags= Intent.FLAG_ACTIVITY_CLEAR_TOP and Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent_home)
+            CustomIntent.customType(this, "right-to-left")
         }
 
         game_over_devam_et.setOnClickListener {
@@ -105,6 +107,7 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
 //                mRewardedVideoAd.show()
 //            }
             finish()
+            CustomIntent.customType(this, "up-to-bottom")
 
 
         }
