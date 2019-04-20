@@ -43,6 +43,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         //loginActivityPresenter'i activity oluşturuldu diyerek uyarıyoruz
         loginActivityPresenter.created()
 
+
     }
 
     override fun bindViews() {

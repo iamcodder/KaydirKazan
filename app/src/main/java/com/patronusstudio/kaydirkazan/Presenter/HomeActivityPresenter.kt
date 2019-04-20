@@ -23,7 +23,7 @@ class HomeActivityPresenter (var model:HomeActivityModel): HomeContract.Presente
     }
 
     override fun loggedGoogle(mAuth:FirebaseAuth) {
-        model.dbyeProfiliYaz(mAuth,this)
+        model.fetchData(this)
     }
 
     override fun onFetchResult(user: userModel) {
@@ -35,12 +35,20 @@ class HomeActivityPresenter (var model:HomeActivityModel): HomeContract.Presente
         model.fetchData(this)
     }
 
+    override fun dbyeYaz(mAuth: FirebaseAuth) {
+        model.dbyeProfiliYaz(mAuth,this)
+    }
+
     override fun startGameButton() {
         mView.startGame()
     }
 
     override fun logineGit() {
         mView.startLogin()
+    }
+
+    override fun profileYok() {
+        mView.profileYok()
     }
 
 }

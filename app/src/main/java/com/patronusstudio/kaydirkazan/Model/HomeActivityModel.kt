@@ -1,9 +1,9 @@
 package com.patronusstudio.kaydirkazan.Model
 
+import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.patronusstudio.kaydirkazan.Contract.HomeContract
-import com.patronusstudio.kaydirkazan.Contract.LoginContract
 
 class HomeActivityModel(var mAuth: FirebaseAuth) {
 
@@ -14,26 +14,30 @@ class HomeActivityModel(var mAuth: FirebaseAuth) {
 
     fun fetchData(fetchResult: HomeContract.FirebaseFetchCallBack) {
 
+        var varMi:Boolean=false
+
         val postTListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
                 for (ds in dataSnapshot.children) {
-
                     val newUser: userModel? = ds.getValue(userModel::class.java)
 
                     if (newUser!=null && newUser.uuid == mAuth.uid) {
                         fetchResult.onFetchResult(newUser)
+                        varMi=true
                     }
+                }
+                if(varMi==false){
+                    fetchResult.profileYok()
                 }
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-
             }
+
         }
 
         fDatabase.addValueEventListener(postTListener)
-
     }
 
 
@@ -45,6 +49,8 @@ class HomeActivityModel(var mAuth: FirebaseAuth) {
 
             val uuid: String = fUser!!.uid
             val mDatabase: FirebaseDatabase = FirebaseDatabase.getInstance()
+
+
 
             mDatabase.reference.child("oyun").child("kullanicilar").child(uuid).child("email").setValue(mAuth.currentUser!!.email)
             mDatabase.reference.child("oyun").child("kullanicilar").child(uuid).child("yuksekPuan").setValue("0")

@@ -17,6 +17,8 @@ interface HomeContract {
 
         fun startLogin()
 
+        fun profileYok()
+
     }
 
     interface Presenter{
@@ -40,5 +42,9 @@ interface HomeContract {
         fun onFetchResult(user:userModel)
 
         fun onWritedDb()
+
+        fun profileYok()
+
+        fun dbyeYaz(mAuth: FirebaseAuth)
     }
 }

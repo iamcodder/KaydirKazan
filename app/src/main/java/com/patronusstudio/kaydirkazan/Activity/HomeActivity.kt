@@ -33,6 +33,8 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         setContentView(R.layout.activity_home)
         mAuth = FirebaseAuth.getInstance()
 
+        Log.d("Sülo","başladı")
+
         //google giriş yapıp yapmadığını kontrol ediyoruz
         if (intent.extras != null) {
             gelenBundle = intent.extras
@@ -54,11 +56,11 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
 
     }
 
+
     override fun bindViews() {
         if (FirebaseAuth.getInstance().currentUser != null) {
             mUser = FirebaseAuth.getInstance().currentUser!!
             mKullanici = userModel()
-            Log.d("Sülo", mUser.uid)
         }
 
         val animation_drawable: AnimationDrawable = activity_home_constraint.background as AnimationDrawable
@@ -101,6 +103,10 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         mAuth.signOut()
         CustomIntent.customType(this, "right-to-left")
 
+    }
+
+    override fun profileYok() {
+        presenter.dbyeYaz(mAuth)
     }
 
     override fun onBackPressed() {
