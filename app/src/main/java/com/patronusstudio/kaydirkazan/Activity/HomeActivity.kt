@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.patronusstudio.kaydirkazan.Contract.HomeContract
@@ -33,25 +32,11 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         setContentView(R.layout.activity_home)
         mAuth = FirebaseAuth.getInstance()
 
-        Log.d("Sülo","başladı")
-
-        //google giriş yapıp yapmadığını kontrol ediyoruz
-        if (intent.extras != null) {
-            gelenBundle = intent.extras
 
             presenter = HomeActivityPresenter(HomeActivityModel(mAuth))
             presenter.setView(this)
             presenter.created()
-            presenter.loggedGoogle(mAuth)
-
-        }
-
-        else {
-            presenter = HomeActivityPresenter(HomeActivityModel(mAuth))
-            presenter.setView(this)
-            presenter.created()
-            presenter.fetchDataOnFirebaseWithMAIL()
-        }
+            presenter.fetchData()
 
 
     }
@@ -87,6 +72,14 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
     override fun showPuan(user: userModel) {
         activity_home_puan.text = "Skor : ${user.yuksekPuan}"
         this.mKullanici = user
+    }
+
+    override fun showSort(seninSiran: Int, toplamSira: Int) {
+        activity_home_siralama.text="Sıralaman : $seninSiran"
+    }
+
+    override fun showToast(message: String) {
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show()
     }
 
     override fun startGame() {

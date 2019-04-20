@@ -13,6 +13,10 @@ interface HomeContract {
 
         fun showPuan(user: userModel)
 
+        fun showSort(seninSiran:Int,toplamSira:Int)
+
+        fun showToast(message:String)
+
         fun startGame()
 
         fun startLogin()
@@ -27,9 +31,7 @@ interface HomeContract {
 
         fun created()
 
-        fun loggedGoogle(mAuth: FirebaseAuth)
-
-        fun fetchDataOnFirebaseWithMAIL()
+        fun fetchData()
 
         fun startGameButton()
 
@@ -46,5 +48,7 @@ interface HomeContract {
         fun profileYok()
 
         fun dbyeYaz(mAuth: FirebaseAuth)
+
+        fun siralamaCekildi(seninSiran:Int,toplamSira:Int)
     }
 }

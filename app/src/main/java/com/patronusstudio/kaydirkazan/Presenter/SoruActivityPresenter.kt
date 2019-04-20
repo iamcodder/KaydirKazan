@@ -23,7 +23,6 @@ class SoruActivityPresenter(var model: SoruActivityModel) : SoruContract.Present
         mView.recyclerSetle(soruListesi)
         mView.cardTasarimi()
         mView.progressHide()
-
         mView.startTimer()
     }
 
@@ -36,6 +35,7 @@ class SoruActivityPresenter(var model: SoruActivityModel) : SoruContract.Present
 
     override fun falseAnswer() {
         mView.gameOver()
+        mView.stopTimer()
     }
 
     override fun overTime() {

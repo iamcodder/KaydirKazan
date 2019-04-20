@@ -44,20 +44,14 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
 
     var TOPLAM_SURE:Long=16000
     var kalanSure:Long=0
-    var countDownTimer = object : CountDownTimer(TOPLAM_SURE, 1000) {
-        override fun onFinish() {
-            presenter.overTime()
-        }
 
-        override fun onTick(millisUntilFinished: Long) {
-            kalanSure= millisUntilFinished / 1000
-            textiGuncelle()
-        }
-    }
+    val zaman=zamanlayici(TOPLAM_SURE,1000)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_soru)
+
 
 
         var isim:String=""
@@ -97,7 +91,7 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         if(!activity_soru_meteor.isAnimating) activity_soru_meteor.playAnimation()
 
 
-
+        val zaman=zamanlayici(TOPLAM_SURE,1000)
     }
 
 
@@ -136,20 +130,20 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     }
 
     override fun startTimer() {
-        countDownTimer.start()
+        zaman.start()
     }
+
     fun textiGuncelle(){
         activity_soru_kalan_sure.text=this.kalanSure.toString()
     }
 
     override fun resetTimer() {
-        countDownTimer.cancel()
-        countDownTimer.start()
+        zaman.cancel()
+        zaman.start()
     }
 
     override fun stopTimer() {
-         countDownTimer.cancel()
-
+        zaman.cancel()
     }
 
     override fun progressShow() {
@@ -174,7 +168,6 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
 
     //oyun bittiğinde yapılacak olanlar
     override fun gameOver() {
-        countDownTimer.cancel()
         val intent=Intent(this,GameOverActivity::class.java)
         intent.putExtra("dogruSayisi",dogruSayisi.toInt())
         intent.putExtra("rekor",this.mKullanici.yuksekPuan.toInt())
@@ -246,7 +239,7 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         super.onPause()
         activity_soru_meteor.cancelAnimation()
         activity_soru_loading_infinity_bar.cancelAnimation()
-        countDownTimer.cancel()
+        zaman.cancel()
 
     }
 
@@ -254,20 +247,31 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         super.onStop()
         activity_soru_meteor.cancelAnimation()
         activity_soru_loading_infinity_bar.cancelAnimation()
-        countDownTimer.cancel()
+        zaman.cancel()
     }
 
     override fun onResume() {
         super.onResume()
         activity_soru_meteor.playAnimation()
-        countDownTimer.start()
+        zaman.start()
     }
 
     override fun onRestart() {
         super.onRestart()
         activity_soru_meteor.cancelAnimation()
-        countDownTimer.start()
+        zaman.start()
     }
 
+    inner class zamanlayici(millisInFuture: Long, countDownInterval: Long) : CountDownTimer(millisInFuture, countDownInterval) {
+
+        override fun onFinish() {
+
+        }
+
+        override fun onTick(millisUntilFinished: Long) {
+            kalanSure= millisUntilFinished / 1000
+            textiGuncelle()
+        }
+    }
 
 }

@@ -7,6 +7,8 @@ class soruModel(){
     var soru:String=""
     var dogruCevap:String=""
 
+
+
     constructor(solCevap:String,soru:String,sagCevap:String,dogruCevap:String) : this(){
         this.solCevap= solCevap
         this.sagCevap=sagCevap

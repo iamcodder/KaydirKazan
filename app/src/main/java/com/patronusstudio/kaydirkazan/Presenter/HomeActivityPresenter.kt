@@ -18,17 +18,16 @@ class HomeActivityPresenter (var model:HomeActivityModel): HomeContract.Presente
         mView.bindViews()
     }
 
-    override fun fetchDataOnFirebaseWithMAIL() {
+    override fun fetchData() {
         model.fetchData(this)
+        mView.showToast("Veriler çekiliyor...")
     }
 
-    override fun loggedGoogle(mAuth:FirebaseAuth) {
-        model.fetchData(this)
-    }
 
     override fun onFetchResult(user: userModel) {
         mView.showPuan(user)
         mView.clickControl()
+        mView.showToast("İyi oyunlar...")
     }
 
     override fun onWritedDb() {
@@ -51,4 +50,7 @@ class HomeActivityPresenter (var model:HomeActivityModel): HomeContract.Presente
         mView.profileYok()
     }
 
+    override fun siralamaCekildi(seninSiran: Int, toplamSira: Int) {
+        mView.showSort(seninSiran,toplamSira)
+    }
 }
