@@ -12,6 +12,8 @@ interface GameOverContract {
 
         fun kontrolEt()
 
+        fun toastYazdir(message: String)
+
     }
 
     interface Presenter{
@@ -23,5 +25,13 @@ interface GameOverContract {
         fun beatRecord(dogruSayisi: Int, mAuth: FirebaseAuth)
 
         fun increaseRepliesAnswew(soruSayisi:Int,mAuth: FirebaseAuth)
+
+        fun soruHatali(mAuth: FirebaseAuth,soru:String?)
+    }
+
+    interface firebase_Fetch{
+
+        fun db_sonucu_yaz(message:String)
+
     }
 }

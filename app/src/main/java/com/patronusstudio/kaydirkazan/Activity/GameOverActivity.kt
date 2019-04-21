@@ -41,6 +41,7 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
     override fun onRewarded(p0: RewardItem?) {
         Toast.makeText(this,"Devam edebilirsiniz.",Toast.LENGTH_SHORT).show()
         finish()
+        CustomIntent.customType(this, "up-to-bottom")
     }
 
     override fun onRewardedVideoStarted() {
@@ -55,10 +56,11 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
     var rekor:Int=0
     var cevaplananSoruMiktari:Int=0
     var dogruCevap:String?=""
+    var soru:String?=""
     lateinit var intent_home:Intent
     lateinit var presenter:GameOverPresenter
     lateinit var mAuth: FirebaseAuth
-//    private lateinit var mRewardedVideoAd: RewardedVideoAd
+    private lateinit var mRewardedVideoAd: RewardedVideoAd
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,16 +72,16 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
         presenter.setView(this)
         presenter.created()
 
-//        MobileAds.initialize(this, "ca-app-pub-1818679104699845~3155151657")
-//
-//        // Use an activity context to get the rewarded video instance.
-//        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this)
-//        mRewardedVideoAd.rewardedVideoAdListener = this
-//        loadRewardedVideoAd()
+        MobileAds.initialize(this, "ca-app-pub-1818679104699845~3155151657")
+
+        // Use an activity context to get the rewarded video instance.
+        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this)
+        mRewardedVideoAd.rewardedVideoAdListener = this
+        loadRewardedVideoAd()
     }
     private fun loadRewardedVideoAd() {
-//        mRewardedVideoAd.loadAd("ca-app-pub-1818679104699845/2852819194",
-//            AdRequest.Builder().addTestDevice("D239974A1C94D237A5745EC53CF138BE").build())
+        mRewardedVideoAd.loadAd("ca-app-pub-1818679104699845/2852819194",
+            AdRequest.Builder().addTestDevice("D239974A1C94D237A5745EC53CF138BE").build())
     }
 
 
@@ -88,7 +90,8 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
         gelenBundle=intent.extras
         dogruSayisi = gelenBundle!!.getInt("dogruSayisi")
         rekor = gelenBundle!!.getInt("rekor")
-        cevaplananSoruMiktari = gelenBundle!!.getInt("cevaplananSoru")
+        cevaplananSoruMiktari = gelenBundle!!.getInt("cevaplananSoruMiktari")
+        soru= gelenBundle!!.getString("cevaplananSoru")
         dogruCevap= gelenBundle!!.getString("dogruCevap")
         mAuth= FirebaseAuth.getInstance()
         intent_home=Intent(this,HomeActivity::class.java)
@@ -103,14 +106,18 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
         }
 
         game_over_devam_et.setOnClickListener {
-//            if (mRewardedVideoAd.isLoaded) {
-//                mRewardedVideoAd.show()
-//            }
-            finish()
-            CustomIntent.customType(this, "up-to-bottom")
-
-
+            if (mRewardedVideoAd.isLoaded) {
+                mRewardedVideoAd.show()
+            }
         }
+
+        game_over_cevap_hatali.setOnClickListener {
+            presenter.soruHatali(mAuth,soru)
+        }
+    }
+
+    override fun toastYazdir(message: String) {
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show()
     }
 
     override fun kontrolEt() {
@@ -145,16 +152,16 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
 
     override fun onPause() {
         super.onPause()
-//        mRewardedVideoAd.pause(this)
+        mRewardedVideoAd.pause(this)
     }
 
     override fun onResume() {
         super.onResume()
-//        mRewardedVideoAd.resume(this)
+        mRewardedVideoAd.resume(this)
     }
 
     override fun onDestroy() {
         super.onDestroy()
-//        mRewardedVideoAd.destroy(this)
+        mRewardedVideoAd.destroy(this)
     }
 }

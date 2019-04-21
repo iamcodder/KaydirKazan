@@ -12,6 +12,7 @@
     <string name="sifre">Şifre</string>
     <string name="hadi_kaydiralim">Oyna</string>
     <string name="devam_et">Devam Et (Reklam İçerir)</string>
+    <string name="cevap_hatali">Cevap Hatalıysa Bildir</string>
     <string name="menuye_don">Menüye Dön</string>
 
     <string name="mucize">Eğer illa bir mucize istiyorsan, o zaman ona inanmaya da hazır olmalısın.</string>
