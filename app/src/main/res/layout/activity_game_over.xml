@@ -96,8 +96,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdebes"
             app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdebes"
-            app:layout_constraintTop_toTopOf="@+id/gui_ikiyebolme"
-            app:layout_constraintBottom_toTopOf="@+id/game_over_devam_et2">
+            app:layout_constraintTop_toTopOf="@+id/gui_ikiyebolme">
         <TextView
                 android:id="@+id/activity_game_over_dogru_sonuc"
                 android:layout_width="match_parent"

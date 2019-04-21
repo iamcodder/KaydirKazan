@@ -111,7 +111,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
                     loginActivityPresenter.googleSignInDoing(account,mAuth)
                 }
             } catch (e: ApiException) {
-                Log.d("Süleyman",e.localizedMessage.toString())
+                Log.d("Süleyman123",e.localizedMessage.toString())
 
                 Toast.makeText(this, "Google sign in failed:(", Toast.LENGTH_LONG).show()
             }

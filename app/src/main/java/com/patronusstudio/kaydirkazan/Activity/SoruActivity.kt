@@ -43,7 +43,6 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     var dogruSayisi:Int=0
 
     var TOPLAM_SURE:Long=16000
-    var kalanSure:Long=0
 
     val zaman=zamanlayici(TOPLAM_SURE,1000)
 
@@ -91,7 +90,6 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         if(!activity_soru_meteor.isAnimating) activity_soru_meteor.playAnimation()
 
 
-        val zaman=zamanlayici(TOPLAM_SURE,1000)
     }
 
 
@@ -125,25 +123,23 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         //dikeyde kaydırılmayacağını , yatayda kaydırma olacağını belirtiyoruz
         cardStackManager.setCanScrollVertical(false)
         cardStackManager.setCanScrollHorizontal(true)
-
-
     }
 
     override fun startTimer() {
         zaman.start()
-    }
-
-    fun textiGuncelle(){
-        activity_soru_kalan_sure.text=this.kalanSure.toString()
+        activity_soru_bomba.playAnimation()
     }
 
     override fun resetTimer() {
         zaman.cancel()
         zaman.start()
+        activity_soru_bomba.cancelAnimation()
+        activity_soru_bomba.playAnimation()
     }
 
     override fun stopTimer() {
         zaman.cancel()
+        activity_soru_bomba.cancelAnimation()
     }
 
     override fun progressShow() {
@@ -242,7 +238,7 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         activity_soru_meteor.cancelAnimation()
         activity_soru_loading_infinity_bar.cancelAnimation()
         zaman.cancel()
-
+        activity_soru_bomba.cancelAnimation()
     }
 
     override fun onStop() {
@@ -250,29 +246,30 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         activity_soru_meteor.cancelAnimation()
         activity_soru_loading_infinity_bar.cancelAnimation()
         zaman.cancel()
+        activity_soru_bomba.cancelAnimation()
     }
 
     override fun onResume() {
         super.onResume()
         activity_soru_meteor.playAnimation()
         zaman.start()
+        activity_soru_bomba.playAnimation()
     }
 
     override fun onRestart() {
         super.onRestart()
         activity_soru_meteor.cancelAnimation()
         zaman.start()
+        activity_soru_bomba.playAnimation()
     }
 
     inner class zamanlayici(millisInFuture: Long, countDownInterval: Long) : CountDownTimer(millisInFuture, countDownInterval) {
 
         override fun onFinish() {
-
+            presenter.overTime()
         }
 
         override fun onTick(millisUntilFinished: Long) {
-            kalanSure= millisUntilFinished / 1000
-            textiGuncelle()
         }
     }
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="kayit_ol">Kayıt Ol</string>
+    <string name="giris_yap">Giris Yap</string>
+    <string name="cikis_yap">Cikis Yap</string>
+    <string name="uygulama_hakkinda">Uygulama Hakkında</string>
+    <string name="email">Email</string>
+    <string name="sifre">Sifre</string>
+    <string name="hadi_kaydiralim">Oyna</string>
+    <string name="devam_et">Devam Et (Reklam Icerir)</string>
+    <string name="cevap_hatali">Cevap Hataliysa Bildir</string>
+    <string name="menuye_don">Menüye Dön</string>
+
+    <string name="mucize">Eğer illa bir mucize istiyorsan, o zaman ona inanmaya da hazır olmalısın.</string>
+    <string name="patronus_studio">Patronus Studio  </string>
+    <string name="sifremi_unuttum">Şifremi Unuttum</string>
+
+    <string name="katkilar">\n@airbnb-lottie / GitHub
+        \n@yuyakaido / GitHub
+        \n@hajiyevelnur92 / GitHub
+        \n@Paddy / LottieFiles
+        \n@Lucas Nemo / LottieFiles
+        \n@Penry Chen / LottieFiles
+        \n@LottieFiles / LottieFiles
+        \n@Donghwa Kang / LottieFiles
+        \n@Jojo Lafrite / LottieFiles
+        \n@Luca Rondine / LottieFiles
+        \n@Ision Industries / LottieFiles
+        \n@INGENIERIA INFORMÁTICA INTERACTIVA / LottieFiles\n
+    </string>
+</resources>

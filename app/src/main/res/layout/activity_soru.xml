@@ -80,7 +80,7 @@
     <com.yuyakaido.android.cardstackview.CardStackView
             android:id="@+id/activity_soru_cardStackView"
             android:layout_width="0dp"
-            android:layout_height="437dp"
+            android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guide_ustten_yuzdeotuz"
@@ -101,7 +101,7 @@
     <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                                 android:id="@+id/guide_alttan_yuzdedoksan"
                                                 android:orientation="horizontal"
-                                                app:layout_constraintGuide_percent="0.9"/>
+                                                app:layout_constraintGuide_percent="0.88"/>
 
     <com.airbnb.lottie.LottieAnimationView android:layout_width="0dp" android:layout_height="0dp"
                                            app:lottie_autoPlay="true" app:lottie_rawRes="@raw/loadingbar"
@@ -112,14 +112,13 @@
                                            app:layout_constraintTop_toTopOf="@+id/activity_soru_cardStackView"
                                            app:layout_constraintBottom_toTopOf="@+id/guideline10"/>
 
-    <TextView
-            android:text="15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/activity_soru_kalan_sure" android:textSize="24sp"
-            app:layout_constraintTop_toTopOf="@+id/guide_alttan_yuzdedoksan"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+    <com.airbnb.lottie.LottieAnimationView android:layout_width="0dp" android:layout_height="72dp"
+                                           android:id="@+id/activity_soru_bomba" app:lottie_rawRes="@raw/bomb"
+                                           app:layout_constraintEnd_toEndOf="parent"
+                                           app:layout_constraintStart_toStartOf="parent"
+                                           app:layout_constraintTop_toTopOf="@+id/guide_alttan_yuzdedoksan"
+                                           app:layout_constraintBottom_toTopOf="@+id/guideline12"/>
+
     <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                                 android:id="@+id/guideline4"
                                                 android:orientation="vertical"
@@ -132,5 +131,9 @@
                                                 android:id="@+id/guideline10"
                                                 android:orientation="horizontal"
                                                 app:layout_constraintGuide_percent="0.7"/>
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/guideline12"
+                                                android:orientation="horizontal"
+                                                app:layout_constraintGuide_percent="0.98"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

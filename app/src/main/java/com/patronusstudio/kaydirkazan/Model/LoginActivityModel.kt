@@ -97,6 +97,7 @@ class LoginActivityModel{
                 loginCallBack.onLoginResultWithGoogle("Tebrikler",true)
             }
             .addOnFailureListener {
+                Log.d("Sülo ",it.message.toString())
                 loginCallBack.onLoginResult(it.localizedMessage,false)
             }
     }
