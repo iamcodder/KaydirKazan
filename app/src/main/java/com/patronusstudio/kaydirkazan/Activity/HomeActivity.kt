@@ -5,6 +5,7 @@ import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -78,8 +79,14 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         activity_home_siralama.text="Sıralaman : $seninSiran"
     }
 
-    override fun showToast(message: String) {
-        Toast.makeText(this,message,Toast.LENGTH_SHORT).show()
+    override fun loadingShow() {
+        activity_home_loading.visibility= View.VISIBLE
+        activity_home_loading.playAnimation()
+    }
+
+    override fun hideLoadingShow() {
+        activity_home_loading.visibility= View.GONE
+        activity_home_loading.cancelAnimation()
     }
 
     override fun startGame() {

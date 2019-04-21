@@ -2,7 +2,7 @@
 <resources>
     <string name="kayit_ol">Kayıt Ol</string>
     <string name="giris_yap">Giris Yap</string>
-    <string name="cikis_yap">Cikis Yap</string>
+    <string name="cikis_yap">ÇIKIŞ  YAP</string>
     <string name="uygulama_hakkinda">Uygulama Hakkında</string>
     <string name="email">Email</string>
     <string name="sifre">Sifre</string>
@@ -18,6 +18,7 @@
     <string name="katkilar">\n@airbnb-lottie / GitHub
         \n@yuyakaido / GitHub
         \n@hajiyevelnur92 / GitHub
+        \n@Wee / LottieFiles
         \n@Paddy / LottieFiles
         \n@Lucas Nemo / LottieFiles
         \n@Penry Chen / LottieFiles

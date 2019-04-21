@@ -19,15 +19,15 @@ class HomeActivityPresenter (var model:HomeActivityModel): HomeContract.Presente
     }
 
     override fun fetchData() {
+        mView.loadingShow()
         model.fetchData(this)
-        mView.showToast("Veriler çekiliyor...")
     }
 
 
     override fun onFetchResult(user: userModel) {
+        mView.hideLoadingShow()
         mView.showPuan(user)
         mView.clickControl()
-        mView.showToast("İyi oyunlar...")
     }
 
     override fun onWritedDb() {

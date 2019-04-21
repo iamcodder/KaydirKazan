@@ -15,7 +15,9 @@ interface HomeContract {
 
         fun showSort(seninSiran:Int,toplamSira:Int)
 
-        fun showToast(message:String)
+        fun loadingShow()
+
+        fun hideLoadingShow()
 
         fun startGame()
 
