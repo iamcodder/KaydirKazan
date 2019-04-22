@@ -37,11 +37,6 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         setContentView(R.layout.activity_home)
         mAuth = FirebaseAuth.getInstance()
 
-        if(mAuth.currentUser!=null){
-            Log.d("Sülo", mAuth.currentUser!!.uid)
-            Toast.makeText(this,"$mAuth.currentUser!!.uid",Toast.LENGTH_SHORT).show()
-        }
-
             presenter = HomeActivityPresenter(HomeActivityModel(mAuth))
             presenter.setView(this)
             presenter.created()
