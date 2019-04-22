@@ -37,12 +37,15 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         setContentView(R.layout.activity_home)
         mAuth = FirebaseAuth.getInstance()
 
+        if(mAuth.currentUser!=null){
+            Log.d("Sülo", mAuth.currentUser!!.uid)
+            Toast.makeText(this,"$mAuth.currentUser!!.uid",Toast.LENGTH_SHORT).show()
+        }
+
             presenter = HomeActivityPresenter(HomeActivityModel(mAuth))
             presenter.setView(this)
             presenter.created()
             presenter.fetchData()
-
-
     }
 
 
@@ -56,25 +59,6 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         animation_drawable.setEnterFadeDuration(1000)
         animation_drawable.setExitFadeDuration(2000)
         animation_drawable.start()
-
-        lottieAnimationView2.addAnimatorListener(object : Animator.AnimatorListener {
-            override fun onAnimationRepeat(animation: Animator?) {
-                Log.d("Sülo","onAnimationRepeat")
-            }
-
-            override fun onAnimationEnd(animation: Animator?) {
-                Log.d("Sülo","onAnimationEnd")
-            }
-
-            override fun onAnimationCancel(animation: Animator?) {
-                Log.d("Sülo","onAnimationCancel")
-            }
-
-            override fun onAnimationStart(animation: Animator?) {
-                Log.d("Sülo","onAnimationStart")
-            }
-
-        })
     }
 
     override fun clickControl() {

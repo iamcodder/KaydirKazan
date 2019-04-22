@@ -99,6 +99,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     }
 
     override fun signInWithGoogle() {
+        activity_login_progress.visibility=View.VISIBLE
         val signInIntent: Intent = mGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
@@ -144,6 +145,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     }
 
     override fun navigationHomeWithGoogle() {
+        activity_login_progress.visibility=View.GONE
         intent=Intent(this, HomeActivity::class.java)
         intent.putExtra("kullanici","baba")
         startActivity(intent)

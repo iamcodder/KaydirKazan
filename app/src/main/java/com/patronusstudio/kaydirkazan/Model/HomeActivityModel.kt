@@ -10,7 +10,6 @@ class HomeActivityModel(var mAuth: FirebaseAuth) {
     private var fDatabase: DatabaseReference =
         FirebaseDatabase.getInstance().reference.child("oyun").child("kullanicilar")
 
-    private lateinit var user : userModel
 
     fun fetchData(fetchResult: HomeContract.FirebaseFetchCallBack) {
 
@@ -29,7 +28,7 @@ class HomeActivityModel(var mAuth: FirebaseAuth) {
 
                         if (newUser.uuid == mAuth.uid) {
                             fetchResult.onFetchResult(newUser)
-                            user=newUser
+                            sirala(liste,newUser,fetchResult)
                             varMi = true
                         }
                     }
@@ -37,7 +36,6 @@ class HomeActivityModel(var mAuth: FirebaseAuth) {
                 if (varMi == false) {
                     fetchResult.profileYok()
                 }
-                sirala(liste,user,fetchResult)
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
