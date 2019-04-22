@@ -30,6 +30,10 @@ interface SoruContract {
 
         fun stopTimer()
 
+        fun startTrueAnim()
+
+        fun startFalseAnim()
+
     }
 
     interface Presenter{

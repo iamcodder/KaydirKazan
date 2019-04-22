@@ -1,11 +1,11 @@
 package com.patronusstudio.kaydirkazan.Activity
 
+import android.animation.Animator
 import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateInterpolator
 import android.widget.Toast
@@ -142,6 +142,52 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         activity_soru_bomba.cancelAnimation()
     }
 
+    override fun startTrueAnim() {
+        activity_soru_animasyon_sonucu.setAnimation(R.raw.trueanim)
+        activity_soru_animasyon_sonucu.visibility=View.VISIBLE
+        activity_soru_animasyon_sonucu.playAnimation()
+        activity_soru_animasyon_sonucu.addAnimatorListener(object:Animator.AnimatorListener{
+            override fun onAnimationRepeat(animation: Animator?) {
+            }
+
+            override fun onAnimationEnd(animation: Animator?) {
+                activity_soru_animasyon_sonucu.visibility=View.GONE
+                activity_soru_animasyon_sonucu.pauseAnimation()
+            }
+
+            override fun onAnimationCancel(animation: Animator?) {
+            }
+
+            override fun onAnimationStart(animation: Animator?) {
+            }
+
+        })
+
+    }
+
+    override fun startFalseAnim() {
+        activity_soru_animasyon_sonucu.setAnimation(R.raw.falseanim)
+        activity_soru_animasyon_sonucu.visibility=View.VISIBLE
+        activity_soru_animasyon_sonucu.playAnimation()
+        activity_soru_animasyon_sonucu.addAnimatorListener(object:Animator.AnimatorListener{
+            override fun onAnimationRepeat(animation: Animator?) {
+            }
+
+            override fun onAnimationEnd(animation: Animator?) {
+                activity_soru_animasyon_sonucu.visibility=View.GONE
+                activity_soru_animasyon_sonucu.pauseAnimation()
+            }
+
+            override fun onAnimationCancel(animation: Animator?) {
+            }
+
+            override fun onAnimationStart(animation: Animator?) {
+            }
+
+        })
+
+    }
+
     override fun progressShow() {
         activity_soru_loading_infinity_bar.visibility=View.VISIBLE
         activity_soru_loading_infinity_bar.playAnimation()
@@ -158,7 +204,7 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
 
     override fun trueAnswerNumber(dogruSayisi: Int) {
 
-        activity_soru_puan_PUAN.text="Skor : ${dogruSayisi.toString()}"
+        activity_soru_puan_PUAN.text="Skor : $dogruSayisi"
 
     }
 
@@ -200,22 +246,18 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
             when(direction.name) {
                 "Right" ->
                     if (liste[ekrandakiKartKonumu].sagCevap == liste[ekrandakiKartKonumu].dogruCevap) {
-                        Toast.makeText(this, "Doğru Cevap", Toast.LENGTH_SHORT).show()
                         dogruSayisi++
                         presenter.trueAnswer(this.dogruSayisi)
                     } else {
                         presenter.falseAnswer()
-                        Toast.makeText(this, "Yanlış Cevap", Toast.LENGTH_SHORT).show()
                     }
 
                 "Left" ->
                     if (liste[ekrandakiKartKonumu].solCevap == liste[ekrandakiKartKonumu].dogruCevap) {
-                        Toast.makeText(this, "Doğru Cevap", Toast.LENGTH_SHORT).show()
                         dogruSayisi++
                         presenter.trueAnswer(this.dogruSayisi)
                     } else {
                         presenter.falseAnswer()
-                        Toast.makeText(this, "Yanlış Cevap", Toast.LENGTH_SHORT).show()
                     }
             }
         }

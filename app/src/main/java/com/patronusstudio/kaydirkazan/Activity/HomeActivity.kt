@@ -1,12 +1,16 @@
 package com.patronusstudio.kaydirkazan.Activity
 
+import android.animation.Animator
 import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.animation.Animation
 import android.widget.Toast
+import com.airbnb.lottie.LottieResult
+import com.google.android.gms.ads.MobileAds
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.patronusstudio.kaydirkazan.Contract.HomeContract
@@ -33,7 +37,6 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         setContentView(R.layout.activity_home)
         mAuth = FirebaseAuth.getInstance()
 
-
             presenter = HomeActivityPresenter(HomeActivityModel(mAuth))
             presenter.setView(this)
             presenter.created()
@@ -53,6 +56,25 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         animation_drawable.setEnterFadeDuration(1000)
         animation_drawable.setExitFadeDuration(2000)
         animation_drawable.start()
+
+        lottieAnimationView2.addAnimatorListener(object : Animator.AnimatorListener {
+            override fun onAnimationRepeat(animation: Animator?) {
+                Log.d("Sülo","onAnimationRepeat")
+            }
+
+            override fun onAnimationEnd(animation: Animator?) {
+                Log.d("Sülo","onAnimationEnd")
+            }
+
+            override fun onAnimationCancel(animation: Animator?) {
+                Log.d("Sülo","onAnimationCancel")
+            }
+
+            override fun onAnimationStart(animation: Animator?) {
+                Log.d("Sülo","onAnimationStart")
+            }
+
+        })
     }
 
     override fun clickControl() {
@@ -82,6 +104,8 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
     override fun loadingShow() {
         activity_home_loading.visibility= View.VISIBLE
         activity_home_loading.playAnimation()
+
+
     }
 
     override fun hideLoadingShow() {
@@ -120,6 +144,26 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
             cikis_sayisi++
         }
 
+    }
+
+    override fun onPause() {
+        super.onPause()
+        lottieAnimationView2.pauseAnimation()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        lottieAnimationView2.playAnimation()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        lottieAnimationView2.pauseAnimation()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        lottieAnimationView2.playAnimation()
     }
 
 }

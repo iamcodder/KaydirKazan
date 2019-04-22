@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -42,16 +43,18 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         loginActivityPresenter.setView(this)
         //loginActivityPresenter'i activity oluşturuldu diyerek uyarıyoruz
         loginActivityPresenter.created()
-
-
     }
 
-    override fun bindViews() {
+    override fun onStart() {
+        super.onStart()
         mAuth = FirebaseAuth.getInstance()
         if (mAuth.currentUser!=null){
             startActivity(Intent(this,HomeActivity::class.java))
             finish()
         }
+    }
+
+    override fun bindViews() {
 
     }
 

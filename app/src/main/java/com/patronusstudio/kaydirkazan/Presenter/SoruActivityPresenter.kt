@@ -27,13 +27,14 @@ class SoruActivityPresenter(var model: SoruActivityModel) : SoruContract.Present
     }
 
     override fun trueAnswer(dogruSayisi: Int) {
-
+        mView.startTrueAnim()
         mView.trueAnswerNumber(dogruSayisi)
         mView.resetTimer()
 
     }
 
     override fun falseAnswer() {
+        mView.startFalseAnim()
         mView.gameOver()
         mView.stopTimer()
     }

@@ -67,12 +67,12 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_over)
 
+        MobileAds.initialize(this, "ca-app-pub-1818679104699845~3155151657")
 
         presenter= GameOverPresenter(GameOverModel())
         presenter.setView(this)
         presenter.created()
 
-        MobileAds.initialize(this, "ca-app-pub-1818679104699845~3155151657")
 
         // Use an activity context to get the rewarded video instance.
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this)
@@ -80,8 +80,11 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
         loadRewardedVideoAd()
     }
     private fun loadRewardedVideoAd() {
-        mRewardedVideoAd.loadAd("ca-app-pub-1818679104699845/2852819194",
-            AdRequest.Builder().addTestDevice("D239974A1C94D237A5745EC53CF138BE").build())
+
+        if(!mRewardedVideoAd.isLoaded){
+            mRewardedVideoAd.loadAd("ca-app-pub-1818679104699845/8861470565",
+                AdRequest.Builder().build())
+        }
     }
 
 
