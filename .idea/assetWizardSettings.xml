@@ -92,7 +92,9 @@
                                       <entry key="backgroundAssetType" value="COLOR" />
                                       <entry key="backgroundColor" value="49206b" />
                                       <entry key="backgroundImage" value="C:\Users\iamcodder\Desktop\slidelogo.png" />
-                                      <entry key="foregroundImage" value="C:\Users\iamcodder\Desktop\logo.png" />
+                                      <entry key="foregroundImage" value="C:\Users\iamcodder\Desktop\Kaydır Kazan\Logo\logo.png" />
+                                      <entry key="legacyIconShape" value="CIRCLE" />
+                                      <entry key="webIconShape" value="CIRCLE" />
                                     </map>
                                   </option>
                                 </PersistentState>
