@@ -76,7 +76,7 @@
     <session id="1496610934">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="38" />
+          <entry key="project.closed" value="39" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.14" value="1" />
@@ -86,7 +86,7 @@
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.20" value="2" />
-          <entry key="project.open.time.21" value="4" />
+          <entry key="project.open.time.21" value="5" />
           <entry key="project.open.time.22" value="2" />
           <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.24" value="1" />
@@ -100,7 +100,7 @@
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="40" />
+          <entry key="project.opened" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -113,10 +113,10 @@
           <entry key="iml" value="1" />
           <entry key="java" value="11" />
           <entry key="json" value="49" />
-          <entry key="kt" value="521" />
+          <entry key="kt" value="547" />
           <entry key="png" value="86" />
           <entry key="svg" value="1" />
-          <entry key="xml" value="308" />
+          <entry key="xml" value="309" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -130,9 +130,9 @@
           <entry key="Image" value="86" />
           <entry key="JAVA" value="11" />
           <entry key="JSON" value="49" />
-          <entry key="Kotlin" value="521" />
+          <entry key="Kotlin" value="547" />
           <entry key="SVG" value="1" />
-          <entry key="XML" value="308" />
+          <entry key="XML" value="309" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -140,8 +140,8 @@
           <entry key="gradle" value="133" />
           <entry key="html" value="1" />
           <entry key="java" value="20" />
-          <entry key="kt" value="21210" />
-          <entry key="kts" value="351" />
+          <entry key="kt" value="23291" />
+          <entry key="kts" value="357" />
           <entry key="txt" value="1292" />
           <entry key="xml" value="3673" />
         </counts>
@@ -151,7 +151,7 @@
           <entry key="Groovy" value="133" />
           <entry key="HTML" value="1" />
           <entry key="JAVA" value="20" />
-          <entry key="Kotlin" value="21561" />
+          <entry key="Kotlin" value="23648" />
           <entry key="PLAIN_TEXT" value="1292" />
           <entry key="XML" value="3673" />
         </counts>
@@ -159,7 +159,55 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/IFirebaseDatabase.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+              <folding>
+                <element signature="e#46#266#0" expanded="true" />
+                <element signature="e#375#1175#0" />
+                <element signature="e#1287#2289#0" />
+                <element signature="e#2534#2856#0" />
+                <element signature="e#3282#4115#0" />
+                <element signature="e#4225#4742#0" />
+                <element signature="e#4731#4985#0" />
+                <element signature="e#5090#5353#0" />
+                <element signature="e#5356#5938#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/HomeActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="109" column="49" selection-start-line="109" selection-start-column="49" selection-end-line="109" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Presenter/HomeActivityPresenter.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Contract/HomeContract.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="443">
+              <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -169,8 +217,9 @@
         <option value="layoutResourceFile_vertical" />
         <option value="Kotlin Interface" />
         <option value="resourceFile" />
-        <option value="Kotlin Class" />
         <option value="valueResourceFile" />
+        <option value="Kotlin Object" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -189,6 +238,7 @@
       <find>Toas</find>
       <find>o</find>
       <find>onWritedDb</find>
+      <find>profile</find>
     </findStrings>
   </component>
   <component name="GenerateSignedApkSettings">
@@ -241,10 +291,6 @@
                 <option name="description" value="Displays the sub-projects of root project 'KaydirKazan'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="projects" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="mergeLibDexDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -350,6 +396,10 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="compileDebugUnitTestJavaWithJavac" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="mergeDexDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -607,10 +657,6 @@
                 <option name="name" value="generateDebugFeatureMetadata" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="mergeLibDexDebugAndroidTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
                 <option name="description" value="Runs lint on the Release build." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="lintRelease" />
@@ -718,10 +764,6 @@
                 <option name="description" value="Assembles main output for variant releaseUnitTest" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="assembleReleaseUnitTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="mergeProjectDexDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles bundle for variant debug" />
@@ -849,6 +891,10 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="javaPreCompileDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="mergeDexDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -1100,10 +1146,6 @@
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="mergeProjectDexDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="resolveConfigAttr" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
@@ -1141,10 +1183,6 @@
                 <option name="description" value="Displays the sub-projects of project ':app'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="projects" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="mergeLibDexDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
@@ -1250,6 +1288,10 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="compileDebugUnitTestJavaWithJavac" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="mergeDexDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
@@ -1507,10 +1549,6 @@
                 <option name="name" value="generateDebugFeatureMetadata" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="mergeLibDexDebugAndroidTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
                 <option name="description" value="Runs lint on the Release build." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="lintRelease" />
@@ -1618,10 +1656,6 @@
                 <option name="description" value="Assembles main output for variant releaseUnitTest" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="assembleReleaseUnitTest" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="mergeProjectDexDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles bundle for variant debug" />
@@ -1744,6 +1778,10 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="javaPreCompileDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="mergeDexDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
@@ -1988,10 +2026,6 @@
                 <option name="description" value="Assembles and tests this project." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="build" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="mergeProjectDexDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
@@ -2601,9 +2635,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Model/HomeActivityModel.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/GameOverActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Presenter/HomeActivityPresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Contract/HomeContract.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/background.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/animated_background.xml" />
@@ -2617,10 +2648,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/button_background.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/SoruActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nosignalapp/kaydirkazan/Activity/LoginActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/SoruActivityModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Contract/LoginContract.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Presenter/LoginActivityPresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/soruModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/userModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/userModel2.kt" />
@@ -2630,12 +2659,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Presenter/GameOverPresenter.kt" />
         <option value="$PROJECT_DIR$/app/build/reports/lint-results-release-fatal.html" />
         <option value="$USER_HOME$/.gradle/caches/transforms-1/files-1.1/intentanimation-1.0.aar/d56ee0e1f2aa653786fc8c2cbd7a36b2/res/values/values.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/LoginActivityModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_game_over.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/preloaded_fonts.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/soru_karti.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Contract/HomeContract.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Presenter/HomeActivityPresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_uygulama_hakkinda.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/GameOverActivity.kt" />
@@ -2648,10 +2674,18 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_soru.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/SoruActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/LoginActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/HomeActivityModel.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/HomeActivity.kt" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Presenter/LoginActivityPresenter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/LoginActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/SoruActivityModel.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Constant/FirebaseKey.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/LoginActivityModel.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/IFirebaseAuth.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Contract/HomeContract.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/HomeActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/HomeActivityModel.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Presenter/HomeActivityPresenter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/IFirebaseDatabase.kt" />
       </list>
     </option>
   </component>
@@ -2667,24 +2701,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="KaydirKazan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KaydirKazan" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="KaydirKazan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KaydirKazan" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2705,12 +2721,72 @@
             </path>
             <path>
               <item name="KaydirKazan" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="kaydirkazan" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Activity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KaydirKazan" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="kaydirkazan" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Constant" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KaydirKazan" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="kaydirkazan" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Contract" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KaydirKazan" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="kaydirkazan" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KaydirKazan" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="kaydirkazan" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Presenter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KaydirKazan" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="KaydirKazan" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="KaydirKazan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KaydirKazan" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="KaydirKazan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KaydirKazan" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2731,12 +2807,9 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/app/src/main/res/drawable/animated_background_1.xml" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Android\KaydirKazan\app" />
-      <recent name="D:\Android\KaydirKazan" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Android\KaydirKazan\app\src\main\res\raw" />
       <recent name="D:\Android\KaydirKazan\app\src\main\res\drawable-mdpi" />
-      <recent name="D:\Android\KaydirKazan\app\src\main\res\drawable-hdpi" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.nosignalapp.kaydirkazan.Activity" />
@@ -2749,9 +2822,15 @@
       <recent name="com.nosignalapp.kaydirkazan.Activity" />
       <recent name="com.nosignalapp.kaydirkazan" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.patronusstudio.kaydirkazan" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Android\KaydirKazan\app" />
+      <recent name="D:\Android\KaydirKazan" />
       <recent name="D:\Android\KaydirKazan\app\src\main\res\raw" />
       <recent name="D:\Android\KaydirKazan\app\src\main\res\drawable-mdpi" />
+      <recent name="D:\Android\KaydirKazan\app\src\main\res\drawable-hdpi" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -2991,9 +3070,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49590835" weight="0.20726173" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49590835" visible="true" weight="0.20726173" />
       <window_info id="Structure" order="2" sideWeight="0.502455" side_tool="true" weight="0.20726173" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" sideWeight="0.5040917" side_tool="true" weight="0.20726173" />
@@ -3002,14 +3082,14 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Find" order="0" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="1" weight="0.87234044" />
-      <window_info anchor="bottom" id="Logcat" order="2" sideWeight="0.49848714" weight="0.3584288" />
+      <window_info anchor="bottom" id="Logcat" order="2" sideWeight="0.49848714" weight="0.23076923" />
       <window_info anchor="bottom" id="TODO" order="3" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3584288" />
       <window_info anchor="bottom" id="Terminal" order="5" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5015129" side_tool="true" weight="0.61374795" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Build" order="8" weight="0.3666121" />
-      <window_info anchor="bottom" id="Android Profiler" order="9" show_stripe_button="false" weight="0.4222586" />
+      <window_info anchor="bottom" id="Android Profiler" order="9" weight="0.4222586" />
       <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.45714286" />
       <window_info anchor="right" id="StringPreview" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -3024,17 +3104,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/clock.json" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/loadingbar.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-play-services-base-16.0.1.aar/bbdaf7e70d47152ec147416e132ba9cf/jars/classes.jar!/com/google/android/gms/auth/api/signin/GoogleSignInAccount.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/soruModel.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -3054,13 +3123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/GameOverModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="41" column="85" selection-start-line="41" selection-start-column="85" selection-end-line="41" selection-end-column="85" />
         </state>
       </provider>
     </entry>
@@ -3127,32 +3189,11 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/bomb.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/LoginActivityModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="87" column="9" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/SoruActivityModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/soru_karti.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="81" column="42" lean-forward="true" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Contract/HomeContract.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -3217,13 +3258,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/SoruActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-703">
-          <caret line="261" column="13" selection-start-line="261" selection-start-column="13" selection-end-line="261" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Presenter/SoruActivityPresenter.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
@@ -3242,13 +3276,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/userModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/google-services.json" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
       <provider selected="true" editor-type-id="android-designer2" />
@@ -3260,29 +3287,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Presenter/LoginActivityPresenter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-393">
-          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/LoginActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="943">
-          <caret line="141" column="31" selection-start-line="141" selection-start-column="31" selection-end-line="141" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Presenter/HomeActivityPresenter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/HomeActivityModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        <state relative-caret-position="-837">
+          <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding>
+            <element signature="e#50#284#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3301,21 +3310,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="77" column="40" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/HomeActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
@@ -3327,6 +3321,138 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/LoginActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2440">
+          <caret line="142" column="31" selection-start-line="142" selection-start-column="31" selection-end-line="142" selection-end-column="31" />
+          <folding>
+            <element signature="e#49#1050#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="101" column="34" selection-start-line="101" selection-start-column="34" selection-end-line="101" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/SoruActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="63" column="31" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/SoruActivityModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="49" column="25" selection-start-line="49" selection-end-line="69" />
+          <folding>
+            <element signature="e#544#1377#0" />
+            <element signature="e#1479#1996#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Constant/FirebaseKey.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/IFirebaseAuth.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#198#787#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/GameOverModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="27" column="26" selection-start-line="27" selection-end-line="44" />
+          <folding>
+            <element signature="e#305#559#0" />
+            <element signature="e#1002#1584#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/LoginActivityModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-end-line="31" />
+          <folding>
+            <element signature="e#46#433#0" expanded="true" />
+            <element signature="e#614#1203#0" />
+            <element signature="e#1325#1957#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/userModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Contract/HomeContract.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Activity/HomeActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="109" column="49" selection-start-line="109" selection-start-column="49" selection-end-line="109" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/HomeActivityModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+          <folding>
+            <element signature="e#2455#2777#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Presenter/HomeActivityPresenter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/patronusstudio/kaydirkazan/Model/IFirebaseDatabase.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <folding>
+            <element signature="e#46#266#0" expanded="true" />
+            <element signature="e#375#1175#0" />
+            <element signature="e#1287#2289#0" />
+            <element signature="e#2534#2856#0" />
+            <element signature="e#3282#4115#0" />
+            <element signature="e#4225#4742#0" />
+            <element signature="e#4731#4985#0" />
+            <element signature="e#5090#5353#0" />
+            <element signature="e#5356#5938#0" />
+          </folding>
         </state>
       </provider>
     </entry>

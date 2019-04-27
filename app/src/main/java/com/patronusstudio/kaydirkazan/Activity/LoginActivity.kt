@@ -39,9 +39,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         setContentView(R.layout.activity_login)
 
         loginActivityPresenter = LoginActivityPresenter(LoginActivityModel())
-        //görüntü oluştu diyoruz ve bu görünümü gönderiyoruz
         loginActivityPresenter.setView(this)
-        //loginActivityPresenter'i activity oluşturuldu diyerek uyarıyoruz
         loginActivityPresenter.created()
     }
 
@@ -59,12 +57,8 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     }
 
     override fun clicked() {
-        //View tıklama işlemini dinlemeye koyuluyor.
-        //Örneğin burada login butonuna basılırsa ;
 
         login_activity_login_button.setOnClickListener {
-            //Abi bendeki view'da login butonuna tıklandı.Sen sadece bana hangi butona tıklanıldığını
-            //söylememi istedin.Kalan işleri sen kendin hallet diyor.
             loginActivityPresenter.buttonLoginClicked(
                 login_email.text.toString(),
                 login_password.text.toString(),
@@ -115,7 +109,6 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
                     loginActivityPresenter.googleSignInDoing(account,mAuth)
                 }
             } catch (e: ApiException) {
-                Log.d("Süleyman123",e.localizedMessage.toString())
 
                 Toast.makeText(this, "Google sign in failed:(", Toast.LENGTH_LONG).show()
             }

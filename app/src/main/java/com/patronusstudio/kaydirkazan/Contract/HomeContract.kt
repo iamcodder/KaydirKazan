@@ -25,6 +25,8 @@ interface HomeContract {
 
         fun profileYok()
 
+        fun mesajGoster(mesaj: String)
+
     }
 
     interface Presenter{
@@ -43,14 +45,13 @@ interface HomeContract {
 
     interface FirebaseFetchCallBack{
 
-        fun onFetchResult(user:userModel)
+        fun kullanici_cekildi(kullanici:userModel)
+        fun kullanici_cekilemedi(mesaj:String)
+        fun kullanici_cekilemedi_dbde_yok()
 
-        fun onWritedDb()
-
-        fun profileYok()
-
-        fun dbyeYaz(mAuth: FirebaseAuth)
+        fun kullanici_verileri_dbye_yazildi(mesaj: String)
 
         fun siralamaCekildi(seninSiran:Int,toplamSira:Int)
     }
+
 }

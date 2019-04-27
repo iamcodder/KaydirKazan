@@ -1,11 +1,10 @@
 package com.patronusstudio.kaydirkazan.Presenter
 
-import com.google.firebase.auth.FirebaseAuth
 import com.patronusstudio.kaydirkazan.Contract.HomeContract
-import com.patronusstudio.kaydirkazan.Model.HomeActivityModel
+import com.patronusstudio.kaydirkazan.Model.IFirebaseDatabase
 import com.patronusstudio.kaydirkazan.Model.userModel
 
-class HomeActivityPresenter (var model:HomeActivityModel): HomeContract.Presenter,HomeContract.FirebaseFetchCallBack {
+class HomeActivityPresenter (var firebaseDatabase:IFirebaseDatabase): HomeContract.Presenter,HomeContract.FirebaseFetchCallBack {
 
 
     lateinit var mView:HomeContract.View
@@ -18,25 +17,34 @@ class HomeActivityPresenter (var model:HomeActivityModel): HomeContract.Presente
         mView.bindViews()
     }
 
+
     override fun fetchData() {
         mView.loadingShow()
-        model.fetchData(this)
+        firebaseDatabase.kullaniciVerileriniCek(this)
     }
 
-
-    override fun onFetchResult(user: userModel) {
+    override fun kullanici_cekildi(kullanici: userModel) {
         mView.hideLoadingShow()
-        mView.showPuan(user)
+        mView.showPuan(kullanici)
         mView.clickControl()
     }
 
-    override fun onWritedDb() {
-        model.fetchData(this)
+    override fun kullanici_cekilemedi_dbde_yok() {
+        firebaseDatabase.dbyeProfiliYaz(this)
     }
 
-    override fun dbyeYaz(mAuth: FirebaseAuth) {
-        model.dbyeProfiliYaz(mAuth,this)
+    override fun kullanici_cekilemedi(mesaj: String) {
+        mView.mesajGoster(mesaj)
     }
+
+    override fun kullanici_verileri_dbye_yazildi(mesaj: String) {
+        firebaseDatabase.kullaniciVerileriniCek(this)
+    }
+
+    override fun siralamaCekildi(seninSiran: Int, toplamSira: Int) {
+        mView.showSort(seninSiran,toplamSira)
+    }
+
 
     override fun startGameButton() {
         mView.startGame()
@@ -46,11 +54,4 @@ class HomeActivityPresenter (var model:HomeActivityModel): HomeContract.Presente
         mView.startLogin()
     }
 
-    override fun profileYok() {
-        mView.profileYok()
-    }
-
-    override fun siralamaCekildi(seninSiran: Int, toplamSira: Int) {
-        mView.showSort(seninSiran,toplamSira)
-    }
 }

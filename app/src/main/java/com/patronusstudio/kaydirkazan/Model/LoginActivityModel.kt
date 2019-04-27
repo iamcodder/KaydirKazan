@@ -1,13 +1,10 @@
 package com.patronusstudio.kaydirkazan.Model
 
-import android.content.Intent
 import android.util.Log
-import android.widget.Toast
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.FirebaseDatabase
-import com.patronusstudio.kaydirkazan.Activity.HomeActivity
 import com.patronusstudio.kaydirkazan.Contract.LoginContract
 
 class LoginActivityModel{

@@ -5,13 +5,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.patronusstudio.kaydirkazan.Contract.LoginContract
 import com.patronusstudio.kaydirkazan.Model.LoginActivityModel
 
-//direk class oluştururken constructor tanımlaması yapabiliyoruz.Misal burada olduğu gibi
 class LoginActivityPresenter(var model: LoginActivityModel) : LoginContract.Presenter,
     LoginContract.FirebaseLoginCallback {
 
-    //mView ile daha sonra işlemler yapacağız.Örneğin ekranda progress bar gösterme gizleme gibi
-    //lateinit olarak tanımlama sebebimizde bunu constructor ile tanımlama yapacağız diyoruz
-    //yani değerini sonra değiştirceğiz
     lateinit var mView: LoginContract.View
 
 
@@ -21,7 +17,6 @@ class LoginActivityPresenter(var model: LoginActivityModel) : LoginContract.Pres
 
     override fun created() {
         mView.bindViews()
-        //click işlemlerinin yapıldığı kısmı da çalıştırıyoruz
         mView.clicked()
 
         mView.configureGoogleSignIn()

@@ -1,20 +1,15 @@
 package com.patronusstudio.kaydirkazan.Activity
 
-import android.animation.Animator
 import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.view.animation.Animation
 import android.widget.Toast
-import com.airbnb.lottie.LottieResult
-import com.google.android.gms.ads.MobileAds
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.patronusstudio.kaydirkazan.Contract.HomeContract
-import com.patronusstudio.kaydirkazan.Model.HomeActivityModel
+import com.patronusstudio.kaydirkazan.Model.IFirebaseDatabase
 import com.patronusstudio.kaydirkazan.Model.userModel
 import com.patronusstudio.kaydirkazan.Presenter.HomeActivityPresenter
 import com.patronusstudio.kaydirkazan.R
@@ -37,7 +32,7 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         setContentView(R.layout.activity_home)
         mAuth = FirebaseAuth.getInstance()
 
-            presenter = HomeActivityPresenter(HomeActivityModel(mAuth))
+            presenter = HomeActivityPresenter(IFirebaseDatabase())
             presenter.setView(this)
             presenter.created()
             presenter.fetchData()
@@ -71,6 +66,10 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         }
     }
 
+    override fun mesajGoster(mesaj: String) {
+        Toast.makeText(this,mesaj,Toast.LENGTH_SHORT).show()
+    }
+
     override fun showPuan(user: userModel) {
         activity_home_puan.text = "Skor : ${user.yuksekPuan}"
         this.mKullanici = user
@@ -83,7 +82,6 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
     override fun loadingShow() {
         activity_home_loading.visibility= View.VISIBLE
         activity_home_loading.playAnimation()
-
 
     }
 
@@ -109,7 +107,7 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
     }
 
     override fun profileYok() {
-        presenter.dbyeYaz(mAuth)
+        presenter.kullanici_cekilemedi_dbde_yok()
     }
 
     override fun onBackPressed() {
