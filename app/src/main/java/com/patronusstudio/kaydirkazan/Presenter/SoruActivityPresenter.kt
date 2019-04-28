@@ -1,46 +1,39 @@
 package com.patronusstudio.kaydirkazan.Presenter
 
 import com.patronusstudio.kaydirkazan.Contract.SoruContract
-import com.patronusstudio.kaydirkazan.Model.SoruActivityModel
+import com.patronusstudio.kaydirkazan.Mode.IFirebaseDatabase
 import com.patronusstudio.kaydirkazan.Model.soruModel
 
-class SoruActivityPresenter(var model: SoruActivityModel) : SoruContract.Presenter, SoruContract.FirebaseFetch {
+class SoruActivityPresenter(var firebaseDatabase: IFirebaseDatabase) : SoruContract.Presenter, SoruContract.FirebaseSonuc {
 
     lateinit var mView: SoruContract.View
 
     override fun setView(view: SoruContract.View) {
-        mView = view
-    }
+        mView = view }
 
     override fun created() {
         mView.bindViews()
-        model.butunSorulariCek(this)
+        firebaseDatabase.sorulari_cek(this)
         mView.progressShow()
-        mView.stopTimer()
-    }
+        mView.stopTimer() }
 
-    override fun listeyiGetir(soruListesi: ArrayList<soruModel>) {
+    override fun soruListesiniDondur(soruListesi: ArrayList<soruModel>) {
         mView.recyclerSetle(soruListesi)
         mView.cardTasarimi()
         mView.progressHide()
-        mView.startTimer()
-    }
+        mView.startTimer() }
 
-    override fun trueAnswer(dogruSayisi: Int) {
+    override fun dogruCevap(dogruSayisi: Int) {
         mView.startTrueAnim()
         mView.trueAnswerNumber(dogruSayisi)
-        mView.resetTimer()
+        mView.resetTimer() }
 
-    }
-
-    override fun falseAnswer() {
+    override fun yanlisCevap() {
         mView.startFalseAnim()
         mView.gameOver()
-        mView.stopTimer()
-    }
+        mView.stopTimer() }
 
-    override fun overTime() {
-        mView.finishTime()
-    }
+    override fun zamanTukendi() {
+        mView.finishTime() }
 
 }

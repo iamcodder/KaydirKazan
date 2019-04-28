@@ -13,7 +13,7 @@ import com.google.android.gms.ads.reward.RewardedVideoAd
 import com.google.android.gms.ads.reward.RewardedVideoAdListener
 import com.google.firebase.auth.FirebaseAuth
 import com.patronusstudio.kaydirkazan.Contract.GameOverContract
-import com.patronusstudio.kaydirkazan.Model.GameOverModel
+import com.patronusstudio.kaydirkazan.Mode.IFirebaseDatabase
 import com.patronusstudio.kaydirkazan.Presenter.GameOverPresenter
 import com.patronusstudio.kaydirkazan.R
 import kotlinx.android.synthetic.main.activity_game_over.*
@@ -56,7 +56,7 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
     var rekor:Int=0
     var cevaplananSoruMiktari:Int=0
     var dogruCevap:String?=""
-    var soru:String?=""
+    var soru:String=""
     lateinit var intent_home:Intent
     lateinit var presenter:GameOverPresenter
     lateinit var mAuth: FirebaseAuth
@@ -69,7 +69,7 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
 
         MobileAds.initialize(this, "ca-app-pub-1818679104699845~3155151657")
 
-        presenter= GameOverPresenter(GameOverModel())
+        presenter= GameOverPresenter(IFirebaseDatabase())
         presenter.setView(this)
         presenter.created()
 
@@ -115,7 +115,7 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
         }
 
         game_over_cevap_hatali.setOnClickListener {
-            presenter.soruHatali(mAuth,soru)
+            presenter.soruHatali(soru)
         }
     }
 
@@ -126,25 +126,26 @@ class GameOverActivity : AppCompatActivity(),GameOverContract.View, RewardedVide
     override fun kontrolEt() {
         cevaplananSoruMiktari += dogruSayisi
         cevaplananSoruMiktari++
-        presenter.increaseRepliesAnswew(cevaplananSoruMiktari,this.mAuth)
+        presenter.cevaplananSoruSayisiniArttir(cevaplananSoruMiktari)
 
-        if(dogruCevap.equals("Malesef zaman doldu")){
-            activity_gameOver_lottie.setAnimation(R.raw.error)
-            activity_game_over_dogru_sonuc.text="\n${dogruCevap.toString()}\n"
-            activity_game_over_dogru_sonuc_cardView.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_light))
-        }
+        when {
+            dogruCevap.equals("Malesef zaman doldu") -> {
+                activity_gameOver_lottie.setAnimation(R.raw.error)
+                activity_game_over_dogru_sonuc.text="\n${dogruCevap.toString()}\n"
+                activity_game_over_dogru_sonuc_cardView.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_light))
+            }
+            this.dogruSayisi>this.rekor -> {
+                activity_gameOver_lottie.setAnimation(R.raw.award)
+                activity_game_over_dogru_sonuc.text="\nYanlış cevap vermiş olsanda kendi rekorunu kırdın.\nDoğru cevap ${dogruCevap} olacaktı.\nYinede tebrikler\n"
 
-        else if(this.dogruSayisi>this.rekor){
-            activity_gameOver_lottie.setAnimation(R.raw.award)
-            activity_game_over_dogru_sonuc.text="\nYanlış cevap vermiş olsanda kendi rekorunu kırdın.\nDoğru cevap ${dogruCevap} olacaktı.\nYinede tebrikler\n"
-
-            activity_game_over_dogru_sonuc_cardView.setBackgroundColor(ContextCompat.getColor(this, R.color.turuncu))
-            presenter.beatRecord(dogruSayisi,mAuth)
-        }
-        else{
-            activity_gameOver_lottie.setAnimation(R.raw.error)
-            activity_game_over_dogru_sonuc.text="\nYanlış cevap verdin.\nDoğru cevap ${dogruCevap} olacaktı.\n"
-            activity_game_over_dogru_sonuc_cardView.setBackgroundColor(ContextCompat.getColor(this, R.color.kirmizi))
+                activity_game_over_dogru_sonuc_cardView.setBackgroundColor(ContextCompat.getColor(this, R.color.turuncu))
+                presenter.rekorKirildi(dogruSayisi)
+            }
+            else -> {
+                activity_gameOver_lottie.setAnimation(R.raw.error)
+                activity_game_over_dogru_sonuc.text="\nYanlış cevap verdin.\nDoğru cevap ${dogruCevap} olacaktı.\n"
+                activity_game_over_dogru_sonuc_cardView.setBackgroundColor(ContextCompat.getColor(this, R.color.kirmizi))
+            }
         }
 
     }

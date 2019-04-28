@@ -1,8 +1,6 @@
 package com.patronusstudio.kaydirkazan.Contract
 
-import com.google.firebase.auth.FirebaseAuth
 import com.patronusstudio.kaydirkazan.Model.soruModel
-import com.patronusstudio.kaydirkazan.Model.userModel
 
 interface SoruContract {
 
@@ -42,16 +40,16 @@ interface SoruContract {
 
         fun created()
 
-        fun trueAnswer(dogruSayisi:Int)
+        fun dogruCevap(dogruSayisi:Int)
 
-        fun falseAnswer()
+        fun yanlisCevap()
 
-        fun overTime()
+        fun zamanTukendi()
 
     }
 
-    interface FirebaseFetch {
+    interface FirebaseSonuc {
 
-        fun listeyiGetir(soruListesi:ArrayList<soruModel> )
+        fun soruListesiniDondur(soruListesi: ArrayList<soruModel>)
     }
 }

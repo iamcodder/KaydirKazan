@@ -6,10 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.google.android.gms.ads.MobileAds
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.patronusstudio.kaydirkazan.Contract.HomeContract
-import com.patronusstudio.kaydirkazan.Model.IFirebaseDatabase
+import com.patronusstudio.kaydirkazan.Mode.IFirebaseDatabase
 import com.patronusstudio.kaydirkazan.Model.userModel
 import com.patronusstudio.kaydirkazan.Presenter.HomeActivityPresenter
 import com.patronusstudio.kaydirkazan.R
@@ -31,6 +32,8 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         mAuth = FirebaseAuth.getInstance()
+
+            MobileAds.initialize(this, "ca-app-pub-1818679104699845~3155151657")
 
             presenter = HomeActivityPresenter(IFirebaseDatabase())
             presenter.setView(this)

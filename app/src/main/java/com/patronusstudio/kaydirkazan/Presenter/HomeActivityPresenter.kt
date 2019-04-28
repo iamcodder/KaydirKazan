@@ -1,10 +1,10 @@
 package com.patronusstudio.kaydirkazan.Presenter
 
 import com.patronusstudio.kaydirkazan.Contract.HomeContract
-import com.patronusstudio.kaydirkazan.Model.IFirebaseDatabase
+import com.patronusstudio.kaydirkazan.Mode.IFirebaseDatabase
 import com.patronusstudio.kaydirkazan.Model.userModel
 
-class HomeActivityPresenter (var firebaseDatabase:IFirebaseDatabase): HomeContract.Presenter,HomeContract.FirebaseFetchCallBack {
+class HomeActivityPresenter (var firebaseDatabase: IFirebaseDatabase): HomeContract.Presenter,HomeContract.FirebaseSonucu {
 
 
     lateinit var mView:HomeContract.View

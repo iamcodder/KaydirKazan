@@ -43,7 +43,7 @@ interface HomeContract {
 
     }
 
-    interface FirebaseFetchCallBack{
+    interface FirebaseSonucu{
 
         fun kullanici_cekildi(kullanici:userModel)
         fun kullanici_cekilemedi(mesaj:String)

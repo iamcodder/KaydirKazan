@@ -8,12 +8,10 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import android.view.animation.AccelerateInterpolator
-import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
 import com.patronusstudio.kaydirkazan.Contract.SoruContract
+import com.patronusstudio.kaydirkazan.Mode.IFirebaseDatabase
 import com.patronusstudio.kaydirkazan.Model.SoruActivityAdapter
-import com.patronusstudio.kaydirkazan.Model.SoruActivityModel
 import com.patronusstudio.kaydirkazan.Model.soruModel
 import com.patronusstudio.kaydirkazan.Model.userModel
 import com.patronusstudio.kaydirkazan.Presenter.SoruActivityPresenter
@@ -37,7 +35,6 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     lateinit var liste:ArrayList<soruModel>
     lateinit var swipeSettings:SwipeAnimationSetting
     lateinit var mAuth:FirebaseAuth
-    var firebaseDatabase: FirebaseDatabase = FirebaseDatabase.getInstance()
     var gelenBundle:Bundle? = null
     var ekrandakiKartKonumu:Int = 0
     var dogruSayisi:Int=0
@@ -51,21 +48,7 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_soru)
 
-
-
-        var isim:String=""
-        val ran = Random()
-        val x = ran.nextInt(5)
-
-        when(x){
-            0 -> isim="rekorlar"
-            1 -> isim="neZaman"
-            2 -> isim="genelKultur"
-            3 -> isim="tahminEt"
-            4 -> isim="tahminEt"
-        }
-
-        presenter= SoruActivityPresenter(SoruActivityModel(isim,firebaseDatabase))
+        presenter= SoruActivityPresenter(IFirebaseDatabase())
         presenter.setView(this)
         presenter.created()
 
@@ -247,17 +230,17 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
                 "Right" ->
                     if (liste[ekrandakiKartKonumu].sagCevap == liste[ekrandakiKartKonumu].dogruCevap) {
                         dogruSayisi++
-                        presenter.trueAnswer(this.dogruSayisi)
+                        presenter.dogruCevap(this.dogruSayisi)
                     } else {
-                        presenter.falseAnswer()
+                        presenter.yanlisCevap()
                     }
 
                 "Left" ->
                     if (liste[ekrandakiKartKonumu].solCevap == liste[ekrandakiKartKonumu].dogruCevap) {
                         dogruSayisi++
-                        presenter.trueAnswer(this.dogruSayisi)
+                        presenter.dogruCevap(this.dogruSayisi)
                     } else {
-                        presenter.falseAnswer()
+                        presenter.yanlisCevap()
                     }
             }
         }
@@ -308,7 +291,7 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     inner class zamanlayici(millisInFuture: Long, countDownInterval: Long) : CountDownTimer(millisInFuture, countDownInterval) {
 
         override fun onFinish() {
-            presenter.overTime()
+            presenter.zamanTukendi()
         }
 
         override fun onTick(millisUntilFinished: Long) {

@@ -1,9 +1,13 @@
-package com.patronusstudio.kaydirkazan.Model
+package com.patronusstudio.kaydirkazan.Mode
 
+import com.patronusstudio.kaydirkazan.Model.soruModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.patronusstudio.kaydirkazan.Constant.FirebaseKey
+import com.patronusstudio.kaydirkazan.Contract.GameOverContract
 import com.patronusstudio.kaydirkazan.Contract.HomeContract
+import com.patronusstudio.kaydirkazan.Contract.SoruContract
+import com.patronusstudio.kaydirkazan.Model.userModel
 import java.util.*
 
 
@@ -19,26 +23,28 @@ class IFirebaseDatabase {
     val firebaseDatabase_sorular: DatabaseReference =
         firebaseDatabase.reference.child(FirebaseKey.OYUN).child(FirebaseKey.SORULAR).child(FirebaseKey.TAHMIN_ET)
 
-    val kullanicinin_uuidsi = firebaseAuth.currentUser!!.uid
+    val kullanicinin_uuidsi = firebaseAuth.currentUser?.uid ?: (Math.random() * 10000).toString()
 
 
-    fun dbyeProfiliYaz(sonuc:HomeContract.FirebaseFetchCallBack) {
+    fun dbyeProfiliYaz(sonuc:HomeContract.FirebaseSonucu) {
 
-        val uuid: String = firebaseAuth.currentUser?.uid ?: "" + Math.random() * 10000
+        if(firebaseAuth.currentUser!=null){
+            val uuid: String = firebaseAuth.currentUser?.uid ?: (Math.random() * 10000).toString()
 
-        firebaseDatabase.reference.child(FirebaseKey.OYUN).child(FirebaseKey.KULLANICILAR).child(uuid)
-            .child(FirebaseKey.EMAIL).setValue(firebaseAuth.currentUser?.email.toString())
-        firebaseDatabase.reference.child(FirebaseKey.OYUN).child(FirebaseKey.KULLANICILAR).child(uuid)
-            .child(FirebaseKey.YUKSEK_PUAN).setValue("0")
-        firebaseDatabase.reference.child(FirebaseKey.OYUN).child(FirebaseKey.KULLANICILAR).child(uuid)
-            .child(FirebaseKey.CEVAPLANAN_SORU_SAYISI).setValue("0")
-        firebaseDatabase.reference.child(FirebaseKey.OYUN).child(FirebaseKey.KULLANICILAR).child(uuid)
-            .child(FirebaseKey.UUID).setValue(uuid)
+            firebaseDatabase.reference.child(FirebaseKey.OYUN).child(FirebaseKey.KULLANICILAR).child(uuid)
+                .child(FirebaseKey.EMAIL).setValue(firebaseAuth.currentUser?.email.toString())
+            firebaseDatabase.reference.child(FirebaseKey.OYUN).child(FirebaseKey.KULLANICILAR).child(uuid)
+                .child(FirebaseKey.YUKSEK_PUAN).setValue("0")
+            firebaseDatabase.reference.child(FirebaseKey.OYUN).child(FirebaseKey.KULLANICILAR).child(uuid)
+                .child(FirebaseKey.CEVAPLANAN_SORU_SAYISI).setValue("0")
+            firebaseDatabase.reference.child(FirebaseKey.OYUN).child(FirebaseKey.KULLANICILAR).child(uuid)
+                .child(FirebaseKey.UUID).setValue(uuid)
 
-        sonuc.kullanici_verileri_dbye_yazildi("Tebrikler.Kullanıcı oluşturuldu.")
+            sonuc.kullanici_verileri_dbye_yazildi("Tebrikler.Kullanıcı oluşturuldu.")
+        }
     }
 
-    fun kullaniciVerileriniCek(sonuc:HomeContract.FirebaseFetchCallBack) {
+    fun kullaniciVerileriniCek(sonuc:HomeContract.FirebaseSonucu) {
 
         var kullanici_bulundu_mu: Boolean = false
         val siralanacak_liste: ArrayList<Int> = ArrayList()
@@ -81,7 +87,7 @@ class IFirebaseDatabase {
         firebaseDatabase_kullanicilar.addValueEventListener(postTListener)
     }
 
-    fun kullanicilari_sirala(liste: ArrayList<Int>, kullanicinin_puani: Int, sonuc:HomeContract.FirebaseFetchCallBack) {
+    fun kullanicilari_sirala(liste: ArrayList<Int>, kullanicinin_puani: Int, sonuc:HomeContract.FirebaseSonucu) {
 
         var siralama: Int = 0
 
@@ -95,8 +101,7 @@ class IFirebaseDatabase {
         liste.clear()
     }
 
-
-    fun sorulari_cek() {
+    fun sorulari_cek(sonuc:SoruContract.FirebaseSonuc) {
 
         try {
             val soruListesi: ArrayList<soruModel> = ArrayList()
@@ -112,7 +117,7 @@ class IFirebaseDatabase {
                             soruListesi.add(soruNesnesi)
 
                     }
-                    soruListesiRandom(soruListesi)
+                    soruListesiRandom(soruListesi,sonuc)
 
                 }
 
@@ -126,7 +131,7 @@ class IFirebaseDatabase {
 
     }
 
-    fun soruListesiRandom(soruListesi: ArrayList<soruModel>) {
+    fun soruListesiRandom(soruListesi: ArrayList<soruModel>, sonuc: SoruContract.FirebaseSonuc) {
 
         val dondurulecekListe: ArrayList<soruModel> = ArrayList()
         dondurulecekListe.clear()
@@ -143,11 +148,9 @@ class IFirebaseDatabase {
             soruListesi_child_sayisi = (soruListesi.size) - 1
 
         }
-        //Artık rastgele sorular listelenmiş halde.Bu listeyi döndürmemiz lazım.
-        //dondurulecekListe de sorular var
+        sonuc.soruListesiniDondur(dondurulecekListe)
 
     }
-
 
     fun rekoruYaz(dogruSayisi: Int) {
 
@@ -158,16 +161,17 @@ class IFirebaseDatabase {
 
         firebaseDatabase_kullanicilar.child(kullanicinin_uuidsi).child(FirebaseKey.CEVAPLANAN_SORU_SAYISI)
             .setValue("$soruSayisi")
-
     }
 
-    fun soruHataliysa(soru: String) {
+    fun soruHataliysa(soru: String,sonuc:GameOverContract.FirebaseSonucu) {
 
-        val randomSayi: String = (Math.random()*10000).toString()
+        val random:Random= Random()
+        val randomSayi: String = random.nextInt(1000).toString()
+
 
         firebaseDatabase.reference.child(FirebaseKey.OYUN).child(FirebaseKey.HATALI_SORU).child(kullanicinin_uuidsi).child(randomSayi).setValue(soru)
 
-        //burada da kullanıcıya geliştiriciye haber verildi tarzında mesaj iletilmesi lazım
+        sonuc.gelistiriciye_haber("Geliştiriciye haber verildi.Teşekkürler")
 
 
     }
