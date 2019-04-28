@@ -9,11 +9,12 @@ android {
     }
     compileSdkVersion 28
     defaultConfig {
+        multiDexEnabled true
         applicationId "com.patronusstudio.kaydirkazan"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 28
-        versionCode 3
-        versionName "1.2"
+        versionCode 5
+        versionName "1.4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -50,5 +51,9 @@ dependencies {
     //Lottie animation
     implementation 'com.airbnb.android:lottie:2.7.0'
     implementation 'com.github.hajiyevelnur92:intentanimation:1.0'
+
+    implementation 'com.android.support:multidex:1.0.3'
+
+
 }
 apply plugin: 'com.google.gms.google-services'

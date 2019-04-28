@@ -43,10 +43,10 @@ class Admob (context: Context): RewardedVideoAdListener {
     }
 
     override fun onRewardedVideoCompleted() {
-        admob_sonuc.videolu_reklam_izlendi()
     }
 
     override fun onRewarded(p0: RewardItem?) {
+        admob_sonuc.videolu_reklam_izlendi()
     }
 
     override fun onRewardedVideoStarted() {

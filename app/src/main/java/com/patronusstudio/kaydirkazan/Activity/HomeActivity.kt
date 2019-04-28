@@ -4,11 +4,13 @@ import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.patronusstudio.kaydirkazan.Constant.FirebaseKey
 import com.patronusstudio.kaydirkazan.Contract.HomeContract
 import com.patronusstudio.kaydirkazan.Mode.IFirebaseDatabase
 import com.patronusstudio.kaydirkazan.Model.userModel
@@ -39,6 +41,7 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
             presenter.setView(this)
             presenter.created()
             presenter.fetchData()
+
     }
 
 

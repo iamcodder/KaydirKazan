@@ -1,5 +1,6 @@
 package com.patronusstudio.kaydirkazan.Mode
 
+import android.util.Log
 import com.patronusstudio.kaydirkazan.Model.soruModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -20,8 +21,8 @@ class IFirebaseDatabase {
     val firebaseDatabase_kullanicilar: DatabaseReference =
         firebaseDatabase.reference.child(FirebaseKey.OYUN).child(FirebaseKey.KULLANICILAR)
 
-    val firebaseDatabase_sorular: DatabaseReference =
-        firebaseDatabase.reference.child(FirebaseKey.OYUN).child(FirebaseKey.SORULAR).child(FirebaseKey.TAHMIN_ET)
+    var firebaseDatabase_sorular: DatabaseReference =
+        firebaseDatabase.reference.child(FirebaseKey.OYUN).child(FirebaseKey.SORULAR)
 
     val kullanicinin_uuidsi = firebaseAuth.currentUser?.uid ?: (Math.random() * 10000).toString()
 
@@ -89,7 +90,7 @@ class IFirebaseDatabase {
 
     fun kullanicilari_sirala(liste: ArrayList<Int>, kullanicinin_puani: Int, sonuc:HomeContract.FirebaseSonucu) {
 
-        var siralama: Int = 0
+        var siralama = 0
 
         for (i in 0 until liste.size) {
 
@@ -102,6 +103,18 @@ class IFirebaseDatabase {
     }
 
     fun sorulari_cek(sonuc:SoruContract.FirebaseSonuc) {
+
+        val random:Random= Random()
+        val random_sayi=random.nextInt(7)
+        when (random_sayi){
+            0 ->firebaseDatabase_sorular=firebaseDatabase_sorular.child(FirebaseKey.TAHMIN_ET)
+            1 ->firebaseDatabase_sorular=firebaseDatabase_sorular.child(FirebaseKey.TAHMIN_ET)
+            2 ->firebaseDatabase_sorular=firebaseDatabase_sorular.child(FirebaseKey.TAHMIN_ET)
+            3 ->firebaseDatabase_sorular=firebaseDatabase_sorular.child(FirebaseKey.REKORLAR)
+            4 ->firebaseDatabase_sorular=firebaseDatabase_sorular.child(FirebaseKey.GENEL_KULTUR)
+            5 ->firebaseDatabase_sorular=firebaseDatabase_sorular.child(FirebaseKey.GENEL_KULTUR)
+            6 ->firebaseDatabase_sorular=firebaseDatabase_sorular.child(FirebaseKey.NE_ZAMAN)
+        }
 
         try {
             val soruListesi: ArrayList<soruModel> = ArrayList()

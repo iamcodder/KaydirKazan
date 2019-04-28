@@ -12,9 +12,12 @@ import com.google.android.gms.ads.reward.RewardItem
 import com.google.android.gms.ads.reward.RewardedVideoAd
 import com.google.android.gms.ads.reward.RewardedVideoAdListener
 import com.google.firebase.auth.FirebaseAuth
+import com.patronusstudio.kaydirkazan.Constant.FirebaseKey
 import com.patronusstudio.kaydirkazan.Contract.GameOverContract
 import com.patronusstudio.kaydirkazan.Mode.IFirebaseDatabase
 import com.patronusstudio.kaydirkazan.Model.Admob
+import com.patronusstudio.kaydirkazan.Model.soruModel
+import com.patronusstudio.kaydirkazan.Model.userModel
 import com.patronusstudio.kaydirkazan.Presenter.GameOverPresenter
 import com.patronusstudio.kaydirkazan.R
 import kotlinx.android.synthetic.main.activity_game_over.*
@@ -24,16 +27,16 @@ import maes.tech.intentanim.CustomIntent
 class GameOverActivity : AppCompatActivity(), GameOverContract.View {
 
 
-    var gelenBundle: Bundle? = null
+    var gelenBundle:Bundle? = null
     var dogruSayisi: Int = 0
     var rekor: Int = 0
     var cevaplananSoruMiktari: Int = 0
-    var dogruCevap: String? = ""
+    var dogruCevap: String = ""
     var soru: String = ""
     lateinit var intent_home: Intent
     lateinit var presenter: GameOverPresenter
-    lateinit var mAuth: FirebaseAuth
-    lateinit var mRewardedVideoAd: RewardedVideoAd
+    lateinit var mKullanici:userModel
+    lateinit var mSoru:soruModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,27 +50,44 @@ class GameOverActivity : AppCompatActivity(), GameOverContract.View {
 
 
     override fun bindViews() {
+
         gelenBundle = intent.extras
-        dogruSayisi = gelenBundle!!.getInt("dogruSayisi")
-        rekor = gelenBundle!!.getInt("rekor")
-        cevaplananSoruMiktari = gelenBundle!!.getInt("cevaplananSoruMiktari")
-        soru = gelenBundle!!.getString("cevaplananSoru")
-        dogruCevap = gelenBundle!!.getString("dogruCevap")
-        mAuth = FirebaseAuth.getInstance()
+        if(gelenBundle!=null){
+            mKullanici= gelenBundle!!.getSerializable("kullanici") as userModel
+            mSoru= gelenBundle!!.getSerializable("soru") as soruModel
+
+            rekor=mKullanici.yuksekPuan.toInt()
+            cevaplananSoruMiktari=mKullanici.cevaplananSoruSayisi.toInt()
+            soru=mSoru.soru
+            dogruCevap=mSoru.dogruCevap
+
+            dogruSayisi = gelenBundle!!.getInt("dogruSayisi")
+        }
         intent_home = Intent(this, HomeActivity::class.java)
+
     }
 
     override fun clickControl() {
 
         game_over_menuye_don.setOnClickListener {
             intent_home.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP and Intent.FLAG_ACTIVITY_NEW_TASK
-            startActivity(intent_home)
             CustomIntent.customType(this, "right-to-left")
+            startActivity(intent_home)
         }
 
         game_over_devam_et.setOnClickListener {
-            presenter.setAdmob(Admob(applicationContext))
-            presenter.reklam_yukle()
+            if(FirebaseKey.IZLENMIS_REKLAM_SAYISI>3){
+                FirebaseKey.IZLENMIS_REKLAM_SAYISI=0
+                Toast.makeText(this,"Bu oyunda izlenecek reklam kalmadı :)",Toast.LENGTH_SHORT).show()
+                intent_home.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP and Intent.FLAG_ACTIVITY_NEW_TASK
+                CustomIntent.customType(this, "left-to-right")
+                startActivity(intent_home)
+            }
+            else{
+                Toast.makeText(this,"Reklam yükleniyor...",Toast.LENGTH_LONG).show()
+                presenter.setAdmob(Admob(applicationContext))
+                presenter.reklam_yukle()
+            }
         }
 
         game_over_cevap_hatali.setOnClickListener {
@@ -77,12 +97,13 @@ class GameOverActivity : AppCompatActivity(), GameOverContract.View {
 
     override fun videoluReklamiGoster(mRewardedVideoAd: RewardedVideoAd) {
         mRewardedVideoAd.show()
+        FirebaseKey.IZLENMIS_REKLAM_SAYISI++
     }
 
     override fun videoluReklamIzlendi() {
         Toast.makeText(this, "Devam edebilirsiniz.", Toast.LENGTH_SHORT).show()
-        finish()
         CustomIntent.customType(this, "up-to-bottom")
+        finish()
     }
 
     override fun videoluReklamYuklenemedi(message: String) {
@@ -94,7 +115,7 @@ class GameOverActivity : AppCompatActivity(), GameOverContract.View {
     }
 
     override fun kontrolEt() {
-        cevaplananSoruMiktari += dogruSayisi
+        cevaplananSoruMiktari =cevaplananSoruMiktari+ dogruSayisi
         cevaplananSoruMiktari++
         presenter.cevaplananSoruSayisiniArttir(cevaplananSoruMiktari)
 
@@ -140,18 +161,4 @@ class GameOverActivity : AppCompatActivity(), GameOverContract.View {
 
     }
 
-    override fun onPause() {
-        super.onPause()
-//        mRewardedVideoAd.pause(this)
-    }
-
-    override fun onResume() {
-        super.onResume()
-//        mRewardedVideoAd.resume(this)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-//        mRewardedVideoAd.destroy(this)
-    }
 }

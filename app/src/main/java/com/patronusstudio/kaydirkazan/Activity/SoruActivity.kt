@@ -6,9 +6,10 @@ import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateInterpolator
-import com.google.firebase.auth.FirebaseAuth
+import com.patronusstudio.kaydirkazan.Constant.FirebaseKey
 import com.patronusstudio.kaydirkazan.Contract.SoruContract
 import com.patronusstudio.kaydirkazan.Mode.IFirebaseDatabase
 import com.patronusstudio.kaydirkazan.Model.SoruActivityAdapter
@@ -34,10 +35,11 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     lateinit var adapter:SoruActivityAdapter
     lateinit var liste:ArrayList<soruModel>
     lateinit var swipeSettings:SwipeAnimationSetting
-    lateinit var mAuth:FirebaseAuth
     var gelenBundle:Bundle? = null
     var ekrandakiKartKonumu:Int = 0
     var dogruSayisi:Int=0
+
+    var izlenen_reklam_sayisi:Int=0
 
     var TOPLAM_SURE:Long=16000
 
@@ -47,10 +49,15 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_soru)
-
         presenter= SoruActivityPresenter(IFirebaseDatabase())
         presenter.setView(this)
         presenter.created()
+
+        Log.d("Sülo : 2","${FirebaseKey.IZLENMIS_REKLAM_SAYISI}")
+        FirebaseKey.IZLENMIS_REKLAM_SAYISI++
+        Log.d("Sülo : 2","${FirebaseKey.IZLENMIS_REKLAM_SAYISI}")
+        FirebaseKey.IZLENMIS_REKLAM_SAYISI++
+        Log.d("Sülo : 2","${FirebaseKey.IZLENMIS_REKLAM_SAYISI}")
 
     }
 
@@ -66,11 +73,8 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         animation_drawable.setExitFadeDuration(2000)
         animation_drawable.start()
 
-        liste = ArrayList()
-
-        mAuth= FirebaseAuth.getInstance()
-
         if(!activity_soru_meteor.isAnimating) activity_soru_meteor.playAnimation()
+        liste = ArrayList()
 
 
     }
@@ -195,24 +199,19 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     override fun gameOver() {
         val intent=Intent(this,GameOverActivity::class.java)
         intent.putExtra("dogruSayisi",dogruSayisi.toInt())
-        intent.putExtra("rekor",this.mKullanici.yuksekPuan.toInt())
-        intent.putExtra("cevaplananSoruMiktari",this.mKullanici.cevaplananSoruSayisi.toInt())
-        intent.putExtra("cevaplananSoru",""+liste[ekrandakiKartKonumu].soru)
-        intent.putExtra("dogruCevap",this.liste[ekrandakiKartKonumu].dogruCevap.toString())
-        startActivity(intent)
+        intent.putExtra("kullanici",mKullanici)
+        intent.putExtra("soru",liste[ekrandakiKartKonumu])
         CustomIntent.customType(this, "up-to-bottom")
-
+        startActivity(intent)
     }
 
     override fun finishTime() {
         val intent=Intent(this,GameOverActivity::class.java)
         intent.putExtra("dogruSayisi",dogruSayisi.toInt())
-        intent.putExtra("rekor",this.mKullanici.yuksekPuan.toInt())
-        intent.putExtra("cevaplananSoruMiktari",this.mKullanici.cevaplananSoruSayisi.toInt())
-        intent.putExtra("cevaplananSoru",""+liste[ekrandakiKartKonumu].soru)
-        intent.putExtra("dogruCevap","Malesef zaman doldu")
-        startActivity(intent)
+        intent.putExtra("kullanici",mKullanici)
+        intent.putExtra("soru",liste[ekrandakiKartKonumu])
         CustomIntent.customType(this, "up-to-bottom")
+        startActivity(intent)
     }
 
     //geçilmiş olan kart
