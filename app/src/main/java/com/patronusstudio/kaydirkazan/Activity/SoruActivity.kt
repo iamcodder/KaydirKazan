@@ -6,10 +6,9 @@ import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateInterpolator
-import com.patronusstudio.kaydirkazan.Constant.FirebaseKey
+import com.patronusstudio.kaydirkazan.Constant.OyunIslevi
 import com.patronusstudio.kaydirkazan.Contract.SoruContract
 import com.patronusstudio.kaydirkazan.Mode.IFirebaseDatabase
 import com.patronusstudio.kaydirkazan.Model.SoruActivityAdapter
@@ -53,11 +52,6 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         presenter.setView(this)
         presenter.created()
 
-        Log.d("Sülo : 2","${FirebaseKey.IZLENMIS_REKLAM_SAYISI}")
-        FirebaseKey.IZLENMIS_REKLAM_SAYISI++
-        Log.d("Sülo : 2","${FirebaseKey.IZLENMIS_REKLAM_SAYISI}")
-        FirebaseKey.IZLENMIS_REKLAM_SAYISI++
-        Log.d("Sülo : 2","${FirebaseKey.IZLENMIS_REKLAM_SAYISI}")
 
     }
 
@@ -197,6 +191,7 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
 
     //oyun bittiğinde yapılacak olanlar
     override fun gameOver() {
+        OyunIslevi.KAYDIRMA_YAPILABILIR=false
         val intent=Intent(this,GameOverActivity::class.java)
         intent.putExtra("dogruSayisi",dogruSayisi.toInt())
         intent.putExtra("kullanici",mKullanici)
@@ -206,6 +201,7 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     }
 
     override fun finishTime() {
+        OyunIslevi.KAYDIRMA_YAPILABILIR=false
         val intent=Intent(this,GameOverActivity::class.java)
         intent.putExtra("dogruSayisi",dogruSayisi.toInt())
         intent.putExtra("kullanici",mKullanici)
@@ -223,7 +219,7 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     }
 
     override fun onCardSwiped(direction: Direction?) {
-        if(direction!=null)
+        if(direction!=null && OyunIslevi.KAYDIRMA_YAPILABILIR)
         {
             when(direction.name) {
                 "Right" ->

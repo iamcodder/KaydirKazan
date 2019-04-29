@@ -11,6 +11,7 @@ import com.google.android.gms.ads.MobileAds
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.patronusstudio.kaydirkazan.Constant.FirebaseKey
+import com.patronusstudio.kaydirkazan.Constant.OyunIslevi
 import com.patronusstudio.kaydirkazan.Contract.HomeContract
 import com.patronusstudio.kaydirkazan.Mode.IFirebaseDatabase
 import com.patronusstudio.kaydirkazan.Model.userModel
@@ -33,6 +34,7 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        OyunIslevi.KAYDIRMA_YAPILABILIR=true
         mAuth = FirebaseAuth.getInstance()
 
             MobileAds.initialize(this, "ca-app-pub-1818679104699845~3155151657")
@@ -64,7 +66,10 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         }
 
         button_uygulama_hakkinda.setOnClickListener {
-            startActivity(Intent(this, UygulamaHakkinda::class.java))
+            iintent = Intent(this, UygulamaHakkinda::class.java)
+            iintent.putExtra("kullanıcı bilgisi", this.mKullanici)
+            startActivity(iintent)
+            CustomIntent.customType(this, "left-to-right")
         }
 
         button_cikis_yap.setOnClickListener {

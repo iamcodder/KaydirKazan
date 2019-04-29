@@ -12,13 +12,13 @@
     <string name="menuye_don">Menüye Dön</string>
 
     <string name="mucize">Eğer illa bir mucize istiyorsan, o zaman ona inanmaya da hazır olmalısın.</string>
-    <string name="patronus_studio">Patronus Studio  </string>
+    <string name="patronus_studio">- Patronus Studio -</string>
     <string name="sifremi_unuttum">Şifremi Unuttum</string>
 
-    <string name="katkilar">\n@airbnb-lottie / GitHub
-        \n@yuyakaido / GitHub
-        \n@hajiyevelnur92 / GitHub
-        \n@Wee / LottieFiles
+    <string name="hosgeldiniz">Hoşgeldiniz</string>
+
+
+    <string name="katkilar">\n@Wee / LottieFiles
         \n@Paddy / LottieFiles
         \n@Lucas Nemo / LottieFiles
         \n@Penry Chen / LottieFiles
@@ -26,8 +26,7 @@
         \n@Donghwa Kang / LottieFiles
         \n@Jojo Lafrite / LottieFiles
         \n@Luca Rondine / LottieFiles
-        \n@Victor Winnhed / LottieFiles
-        \n@Ision Industries / LottieFiles
+        \n@Victor Winnhed / LottieFiles        \n@Ision Industries / LottieFiles
         \n@INGENIERIA INFORMÁTICA INTERACTIVA / LottieFiles\n
     </string>
 </resources>

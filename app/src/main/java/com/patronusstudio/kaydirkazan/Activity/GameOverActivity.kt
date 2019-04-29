@@ -13,6 +13,7 @@ import com.google.android.gms.ads.reward.RewardedVideoAd
 import com.google.android.gms.ads.reward.RewardedVideoAdListener
 import com.google.firebase.auth.FirebaseAuth
 import com.patronusstudio.kaydirkazan.Constant.FirebaseKey
+import com.patronusstudio.kaydirkazan.Constant.OyunIslevi
 import com.patronusstudio.kaydirkazan.Contract.GameOverContract
 import com.patronusstudio.kaydirkazan.Mode.IFirebaseDatabase
 import com.patronusstudio.kaydirkazan.Model.Admob
@@ -101,6 +102,7 @@ class GameOverActivity : AppCompatActivity(), GameOverContract.View {
     }
 
     override fun videoluReklamIzlendi() {
+        OyunIslevi.KAYDIRMA_YAPILABILIR=true
         Toast.makeText(this, "Devam edebilirsiniz.", Toast.LENGTH_SHORT).show()
         CustomIntent.customType(this, "up-to-bottom")
         finish()

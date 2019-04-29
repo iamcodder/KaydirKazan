@@ -1,6 +1,5 @@
 package com.patronusstudio.kaydirkazan.Mode
 
-import android.util.Log
 import com.patronusstudio.kaydirkazan.Model.soruModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -8,6 +7,7 @@ import com.patronusstudio.kaydirkazan.Constant.FirebaseKey
 import com.patronusstudio.kaydirkazan.Contract.GameOverContract
 import com.patronusstudio.kaydirkazan.Contract.HomeContract
 import com.patronusstudio.kaydirkazan.Contract.SoruContract
+import com.patronusstudio.kaydirkazan.Contract.UygulamHakkindaContract
 import com.patronusstudio.kaydirkazan.Model.userModel
 import java.util.*
 
@@ -189,4 +189,16 @@ class IFirebaseDatabase {
 
     }
 
+
+    fun kullaniciBilgileri(sonuc:UygulamHakkindaContract.FirebaseSonuc){
+
+        val displayName:String?= firebaseAuth.currentUser?.displayName
+        val kayitOlmaTarihi: Long = firebaseAuth.currentUser?.metadata?.creationTimestamp ?: 1555972135753
+
+
+
+
+        sonuc.kullaniciSonuclari(displayName,kayitOlmaTarihi)
+
+    }
 }

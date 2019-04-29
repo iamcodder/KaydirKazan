@@ -2,10 +2,12 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/autour_one</item>
+        <item>@font/bangers</item>
         <item>@font/bungee_shade</item>
         <item>@font/codystar</item>
         <item>@font/coustard</item>
         <item>@font/coustard_black</item>
+        <item>@font/iceberg</item>
         <item>@font/margarine</item>
         <item>@font/meddon</item>
         <item>@font/oleo_script</item>
