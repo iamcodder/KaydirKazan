@@ -6,27 +6,44 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.reward.RewardItem
 import com.google.android.gms.ads.reward.RewardedVideoAd
 import com.google.android.gms.ads.reward.RewardedVideoAdListener
-import com.patronusstudio.kaydirkazan.Contract.GameOverContract
+import com.patronusstudio.kaydirkazan.Contract.AdmobContract
 
-class Admob (context: Context): RewardedVideoAdListener {
+class Admob(var context: Context) : RewardedVideoAdListener {
 
-    lateinit var admob_sonuc: GameOverContract.AdmobIslemleri
-    var mRewardedVideoAd: RewardedVideoAd = MobileAds.getRewardedVideoAdInstance(context)
+    lateinit var admob_sonuc: AdmobContract
+    lateinit var mRewardedVideoAd: RewardedVideoAd
 
-    init{
+    fun initiliaze(admob_sonuc:AdmobContract) {
+        this.admob_sonuc = admob_sonuc
+        mRewardedVideoAd=MobileAds.getRewardedVideoAdInstance(context)
         mRewardedVideoAd.rewardedVideoAdListener = this
-        odullu_reklami_yukle()
+        baslangicta_yukle()
     }
 
-    fun initiliaze(admob_sonuc:GameOverContract.AdmobIslemleri){
-        this.admob_sonuc=admob_sonuc
+    fun baslangicta_yukle(){
+        if (!mRewardedVideoAd.isLoaded) {
+            mRewardedVideoAd.loadAd(
+                "ca-app-pub-1818679104699845/8861470565",
+                AdRequest.Builder().addTestDevice("D239974A1C94D237A5745EC53CF138BE").build()
+            )
+        }
     }
 
     fun odullu_reklami_yukle() {
-        if(!mRewardedVideoAd.isLoaded){
-            mRewardedVideoAd.loadAd("ca-app-pub-1818679104699845/8861470565",
-                AdRequest.Builder().addTestDevice("D239974A1C94D237A5745EC53CF138BE").build())
+        if (!mRewardedVideoAd.isLoaded) {
+            mRewardedVideoAd.loadAd(
+                "ca-app-pub-1818679104699845/8861470565",
+                AdRequest.Builder().addTestDevice("D239974A1C94D237A5745EC53CF138BE").build()
+            )
+            reklamiGoster()
         }
+        else {
+            reklamiGoster()
+        }
+    }
+
+    fun reklamiGoster() {
+        admob_sonuc.videolu_reklam_yuklendi(mRewardedVideoAd)
     }
 
     override fun onRewardedVideoAdClosed() {
@@ -36,7 +53,6 @@ class Admob (context: Context): RewardedVideoAdListener {
     }
 
     override fun onRewardedVideoAdLoaded() {
-        admob_sonuc.videolu_reklam_yuklendi(mRewardedVideoAd)
     }
 
     override fun onRewardedVideoAdOpened() {

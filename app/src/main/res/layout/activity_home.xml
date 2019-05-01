@@ -84,11 +84,10 @@
             app:icon="@drawable/slide_logo"
             app:backgroundTint="@drawable/button_background"
 
+            android:fontFamily="@font/margarine"
             app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdeon"
             app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdeon"
-            app:layout_constraintHorizontal_bias="0.0" android:layout_marginBottom="12dp"
-            app:layout_constraintBottom_toTopOf="@+id/button_uygulama_hakkinda"
-            android:fontFamily="@font/margarine"/>
+            app:layout_constraintBottom_toTopOf="@+id/button_uygulama_hakkinda" android:layout_marginBottom="12dp"/>
     <com.google.android.material.button.MaterialButton
             android:id="@+id/button_cikis_yap"
             android:layout_width="0dp"
@@ -99,9 +98,10 @@
             android:padding="10dp"
             app:backgroundTint="@drawable/button_background"
 
-            app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdeon"
-            app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdeon" android:fontFamily="@font/margarine"
-            app:layout_constraintBottom_toTopOf="@+id/guideline13"/>
+            android:fontFamily="@font/margarine"
+            app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdeon"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdeon"/>
 
     <com.google.android.material.button.MaterialButton
             android:id="@+id/button_uygulama_hakkinda"
@@ -109,24 +109,23 @@
             android:layout_height="wrap_content"
             android:text="@string/uygulama_hakkinda"
             android:textAlignment="center"
-            app:icon="@drawable/ic_thumbs_up_down_black_24dp"
+            app:icon="@drawable/ic_sentiment_very_satisfied_black_24dp"
             android:padding="10dp"
             app:backgroundTint="@drawable/button_background"
-            app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdeon"
+            android:fontFamily="@font/margarine"
             app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdeon"
-            android:layout_marginBottom="12dp" app:layout_constraintBottom_toTopOf="@+id/button_cikis_yap"
-            android:fontFamily="@font/margarine"/>
+            app:layout_constraintBottom_toTopOf="@+id/button_cikis_yap" android:layout_marginBottom="12dp"
+            app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdeon"/>
 
     <com.airbnb.lottie.LottieAnimationView android:layout_height="50dp"
                                            android:id="@+id/activity_home_loading"
-                                           app:layout_constraintBottom_toTopOf="@+id/button_oyna"
-                                           app:layout_constraintTop_toTopOf="@+id/guide_ustten_yuzdeelli"
                                            android:layout_width="50dp"
+                                           app:lottie_autoPlay="true" app:lottie_rawRes="@raw/loadingbar"
+                                           app:lottie_loop="true"
+                                           app:layout_constraintTop_toTopOf="@+id/guide_ustten_yuzdeelli"
                                            app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_yuzdeon"
                                            app:layout_constraintStart_toStartOf="@+id/guide_soldan_yuzdeon"
-                                           android:layout_marginStart="8dp"
-                                           app:lottie_autoPlay="true" app:lottie_rawRes="@raw/loadingbar"
-                                           app:lottie_loop="true"/>
+                                           app:layout_constraintBottom_toTopOf="@+id/button_oyna"/>
 
     <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                                 android:id="@+id/guide_soldan_yuzdeon"
@@ -144,9 +143,5 @@
                                                 android:id="@+id/guide_ustten_yuzdeelli"
                                                 android:orientation="horizontal"
                                                 app:layout_constraintGuide_percent="0.5"/>
-    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                                android:id="@+id/guideline13"
-                                                android:orientation="horizontal"
-                                                app:layout_constraintGuide_percent="0.95348835"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.hajiyevelnur92:intentanimation:1.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/intentanimation-1.0.aar/d56ee0e1f2aa653786fc8c2cbd7a36b2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/intentanimation-1.0.aar/d56ee0e1f2aa653786fc8c2cbd7a36b2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a2d53da912bd35fd45b3b97ffd0a2df8/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a2d53da912bd35fd45b3b97ffd0a2df8/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.hajiyevelnur92/intentanimation/1.0/22125658d1184ae8762a3ef2191bace975d6150/intentanimation-1.0-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

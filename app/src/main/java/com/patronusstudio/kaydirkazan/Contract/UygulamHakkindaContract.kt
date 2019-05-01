@@ -8,6 +8,8 @@ interface UygulamHakkindaContract {
 
         fun yazilariGoster(displayName:String?,kayitOlmaTarihi:Long)
 
+        fun siralamaGoster(seninSiran:Int,toplamSira:Int)
+
     }
 
     interface Presenter{
@@ -15,12 +17,6 @@ interface UygulamHakkindaContract {
         fun onCreated()
 
         fun setView(view: View)
-
-    }
-
-    interface FirebaseSonuc{
-
-        fun kullaniciSonuclari(displayName:String?,kayitOlmaTarihi:Long)
 
     }
 

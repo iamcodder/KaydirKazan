@@ -32,6 +32,8 @@ interface SoruContract {
 
         fun startFalseAnim()
 
+        fun sesiOynat(ses:Int)
+
     }
 
     interface Presenter{
@@ -46,10 +48,8 @@ interface SoruContract {
 
         fun zamanTukendi()
 
+        fun sesiOynat(ses:Int)
+
     }
 
-    interface FirebaseSonuc {
-
-        fun soruListesiniDondur(soruListesi: ArrayList<soruModel>)
-    }
 }

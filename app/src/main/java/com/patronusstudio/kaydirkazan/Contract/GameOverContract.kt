@@ -21,13 +21,14 @@ interface GameOverContract {
 
         fun videoluReklamYuklenemedi(message: String)
 
+        fun sesiOynat(ses:Int)
+
+
     }
 
     interface Presenter{
 
         fun setView(view:View)
-
-        fun setAdmob(admobb: Admob)
 
         fun created()
 
@@ -38,20 +39,9 @@ interface GameOverContract {
         fun soruHatali(soru:String)
 
         fun reklam_yukle()
-    }
 
-    interface FirebaseSonucu{
-
-        fun gelistiriciye_haber(message:String)
-    }
-
-    interface AdmobIslemleri{
-
-        fun videolu_reklam_yuklendi(mRewardedVideoAd: RewardedVideoAd)
-
-        fun videolu_reklam_izlendi()
-
-        fun videolu_reklam_yuklenemedi(message: String)
+        fun sesiOynat(ses:Int)
 
     }
+
 }

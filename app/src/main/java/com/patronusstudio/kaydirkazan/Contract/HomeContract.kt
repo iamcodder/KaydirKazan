@@ -43,15 +43,5 @@ interface HomeContract {
 
     }
 
-    interface FirebaseSonucu{
-
-        fun kullanici_cekildi(kullanici:userModel)
-        fun kullanici_cekilemedi(mesaj:String)
-        fun kullanici_cekilemedi_dbde_yok()
-
-        fun kullanici_verileri_dbye_yazildi(mesaj: String)
-
-        fun siralamaCekildi(seninSiran:Int,toplamSira:Int)
-    }
 
 }

@@ -1,10 +1,11 @@
 package com.patronusstudio.kaydirkazan.Presenter
 
+import com.patronusstudio.kaydirkazan.Contract.FirebaseContract
 import com.patronusstudio.kaydirkazan.Contract.SoruContract
 import com.patronusstudio.kaydirkazan.Mode.IFirebaseDatabase
 import com.patronusstudio.kaydirkazan.Model.soruModel
 
-class SoruActivityPresenter(var firebaseDatabase: IFirebaseDatabase) : SoruContract.Presenter, SoruContract.FirebaseSonuc {
+class SoruActivityPresenter(var firebaseDatabase: IFirebaseDatabase) : SoruContract.Presenter, FirebaseContract.SoruListesi {
 
     lateinit var mView: SoruContract.View
 
@@ -17,11 +18,17 @@ class SoruActivityPresenter(var firebaseDatabase: IFirebaseDatabase) : SoruContr
         mView.progressShow()
         mView.stopTimer() }
 
+
     override fun soruListesiniDondur(soruListesi: ArrayList<soruModel>) {
         mView.recyclerSetle(soruListesi)
         mView.cardTasarimi()
         mView.progressHide()
-        mView.startTimer() }
+        mView.startTimer()
+    }
+
+    override fun sesiOynat(ses: Int) {
+        mView.sesiOynat(ses)
+    }
 
     override fun dogruCevap(dogruSayisi: Int) {
         mView.startTrueAnim()
@@ -34,6 +41,7 @@ class SoruActivityPresenter(var firebaseDatabase: IFirebaseDatabase) : SoruContr
         mView.stopTimer() }
 
     override fun zamanTukendi() {
+        mView.stopTimer()
         mView.finishTime() }
 
 }

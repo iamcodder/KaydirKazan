@@ -3,9 +3,11 @@ package com.patronusstudio.kaydirkazan.Activity
 import android.animation.Animator
 import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateInterpolator
 import com.patronusstudio.kaydirkazan.Constant.OyunIslevi
@@ -34,12 +36,11 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     lateinit var adapter:SoruActivityAdapter
     lateinit var liste:ArrayList<soruModel>
     lateinit var swipeSettings:SwipeAnimationSetting
+    lateinit var mediaPlayer: MediaPlayer
     var gelenBundle:Bundle? = null
     var ekrandakiKartKonumu:Int = 0
     var dogruSayisi:Int=0
-
-    var izlenen_reklam_sayisi:Int=0
-
+    var bomba_sesi:Boolean=false
     var TOPLAM_SURE:Long=16000
 
     val zaman=zamanlayici(TOPLAM_SURE,1000)
@@ -69,8 +70,7 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
 
         if(!activity_soru_meteor.isAnimating) activity_soru_meteor.playAnimation()
         liste = ArrayList()
-
-
+        mediaPlayer=MediaPlayer.create(this,R.raw.lose)
     }
 
 
@@ -184,13 +184,29 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     }
 
     override fun trueAnswerNumber(dogruSayisi: Int) {
-
         activity_soru_puan_PUAN.text="Skor : $dogruSayisi"
+        mediaPlayer.stop()
+        bomba_sesi=false
+    }
 
+    override fun sesiOynat(ses: Int) {
+        if(mediaPlayer.isPlaying){
+            mediaPlayer.stop()
+            mediaPlayer=MediaPlayer.create(this,ses)
+            mediaPlayer.start()
+            bomba_sesi=true
+        }
+        else{
+            mediaPlayer=MediaPlayer.create(this,ses)
+            mediaPlayer.start()
+            bomba_sesi=true
+        }
     }
 
     //oyun bittiğinde yapılacak olanlar
     override fun gameOver() {
+        mediaPlayer.stop()
+        bomba_sesi=false
         OyunIslevi.KAYDIRMA_YAPILABILIR=false
         val intent=Intent(this,GameOverActivity::class.java)
         intent.putExtra("dogruSayisi",dogruSayisi.toInt())
@@ -201,6 +217,8 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     }
 
     override fun finishTime() {
+        mediaPlayer.stop()
+        bomba_sesi=false
         OyunIslevi.KAYDIRMA_YAPILABILIR=false
         val intent=Intent(this,GameOverActivity::class.java)
         intent.putExtra("dogruSayisi",dogruSayisi.toInt())
@@ -209,6 +227,8 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         CustomIntent.customType(this, "up-to-bottom")
         startActivity(intent)
     }
+
+
 
     //geçilmiş olan kart
     override fun onCardDisappeared(view: View?, position: Int) {
@@ -259,6 +279,7 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         activity_soru_loading_infinity_bar.cancelAnimation()
         zaman.cancel()
         activity_soru_bomba.cancelAnimation()
+        mediaPlayer.stop()
     }
 
     override fun onStop() {
@@ -267,6 +288,7 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         activity_soru_loading_infinity_bar.cancelAnimation()
         zaman.cancel()
         activity_soru_bomba.cancelAnimation()
+        mediaPlayer.stop()
     }
 
     override fun onResume() {
@@ -290,6 +312,9 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         }
 
         override fun onTick(millisUntilFinished: Long) {
+           if(millisUntilFinished/1000<=5 && !bomba_sesi){
+               presenter.sesiOynat(R.raw.timer)
+           }
         }
     }
 

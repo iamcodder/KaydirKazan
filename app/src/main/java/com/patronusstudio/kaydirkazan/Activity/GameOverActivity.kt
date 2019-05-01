@@ -1,6 +1,7 @@
 package com.patronusstudio.kaydirkazan.Activity
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -38,13 +39,14 @@ class GameOverActivity : AppCompatActivity(), GameOverContract.View {
     lateinit var presenter: GameOverPresenter
     lateinit var mKullanici:userModel
     lateinit var mSoru:soruModel
+    lateinit var mediaPlayer: MediaPlayer
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_over)
 
-        presenter = GameOverPresenter(IFirebaseDatabase())
+        presenter = GameOverPresenter(IFirebaseDatabase(), Admob(this))
         presenter.setView(this)
         presenter.created()
     }
@@ -65,7 +67,7 @@ class GameOverActivity : AppCompatActivity(), GameOverContract.View {
             dogruSayisi = gelenBundle!!.getInt("dogruSayisi")
         }
         intent_home = Intent(this, HomeActivity::class.java)
-
+        mediaPlayer= MediaPlayer.create(this,R.raw.lose)
     }
 
     override fun clickControl() {
@@ -86,7 +88,6 @@ class GameOverActivity : AppCompatActivity(), GameOverContract.View {
             }
             else{
                 Toast.makeText(this,"Reklam yükleniyor...",Toast.LENGTH_LONG).show()
-                presenter.setAdmob(Admob(applicationContext))
                 presenter.reklam_yukle()
             }
         }
@@ -114,6 +115,20 @@ class GameOverActivity : AppCompatActivity(), GameOverContract.View {
 
     override fun toastYazdir(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun sesiOynat(ses:Int){
+
+        if(mediaPlayer.isPlaying){
+            mediaPlayer.stop()
+            mediaPlayer= MediaPlayer.create(this,ses)
+            mediaPlayer.start()
+        }
+        else{
+            mediaPlayer= MediaPlayer.create(this,ses)
+            mediaPlayer.start()
+        }
+
     }
 
     override fun kontrolEt() {
@@ -144,6 +159,7 @@ class GameOverActivity : AppCompatActivity(), GameOverContract.View {
                     )
                 )
                 presenter.rekorKirildi(dogruSayisi)
+                presenter.sesiOynat(R.raw.win)
             }
             else -> {
                 activity_gameOver_lottie.setAnimation(R.raw.error)
@@ -154,6 +170,7 @@ class GameOverActivity : AppCompatActivity(), GameOverContract.View {
                         R.color.kirmizi
                     )
                 )
+                presenter.sesiOynat(R.raw.lose)
             }
         }
 
@@ -161,6 +178,16 @@ class GameOverActivity : AppCompatActivity(), GameOverContract.View {
 
     override fun onBackPressed() {
 
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mediaPlayer.stop()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mediaPlayer.stop()
     }
 
 }

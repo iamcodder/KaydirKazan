@@ -11,14 +11,13 @@
         tools:context=".Activity.UygulamaHakkinda" android:id="@+id/scroolview">
 
     <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
-                                                       android:layout_height="match_parent">
+                                                       android:layout_height="wrap_content">
 
-        <com.airbnb.lottie.LottieAnimationView android:layout_width="0dp" android:layout_height="203dp"
+        <com.airbnb.lottie.LottieAnimationView android:layout_width="0dp" android:layout_height="200dp"
                                                app:lottie_autoPlay="true" app:lottie_loop="true"
                                                app:lottie_rawRes="@raw/about"
 
                                                android:id="@+id/lottieAnimationView3"
-                                               app:layout_constraintBottom_toTopOf="@+id/guide_ustten_otuzbes"
                                                app:layout_constraintTop_toTopOf="parent"
                                                app:layout_constraintStart_toStartOf="@+id/guide_soldan_bes"
                                                app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_bes"
@@ -31,25 +30,20 @@
                 android:fontFamily="@font/margarine"
                 android:textStyle="italic" android:textSize="14sp"
                 android:textColor="@android:color/white"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toTopOf="@+id/guide_ustten_otuzbes"
                 app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_bes"
-                app:layout_constraintStart_toStartOf="@+id/guide_soldan_bes"/>
+                app:layout_constraintStart_toStartOf="@+id/guide_soldan_bes"
+                app:layout_constraintTop_toBottomOf="@+id/activity_uygulama_hakkinda_tarih_txt"
+                android:layout_marginTop="40dp"/>
         <TextView
                 android:text="PATRONUS STUDIO  "
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView8"
                 android:fontFamily="@font/bangers"
-                android:textAllCaps="false" android:textStyle="italic" android:textSize="18sp"
+                android:textAllCaps="false" android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/guide_sagdan_bes"
                 app:layout_constraintTop_toBottomOf="@+id/textView7"
-                android:textColor="@android:color/white"/>
-        <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
-                                                    android:layout_height="wrap_content"
-                                                    android:id="@+id/guide_ustten_otuzbes"
-                                                    android:orientation="horizontal"
-                                                    app:layout_constraintGuide_percent="0.30"/>
+                android:textColor="@android:color/white" android:textStyle="italic"/>
         <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:id="@+id/guide_soldan_bes"
@@ -61,45 +55,60 @@
                                                     android:orientation="vertical"
                                                     app:layout_constraintGuide_percent="0.95"/>
         <TextView
-                android:text="Teşekkürler"
-                android:layout_width="wrap_content"
-                android:layout_height="15dp"
-                android:id="@+id/textView2"
-                app:layout_constraintStart_toStartOf="@+id/guide_soldan_bes" android:fontFamily="@font/bungee_shade"
-                android:textColor="@android:color/white" android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView3"/>
-        <TextView
                 android:text="@string/katkilar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView3"
                 app:layout_constraintStart_toStartOf="@+id/guide_soldan_bes" android:fontFamily="@font/margarine"
-                android:textColor="@android:color/white" android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" android:layout_marginTop="50dp"/>
         <TextView
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/activity_uygulama_hakkinda_hosgeldin_txt"
                 app:layout_constraintStart_toStartOf="@+id/guide_soldan_bes"
-                app:layout_constraintTop_toBottomOf="@+id/textView8"
-                android:layout_marginTop="16dp" android:fontFamily="@font/margarine"/>
+                android:fontFamily="@font/pacifico"
+                android:textColor="@color/browser_actions_bg_grey" android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView3"/>
         <TextView
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/activity_uygulama_hakkinda_tarih_txt"
-                app:layout_constraintTop_toBottomOf="@+id/activity_uygulama_hakkinda_hosgeldin_txt"
-                app:layout_constraintStart_toStartOf="@+id/guide_soldan_bes"
-                android:layout_marginTop="8dp" android:fontFamily="@font/margarine"/>
+                android:fontFamily="@font/pacifico"
+                android:textColor="@color/browser_actions_bg_grey"
+                app:layout_constraintStart_toStartOf="@+id/guide_soldan_bes" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/activity_uygulama_hakkinda_cevaplanan_soru_sayisi_txt"/>
         <TextView
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/activity_uygulama_hakkinda_cevaplanan_soru_sayisi_txt"
-                app:layout_constraintTop_toBottomOf="@+id/activity_uygulama_hakkinda_tarih_txt"
-                android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="@+id/guide_soldan_bes"
-                android:fontFamily="@font/margarine"/>
+                android:fontFamily="@font/pacifico"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/activity_uygulama_hakkinda_siralama"
+                app:layout_constraintStart_toStartOf="@+id/guide_soldan_bes"
+                android:textColor="@color/browser_actions_bg_grey"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/activity_uygulama_hakkinda_kullanici_skoru_txt"
+                android:fontFamily="@font/pacifico"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/activity_uygulama_hakkinda_hosgeldin_txt"
+                app:layout_constraintStart_toStartOf="@+id/guide_soldan_bes"
+                android:textColor="@color/browser_actions_bg_grey"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/activity_uygulama_hakkinda_siralama"
+                android:fontFamily="@font/pacifico" android:textColor="@color/browser_actions_bg_grey"
+                android:text="teasdasd" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/activity_uygulama_hakkinda_kullanici_skoru_txt"
+                app:layout_constraintStart_toStartOf="@+id/guide_soldan_bes"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
 

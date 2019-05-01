@@ -1,10 +1,8 @@
 package com.patronusstudio.kaydirkazan.Activity
 
-import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.firebase.auth.FirebaseAuth
 import com.patronusstudio.kaydirkazan.Contract.UygulamHakkindaContract
 import com.patronusstudio.kaydirkazan.Mode.IFirebaseDatabase
 import com.patronusstudio.kaydirkazan.Model.userModel
@@ -47,11 +45,15 @@ class UygulamaHakkinda : AppCompatActivity(),UygulamHakkindaContract.View {
 
         val dateString = SimpleDateFormat("dd/MM/yyyy").format(Date(kayitOlmaTarihi))
 
-        activity_uygulama_hakkinda_hosgeldin_txt.text=getString(R.string.hosgeldiniz)+" $displayName"
-        activity_uygulama_hakkinda_tarih_txt.text="Kayıt olma tarihi : $dateString"
-        activity_uygulama_hakkinda_cevaplanan_soru_sayisi_txt.text="Cevaplanan soru sayısı : ${kullanici.cevaplananSoruSayisi}"
+        activity_uygulama_hakkinda_hosgeldin_txt.text=getString(R.string.hosgeldiniz)+" $displayName ,"
+        activity_uygulama_hakkinda_tarih_txt.text="Kayıt Olma Tarihiniz: $dateString"
+        activity_uygulama_hakkinda_cevaplanan_soru_sayisi_txt.text="Cevapladığınız Toplam Soru Sayısı: ${kullanici.cevaplananSoruSayisi}"
+        activity_uygulama_hakkinda_kullanici_skoru_txt.text="Rekorunuz: ${kullanici.yuksekPuan}"
 
+    }
 
+    override fun siralamaGoster(seninSiran: Int, toplamSira: Int) {
+        activity_uygulama_hakkinda_siralama.text="Sıralamanız: $seninSiran/$toplamSira"
     }
 
 

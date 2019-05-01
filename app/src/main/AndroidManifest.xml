@@ -21,15 +21,15 @@
                 android:value="ca-app-pub-1818679104699845~3155151657"/>
         <meta-data android:name="preloaded_fonts" android:resource="@array/preloaded_fonts"/>
 
-        <activity android:name=".Activity.UygulamaHakkinda"></activity>
+        <activity android:name=".Activity.UygulamaHakkinda" android:screenOrientation="portrait"></activity>
         <activity
                 android:name=".Activity.GameOverActivity"
-                android:theme="@style/CustomGameOverStyle"></activity>
-        <activity android:name=".Activity.SoruActivity">
+                android:theme="@style/CustomGameOverStyle" android:screenOrientation="portrait"></activity>
+        <activity android:name=".Activity.SoruActivity" android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activity.HomeActivity">
+        <activity android:name=".Activity.HomeActivity" android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activity.LoginActivity">
+        <activity android:name=".Activity.LoginActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

@@ -1,10 +1,11 @@
 package com.patronusstudio.kaydirkazan.Presenter
 
+import com.patronusstudio.kaydirkazan.Contract.FirebaseContract
 import com.patronusstudio.kaydirkazan.Contract.HomeContract
 import com.patronusstudio.kaydirkazan.Mode.IFirebaseDatabase
 import com.patronusstudio.kaydirkazan.Model.userModel
 
-class HomeActivityPresenter (var firebaseDatabase: IFirebaseDatabase): HomeContract.Presenter,HomeContract.FirebaseSonucu {
+class HomeActivityPresenter (var firebaseDatabase: IFirebaseDatabase): HomeContract.Presenter,FirebaseContract.KullaniciIslemleri,FirebaseContract.KullaniciIslemleri.siralamasi {
 
 
     lateinit var mView:HomeContract.View
@@ -20,7 +21,7 @@ class HomeActivityPresenter (var firebaseDatabase: IFirebaseDatabase): HomeContr
 
     override fun fetchData() {
         mView.loadingShow()
-        firebaseDatabase.kullaniciVerileriniCek(this)
+        firebaseDatabase.kullaniciVerileriniCek(this,this)
     }
 
     override fun kullanici_cekildi(kullanici: userModel) {
@@ -38,7 +39,7 @@ class HomeActivityPresenter (var firebaseDatabase: IFirebaseDatabase): HomeContr
     }
 
     override fun kullanici_verileri_dbye_yazildi(mesaj: String) {
-        firebaseDatabase.kullaniciVerileriniCek(this)
+        firebaseDatabase.kullaniciVerileriniCek(this,this)
     }
 
     override fun siralamaCekildi(seninSiran: Int, toplamSira: Int) {

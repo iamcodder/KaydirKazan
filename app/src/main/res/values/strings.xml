@@ -4,7 +4,7 @@
     <string name="kayit_ol">Kayıt Ol</string>
     <string name="giris_yap">Giriş Yap</string>
     <string name="cikis_yap">ÇIKIŞ  YAP</string>
-    <string name="uygulama_hakkinda">Uygulama Hakkında</string>
+    <string name="uygulama_hakkinda">Hakkında</string>
     <string name="email">Email</string>
     <string name="sifre">Şifre</string>
     <string name="hadi_kaydiralim">Oyna</string>
@@ -18,7 +18,8 @@
     
     <string name="hosgeldiniz">Hoşgeldiniz</string>
 
-    <string name="katkilar">\n@Wee / LottieFiles
+    <string name="katkilar">\nTeşekkürler
+        \n@Wee / LottieFiles
         \n@Paddy / LottieFiles
         \n@Lucas Nemo / LottieFiles
         \n@Penry Chen / LottieFiles
@@ -28,6 +29,6 @@
         \n@Luca Rondine / LottieFiles
         \n@Victor Winnhed / LottieFiles
         \n@Ision Industries / LottieFiles
-        \n@INGENIERIA INFORMÁTICA INTERACTIVA / LottieFiles\n
+        \n@INGENIERIA INFORMÁTICA INTERACTIVA / LottieFiles
     </string>
 </resources>
