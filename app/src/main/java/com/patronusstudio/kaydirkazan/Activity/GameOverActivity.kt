@@ -79,8 +79,8 @@ class GameOverActivity : AppCompatActivity(), GameOverContract.View {
         }
 
         game_over_devam_et.setOnClickListener {
-            if(FirebaseKey.IZLENMIS_REKLAM_SAYISI>3){
-                FirebaseKey.IZLENMIS_REKLAM_SAYISI=0
+            if(OyunIslevi.IZLENMIS_REKLAM_SAYISI>3){
+                OyunIslevi.IZLENMIS_REKLAM_SAYISI=0
                 Toast.makeText(this,"Bu oyunda izlenecek reklam kalmadı :)",Toast.LENGTH_SHORT).show()
                 intent_home.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP and Intent.FLAG_ACTIVITY_NEW_TASK
                 CustomIntent.customType(this, "left-to-right")
@@ -99,7 +99,7 @@ class GameOverActivity : AppCompatActivity(), GameOverContract.View {
 
     override fun videoluReklamiGoster(mRewardedVideoAd: RewardedVideoAd) {
         mRewardedVideoAd.show()
-        FirebaseKey.IZLENMIS_REKLAM_SAYISI++
+        OyunIslevi.IZLENMIS_REKLAM_SAYISI++
     }
 
     override fun videoluReklamIzlendi() {

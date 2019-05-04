@@ -16,6 +16,4 @@ object FirebaseKey {
     const val REKORLAR="rekorlar"
     const val HATALI_SORU="hataliSorular"
 
-    var IZLENMIS_REKLAM_SAYISI=0
-
 }

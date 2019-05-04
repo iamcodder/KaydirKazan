@@ -3,7 +3,7 @@
 
     <string name="kayit_ol">Kayıt Ol</string>
     <string name="giris_yap">Giriş Yap</string>
-    <string name="cikis_yap">ÇIKIŞ  YAP</string>
+    <string name="cikis_yap">ÇIKIŞ YAP</string>
     <string name="uygulama_hakkinda">Hakkında</string>
     <string name="email">Email</string>
     <string name="sifre">Şifre</string>
@@ -15,7 +15,7 @@
     <string name="mucize">Eğer illa bir mucize istiyorsan, o zaman ona inanmaya da hazır olmalısın.</string>
     <string name="patronus_studio">- Patronus Studio -</string>
     <string name="sifremi_unuttum">Şifremi Unuttum</string>
-    
+
     <string name="hosgeldiniz">Hoşgeldiniz</string>
 
     <string name="katkilar">\nTeşekkürler

@@ -6,8 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
             android:allowBackup="true"
@@ -16,27 +15,41 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".yeni.OneActivity">
+
+        </activity>
+
         <meta-data
                 android:name="com.google.android.gms.ads.APPLICATION_ID"
                 android:value="ca-app-pub-1818679104699845~3155151657"/>
-        <meta-data android:name="preloaded_fonts" android:resource="@array/preloaded_fonts"/>
+        <meta-data
+                android:name="preloaded_fonts"
+                android:resource="@array/preloaded_fonts"/>
 
-        <activity android:name=".Activity.UygulamaHakkinda" android:screenOrientation="portrait"></activity>
+        <activity
+                android:name=".Activity.UygulamaHakkinda"
+                android:screenOrientation="portrait"/>
         <activity
                 android:name=".Activity.GameOverActivity"
-                android:theme="@style/CustomGameOverStyle" android:screenOrientation="portrait"></activity>
-        <activity android:name=".Activity.SoruActivity" android:screenOrientation="portrait">
+                android:screenOrientation="portrait"
+                android:theme="@style/CustomGameOverStyle"/>
+        <activity
+                android:name=".Activity.SoruActivity"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activity.HomeActivity" android:screenOrientation="portrait">
+        <activity
+                android:name=".Activity.HomeActivity"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Activity.LoginActivity" android:screenOrientation="portrait">
+        <activity
+                android:name=".Activity.LoginActivity"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

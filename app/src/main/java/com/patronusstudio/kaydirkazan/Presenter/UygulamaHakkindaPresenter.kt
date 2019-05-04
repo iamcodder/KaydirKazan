@@ -15,7 +15,6 @@ class UygulamaHakkindaPresenter(var firebaseDatabase: IFirebaseDatabase) : Uygul
     override fun onCreated() {
         mView.bindView()
         firebaseDatabase.kullaniciBilgileri(this)
-
         firebaseDatabase.kullanicilariSirala(this)
     }
 

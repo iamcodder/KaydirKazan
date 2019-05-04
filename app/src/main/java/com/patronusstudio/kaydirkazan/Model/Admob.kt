@@ -17,16 +17,14 @@ class Admob(var context: Context) : RewardedVideoAdListener {
         this.admob_sonuc = admob_sonuc
         mRewardedVideoAd=MobileAds.getRewardedVideoAdInstance(context)
         mRewardedVideoAd.rewardedVideoAdListener = this
-        baslangicta_yukle()
-    }
-
-    fun baslangicta_yukle(){
         if (!mRewardedVideoAd.isLoaded) {
             mRewardedVideoAd.loadAd(
                 "ca-app-pub-1818679104699845/8861470565",
                 AdRequest.Builder().addTestDevice("D239974A1C94D237A5745EC53CF138BE").build()
             )
         }
+
+
     }
 
     fun odullu_reklami_yukle() {

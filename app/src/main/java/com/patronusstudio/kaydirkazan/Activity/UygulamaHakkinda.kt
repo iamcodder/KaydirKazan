@@ -15,7 +15,7 @@ import java.util.*
 class UygulamaHakkinda : AppCompatActivity(),UygulamHakkindaContract.View {
 
     lateinit var presenter: UygulamaHakkindaPresenter
-    lateinit var bundle: Bundle
+    var bundle: Bundle?=null
     lateinit var kullanici:userModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +32,7 @@ class UygulamaHakkinda : AppCompatActivity(),UygulamHakkindaContract.View {
 
         bundle=intent.extras
 
-        kullanici= bundle.getSerializable("kullanıcı bilgisi") as userModel
+        kullanici= bundle.let { it?.getSerializable("kullanıcı bilgisi") as userModel }
 
         val animation_drawable: AnimationDrawable = scroolview.background as AnimationDrawable
         animation_drawable.setEnterFadeDuration(1000)

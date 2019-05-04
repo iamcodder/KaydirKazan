@@ -136,15 +136,12 @@ class IFirebaseDatabase {
 
     fun sorulari_cek(sonuc:FirebaseContract.SoruListesi) {
 
-        val random:Random= Random()
+        val random= Random()
         val random_sayi=random.nextInt(7)
         when (random_sayi){
-            0 ->firebaseDatabase_sorular=firebaseDatabase_sorular.child(FirebaseKey.TAHMIN_ET)
-            1 ->firebaseDatabase_sorular=firebaseDatabase_sorular.child(FirebaseKey.TAHMIN_ET)
-            2 ->firebaseDatabase_sorular=firebaseDatabase_sorular.child(FirebaseKey.TAHMIN_ET)
+            in 0..2 ->firebaseDatabase_sorular=firebaseDatabase_sorular.child(FirebaseKey.TAHMIN_ET)
             3 ->firebaseDatabase_sorular=firebaseDatabase_sorular.child(FirebaseKey.REKORLAR)
-            4 ->firebaseDatabase_sorular=firebaseDatabase_sorular.child(FirebaseKey.GENEL_KULTUR)
-            5 ->firebaseDatabase_sorular=firebaseDatabase_sorular.child(FirebaseKey.GENEL_KULTUR)
+            in 4..5 ->firebaseDatabase_sorular=firebaseDatabase_sorular.child(FirebaseKey.GENEL_KULTUR)
             6 ->firebaseDatabase_sorular=firebaseDatabase_sorular.child(FirebaseKey.NE_ZAMAN)
         }
 
