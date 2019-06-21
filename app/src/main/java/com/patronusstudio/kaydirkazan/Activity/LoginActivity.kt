@@ -1,6 +1,8 @@
 package com.patronusstudio.kaydirkazan.Activity
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -53,6 +55,10 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     }
 
     override fun bindViews() {
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        }
 
     }
 

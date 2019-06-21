@@ -2,8 +2,10 @@ package com.patronusstudio.kaydirkazan.Activity
 
 import android.animation.Animator
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.graphics.drawable.AnimationDrawable
 import android.media.MediaPlayer
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -57,6 +59,11 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     }
 
     override fun bindViews() {
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        }
+
         gelenBundle=intent.extras
         if(gelenBundle!=null && gelenBundle!!.getSerializable("kullanıcı bilgisi")!=null)  {
             mKullanici= gelenBundle!!.getSerializable("kullanıcı bilgisi") as userModel
@@ -68,7 +75,6 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
         animation_drawable.setExitFadeDuration(2000)
         animation_drawable.start()
 
-        if(!activity_soru_meteor.isAnimating) activity_soru_meteor.playAnimation()
         liste = ArrayList()
         mediaPlayer=MediaPlayer.create(this,R.raw.lose)
     }
@@ -172,15 +178,12 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
     override fun progressShow() {
         activity_soru_loading_infinity_bar.visibility=View.VISIBLE
         activity_soru_loading_infinity_bar.playAnimation()
-        activity_soru_meteor.cancelAnimation()
-        activity_soru_meteor.visibility=View.GONE
+
     }
 
     override fun progressHide() {
         activity_soru_loading_infinity_bar.visibility=View.GONE
         activity_soru_loading_infinity_bar.cancelAnimation()
-        activity_soru_meteor.playAnimation()
-        activity_soru_meteor.visibility=View.VISIBLE
     }
 
     override fun trueAnswerNumber(dogruSayisi: Int) {
@@ -275,7 +278,6 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
 
     override fun onPause() {
         super.onPause()
-        activity_soru_meteor.cancelAnimation()
         activity_soru_loading_infinity_bar.cancelAnimation()
         zaman.cancel()
         activity_soru_bomba.cancelAnimation()
@@ -284,7 +286,6 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
 
     override fun onStop() {
         super.onStop()
-        activity_soru_meteor.cancelAnimation()
         activity_soru_loading_infinity_bar.cancelAnimation()
         zaman.cancel()
         activity_soru_bomba.cancelAnimation()
@@ -293,14 +294,12 @@ class SoruActivity : AppCompatActivity(), SoruContract.View,CardStackListener {
 
     override fun onResume() {
         super.onResume()
-        activity_soru_meteor.playAnimation()
         zaman.start()
         activity_soru_bomba.playAnimation()
     }
 
     override fun onRestart() {
         super.onRestart()
-        activity_soru_meteor.cancelAnimation()
         zaman.start()
         activity_soru_bomba.playAnimation()
     }

@@ -1,6 +1,8 @@
 package com.patronusstudio.kaydirkazan.Activity
 
+import android.content.pm.ActivityInfo
 import android.graphics.drawable.AnimationDrawable
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.patronusstudio.kaydirkazan.Contract.UygulamHakkindaContract
@@ -29,6 +31,10 @@ class UygulamaHakkinda : AppCompatActivity(),UygulamHakkindaContract.View {
     }
 
     override fun bindView() {
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        }
 
         bundle=intent.extras
 

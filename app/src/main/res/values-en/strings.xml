@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="uygulama_ismi">Kaydır Kazan</string>
+
+
     <string name="kayit_ol">Kayıt Ol</string>
     <string name="giris_yap">Giris Yap</string>
     <string name="cikis_yap">ÇIKIŞ  YAP</string>
@@ -17,18 +20,4 @@
 
     <string name="hosgeldiniz">Hoşgeldiniz</string>
 
-
-    <string name="katkilar">\nTeşekkürler
-        \n@Wee / LottieFiles
-        \n@Paddy / LottieFiles
-        \n@Lucas Nemo / LottieFiles
-        \n@Penry Chen / LottieFiles
-        \n@LottieFiles / LottieFiles
-        \n@Donghwa Kang / LottieFiles
-        \n@Jojo Lafrite / LottieFiles
-        \n@Luca Rondine / LottieFiles
-        \n@Victor Winnhed / LottieFiles
-        \n@Ision Industries / LottieFiles
-        \n@INGENIERIA INFORMÁTICA INTERACTIVA / LottieFiles
-    </string>
 </resources>

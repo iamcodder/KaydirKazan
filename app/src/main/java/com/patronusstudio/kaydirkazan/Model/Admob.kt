@@ -19,8 +19,8 @@ class Admob(var context: Context) : RewardedVideoAdListener {
         mRewardedVideoAd.rewardedVideoAdListener = this
         if (!mRewardedVideoAd.isLoaded) {
             mRewardedVideoAd.loadAd(
-                "ca-app-pub-1818679104699845/8861470565",
-                AdRequest.Builder().addTestDevice("D239974A1C94D237A5745EC53CF138BE").build()
+                "ca-app-pub-1818679104699845/8480542597",
+                AdRequest.Builder().addTestDevice("F17BD0906D7EAE0C87C14E637D73D52C").build()
             )
         }
 
@@ -30,8 +30,8 @@ class Admob(var context: Context) : RewardedVideoAdListener {
     fun odullu_reklami_yukle() {
         if (!mRewardedVideoAd.isLoaded) {
             mRewardedVideoAd.loadAd(
-                "ca-app-pub-1818679104699845/8861470565",
-                AdRequest.Builder().addTestDevice("D239974A1C94D237A5745EC53CF138BE").build()
+                "ca-app-pub-1818679104699845/8480542597",
+                AdRequest.Builder().addTestDevice("F17BD0906D7EAE0C87C14E637D73D52C").build()
             )
             reklamiGoster()
         }

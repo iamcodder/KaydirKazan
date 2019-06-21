@@ -1,7 +1,9 @@
 package com.patronusstudio.kaydirkazan.Activity
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.graphics.drawable.AnimationDrawable
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -44,6 +46,10 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
             presenter.created()
             presenter.fetchData()
 
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+            requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        }
+
     }
 
 
@@ -57,6 +63,8 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         animation_drawable.setEnterFadeDuration(1000)
         animation_drawable.setExitFadeDuration(2000)
         animation_drawable.start()
+
+
     }
 
     override fun clickControl() {

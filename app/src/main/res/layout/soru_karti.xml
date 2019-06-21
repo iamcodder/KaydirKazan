@@ -15,8 +15,8 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline3"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:contentPadding="10dp" app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/soru_karti_tasarimi_SOL_cardview">
+            app:layout_constraintBottom_toTopOf="@+id/soru_karti_tasarimi_SOL_cardview"
+            android:layout_marginBottom="32dp">
 
         <TextView
                 android:id="@+id/soru_karti_tasarimi_ANA_SORU"
