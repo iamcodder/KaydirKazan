@@ -6,7 +6,7 @@
         android:id="@+id/activity_soru_constraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Activity.SoruActivity"
+        tools:context=".Activity.SoruActivityJ"
         android:background="@drawable/animated_list">
 
     <androidx.cardview.widget.CardView

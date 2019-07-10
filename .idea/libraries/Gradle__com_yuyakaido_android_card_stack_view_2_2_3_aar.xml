@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.yuyakaido.android:card-stack-view:2.2.3@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/33bd2e2a78e99795b5350a55406b440e/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/33bd2e2a78e99795b5350a55406b440e/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5a3a54bfbf42b1ecef7a0a66c30cac2f/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5a3a54bfbf42b1ecef7a0a66c30cac2f/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

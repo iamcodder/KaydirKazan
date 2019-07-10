@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.patronusstudio.kaydirkazan">
 
-
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
@@ -24,19 +23,15 @@
                 android:name="preloaded_fonts"
                 android:resource="@array/preloaded_fonts"/>
 
+        <activity android:name=".Activity.UygulamaHakkindaJ"/>
         <activity
-                android:name=".Activity.UygulamaHakkinda"/>
-        <activity
-                android:name=".Activity.GameOverActivity"
+                android:name=".Activity.GameOverActivityJ"
                 android:theme="@style/CustomGameOverStyle"/>
-        <activity
-                android:name=".Activity.SoruActivity">
+        <activity android:name=".Activity.SoruActivityJ">
         </activity>
-        <activity
-                android:name=".Activity.HomeActivity">
+        <activity android:name=".Activity.HomeActivityJ">
         </activity>
-        <activity
-                android:name=".Activity.LoginActivity">
+        <activity android:name=".Activity.LoginActivityJ">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

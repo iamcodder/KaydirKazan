@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/animated_list"
-        tools:context=".Activity.UygulamaHakkinda" android:id="@+id/scroolview">
+        tools:context=".Activity.UygulamaHakkindaJ" android:id="@+id/scroolview">
     <com.airbnb.lottie.LottieAnimationView android:layout_width="0dp" android:layout_height="200dp"
                                            app:lottie_autoPlay="true" app:lottie_loop="true"
                                            app:lottie_rawRes="@raw/about"
