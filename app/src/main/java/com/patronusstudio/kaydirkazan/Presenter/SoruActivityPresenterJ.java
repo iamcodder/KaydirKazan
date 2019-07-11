@@ -40,14 +40,12 @@ public class SoruActivityPresenterJ implements SoruContractJ.Presenter, Firebase
 
     @Override
     public void dogruCevap(int dogruSayisi) {
-        mView.startTrueAnim();
         mView.trueAnswerNumber(dogruSayisi);
         mView.resetTimer();
     }
 
     @Override
     public void yanlisCevap() {
-        mView.startFalseAnim();
         mView.gameOver();
         mView.stopTimer();
     }
@@ -55,11 +53,6 @@ public class SoruActivityPresenterJ implements SoruContractJ.Presenter, Firebase
     @Override
     public void zamanTukendi() {
         mView.stopTimer();
-        mView.finishTime();
-    }
-
-    @Override
-    public void sesiOynat(int ses) {
-        mView.sesiOynat(ses);
+        mView.gameOver();
     }
 }

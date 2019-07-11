@@ -22,19 +22,12 @@ public interface SoruContractJ {
 
         void gameOver();
 
-        void finishTime();
-
         void startTimer();
 
         void resetTimer();
 
         void stopTimer();
 
-        void startTrueAnim();
-
-        void startFalseAnim();
-
-        void sesiOynat(int ses);
 
     }
 
@@ -49,8 +42,6 @@ public interface SoruContractJ {
         void yanlisCevap();
 
         void zamanTukendi();
-
-        void sesiOynat(int ses);
 
     }
 

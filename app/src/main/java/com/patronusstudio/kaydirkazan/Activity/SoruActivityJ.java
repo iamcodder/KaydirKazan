@@ -1,9 +1,7 @@
 package com.patronusstudio.kaydirkazan.Activity;
 
-import android.animation.Animator;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -21,7 +19,6 @@ import com.patronusstudio.kaydirkazan.Model.userModelJ;
 import com.patronusstudio.kaydirkazan.Presenter.SoruActivityPresenterJ;
 import com.patronusstudio.kaydirkazan.R;
 import com.yuyakaido.android.cardstackview.*;
-import maes.tech.intentanim.CustomIntent;
 
 import java.util.ArrayList;
 
@@ -33,10 +30,8 @@ public class SoruActivityJ extends AppCompatActivity implements SoruContractJ.Vi
     private SoruActivityAdapterJ adapter;
     private ArrayList<soruModelJ> liste;
     private SwipeAnimationSetting swipeAnimationSetting;
-    private MediaPlayer mediaPlayer;
     private Bundle gelen_bundle;
     private int ekrandaki_kart_konumu=0, dogru_sayisi = 0;
-    private boolean bomba_sesi = false;
     private int TOPLAM_SURE = 16000;
 
     private Intent intent;
@@ -50,7 +45,7 @@ public class SoruActivityJ extends AppCompatActivity implements SoruContractJ.Vi
 
     private CountDownTimer timer;
 
-    private LottieAnimationView lottie_bomba, lottie_cevap, lottie_infinity;
+    private LottieAnimationView lottie_bomba, lottie_infinity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +64,7 @@ public class SoruActivityJ extends AppCompatActivity implements SoruContractJ.Vi
         gelen_bundle = getIntent().getExtras();
 
         if (gelen_bundle != null) {
-            mKullanici = (userModelJ) gelen_bundle.getSerializable("kullanıcı bilgisi");
+            mKullanici =  gelen_bundle.getParcelable("kullanıcı bilgisi");
         }
 
         txt_rekor = findViewById(R.id.activity_soru_rekor);
@@ -84,20 +79,16 @@ public class SoruActivityJ extends AppCompatActivity implements SoruContractJ.Vi
         animation_drawable.start();
 
         liste = new ArrayList<>();
-        mediaPlayer = MediaPlayer.create(this, R.raw.lose);
 
         cardStackView = findViewById(R.id.activity_soru_cardStackView);
+        cardStackLayoutManager=new CardStackLayoutManager(this);
 
         lottie_bomba = findViewById(R.id.activity_soru_bomba);
-        lottie_cevap = findViewById(R.id.activity_soru_animasyon_sonucu);
         lottie_infinity = findViewById(R.id.activity_soru_loading_infinity_bar);
 
         timer = new CountDownTimer(TOPLAM_SURE, 1000) {
             @Override
             public void onTick(long l) {
-                if (TOPLAM_SURE / 1000 <= 5 && !bomba_sesi) {
-                    presenter.sesiOynat(R.raw.timer);
-                }
             }
 
             @Override
@@ -114,8 +105,6 @@ public class SoruActivityJ extends AppCompatActivity implements SoruContractJ.Vi
                 .setDuration(1500)
                 .setInterpolator(new AccelerateInterpolator())
                 .build();
-
-        cardStackLayoutManager.setSwipeAnimationSetting(swipeAnimationSetting);
 
         //arkada gözükmesini istediğimiz eleman sayısı
         cardStackLayoutManager.setVisibleCount(1);
@@ -135,6 +124,8 @@ public class SoruActivityJ extends AppCompatActivity implements SoruContractJ.Vi
     @Override
     public void recyclerSetle(ArrayList<soruModelJ> soruListesi) {
 
+
+
         this.liste = soruListesi;
 
         cardStackLayoutManager = new CardStackLayoutManager(this, this);
@@ -147,8 +138,6 @@ public class SoruActivityJ extends AppCompatActivity implements SoruContractJ.Vi
     @Override
     public void trueAnswerNumber(int dogruSayisi) {
         txt_puan.setText("Skor : " + dogruSayisi);
-        mediaPlayer.stop();
-        bomba_sesi = false;
     }
 
     @Override
@@ -165,27 +154,11 @@ public class SoruActivityJ extends AppCompatActivity implements SoruContractJ.Vi
 
     @Override
     public void gameOver() {
-        mediaPlayer.stop();
-        bomba_sesi = false;
         OyunIsleviJ.KAYDIRMA_YAPILABILIR = false;
         intent = new Intent(this, GameOverActivityJ.class);
         intent.putExtra("dogruSayisi", dogru_sayisi);
         intent.putExtra("kullanici", mKullanici);
         intent.putExtra("soru", liste.get(ekrandaki_kart_konumu));
-        CustomIntent.customType(this, "up-to-bottom");
-        startActivity(intent);
-    }
-
-    @Override
-    public void finishTime() {
-        mediaPlayer.stop();
-        bomba_sesi = false;
-        OyunIsleviJ.KAYDIRMA_YAPILABILIR = false;
-        intent = new Intent(this, GameOverActivityJ.class);
-        intent.putExtra("dogruSayisi", dogru_sayisi);
-        intent.putExtra("kullanici", mKullanici);
-        intent.putExtra("soru", liste.get(ekrandaki_kart_konumu));
-        CustomIntent.customType(this, "up-to-bottom");
         startActivity(intent);
     }
 
@@ -210,79 +183,6 @@ public class SoruActivityJ extends AppCompatActivity implements SoruContractJ.Vi
         lottie_bomba.cancelAnimation();
     }
 
-    @Override
-    public void startTrueAnim() {
-
-        lottie_cevap.setAnimation(R.raw.trueanim);
-        lottie_cevap.setVisibility(View.VISIBLE);
-        lottie_cevap.playAnimation();
-        lottie_cevap.addAnimatorListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                lottie_cevap.setVisibility(View.GONE);
-                lottie_cevap.pauseAnimation();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-
-    }
-
-    @Override
-    public void startFalseAnim() {
-        lottie_cevap.setAnimation(R.raw.falseanim);
-        lottie_cevap.setVisibility(View.VISIBLE);
-        lottie_cevap.playAnimation();
-        lottie_cevap.addAnimatorListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                lottie_cevap.setVisibility(View.GONE);
-                lottie_cevap.pauseAnimation();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-
-    @Override
-    public void sesiOynat(int ses) {
-        if (mediaPlayer.isPlaying()) {
-            mediaPlayer.stop();
-            mediaPlayer = MediaPlayer.create(this, ses);
-            mediaPlayer.start();
-            bomba_sesi = true;
-        } else {
-            mediaPlayer = MediaPlayer.create(this, ses);
-            mediaPlayer.start();
-            bomba_sesi = true;
-        }
-    }
 
     @Override
     public void onCardDragging(Direction direction, float ratio) {
@@ -347,7 +247,6 @@ public class SoruActivityJ extends AppCompatActivity implements SoruContractJ.Vi
         lottie_infinity.cancelAnimation();
         timer.cancel();
         lottie_bomba.cancelAnimation();
-        mediaPlayer.stop();
     }
 
     @Override
@@ -356,7 +255,6 @@ public class SoruActivityJ extends AppCompatActivity implements SoruContractJ.Vi
         lottie_infinity.cancelAnimation();
         timer.cancel();
         lottie_bomba.cancelAnimation();
-        mediaPlayer.stop();
     }
 
     @Override

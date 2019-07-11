@@ -41,7 +41,7 @@ public class UygulamaHakkindaJ extends AppCompatActivity implements UygulamHakki
         bundle=getIntent().getExtras();
 
         if(bundle!=null) {
-            kullanici = (userModelJ) bundle.getSerializable("kullanıcı bilgisi");
+            kullanici = bundle.getParcelable("kullanıcı bilgisi");
         }
 
         constraintLayout=findViewById(R.id.scroolview);

@@ -4,12 +4,12 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
     }
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
         multiDexEnabled true
         applicationId "com.patronusstudio.kaydirkazan"
         minSdkVersion 19
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 7
         versionName "1.6"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -45,7 +45,6 @@ dependencies {
     implementation 'com.yuyakaido.android:card-stack-view:2.2.3'
     //Lottie animation
     implementation 'com.airbnb.android:lottie:2.7.0'
-    implementation 'com.github.hajiyevelnur92:intentanimation:1.0'
 
     implementation 'com.android.support:multidex:1.0.3'
 

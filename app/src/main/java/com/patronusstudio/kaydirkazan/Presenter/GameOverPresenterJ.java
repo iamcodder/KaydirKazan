@@ -48,11 +48,6 @@ public class GameOverPresenterJ implements GameOverContractJ.Presenter, Firebase
     }
 
     @Override
-    public void sesiOynat(int ses) {
-        mView.sesiOynat(ses);
-    }
-
-    @Override
     public void gelistiriciye_haber(@NotNull String message) {
         mView.toastYazdir(message);
     }

@@ -20,7 +20,6 @@ import com.patronusstudio.kaydirkazan.Model.soruModelJ;
 import com.patronusstudio.kaydirkazan.Model.userModelJ;
 import com.patronusstudio.kaydirkazan.Presenter.GameOverPresenterJ;
 import com.patronusstudio.kaydirkazan.R;
-import maes.tech.intentanim.CustomIntent;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
@@ -34,7 +33,6 @@ public class GameOverActivityJ extends AppCompatActivity implements GameOverCont
     private GameOverPresenterJ presenter;
     private userModelJ mKullanici;
     private soruModelJ mSoru;
-    private MediaPlayer mediaPlayer;
 
     private Button btn_menuye_don,btn_devam_et,btn_hatali;
 
@@ -60,8 +58,8 @@ public class GameOverActivityJ extends AppCompatActivity implements GameOverCont
 
         gelen_bundle=getIntent().getExtras();
         if(gelen_bundle!=null){
-            mKullanici= (userModelJ) gelen_bundle.getSerializable("kullanici");
-            mSoru=(soruModelJ) gelen_bundle.getSerializable("soru");
+            mKullanici=  gelen_bundle.getParcelable("kullanici");
+            mSoru= gelen_bundle.getParcelable("soru");
             rekor=Integer.parseInt(mKullanici.getYuksekPuan());
             cevaplanan_soru_miktarı=Integer.parseInt(mKullanici.getCevaplananSoruSayisi());
             soru=mSoru.getSoru();
@@ -72,7 +70,6 @@ public class GameOverActivityJ extends AppCompatActivity implements GameOverCont
         }
 
         intent_home=new Intent(this,HomeActivityJ.class);
-        mediaPlayer=MediaPlayer.create(this,R.raw.lose);
 
         btn_devam_et=findViewById(R.id.game_over_devam_et);
         btn_menuye_don=findViewById(R.id.game_over_menuye_don);
@@ -92,7 +89,6 @@ public class GameOverActivityJ extends AppCompatActivity implements GameOverCont
             public void onClick(View view) {
                 intent_home.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent_home.setFlags(FLAG_ACTIVITY_NEW_TASK);
-                CustomIntent.customType(getApplicationContext(), "right-to-left");
                 startActivity(intent_home);
             }
         });
@@ -106,7 +102,6 @@ public class GameOverActivityJ extends AppCompatActivity implements GameOverCont
                     Toast.makeText(getApplicationContext(), "Bu oyunda izlenecek reklam kalmadı :)", Toast.LENGTH_SHORT).show();
                     intent_home.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     intent_home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    CustomIntent.customType(getApplicationContext(), "left-to-right");
                     startActivity(intent_home);
                 }
 
@@ -145,7 +140,6 @@ public class GameOverActivityJ extends AppCompatActivity implements GameOverCont
 
         OyunIsleviJ.KAYDIRMA_YAPILABILIR=true;
         Toast.makeText(this, "Devam edebilirsiniz.", Toast.LENGTH_SHORT).show();
-        CustomIntent.customType(this, "up-to-bottom");
         finish();
     }
 
@@ -155,17 +149,6 @@ public class GameOverActivityJ extends AppCompatActivity implements GameOverCont
 
     }
 
-    @Override
-    public void sesiOynat(int ses) {
-        if (mediaPlayer.isPlaying()) {
-            mediaPlayer.stop();
-            mediaPlayer = MediaPlayer.create(getApplicationContext(), ses);
-            mediaPlayer.start();
-        } else {
-            mediaPlayer = MediaPlayer.create(getApplicationContext(), ses);
-            mediaPlayer.start();
-        }
-    }
 
     @Override
     public void kontrolEt() {
@@ -189,7 +172,6 @@ public class GameOverActivityJ extends AppCompatActivity implements GameOverCont
             card_dogru_sonuc.setCardBackgroundColor(ContextCompat.getColor(this,R.color.turuncu));
 
             presenter.rekorKirildi(dogru_sayisi);
-            presenter.sesiOynat(R.raw.win);
 
         }
 
@@ -197,7 +179,6 @@ public class GameOverActivityJ extends AppCompatActivity implements GameOverCont
             lottie_game_over.setAnimation(R.raw.error);
             txt_dogru_sonuc.setText("\nYanlış cevap verdin.\nDoğru cevap ${dogruCevap} olacaktı.\n");
             card_dogru_sonuc.setBackgroundColor(ContextCompat.getColor(this,R.color.kirmizi));
-            presenter.sesiOynat(R.raw.lose);
         }
 
     }
@@ -209,12 +190,10 @@ public class GameOverActivityJ extends AppCompatActivity implements GameOverCont
     @Override
     protected void onStop() {
         super.onStop();
-        mediaPlayer.stop();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        mediaPlayer.stop();
     }
 }

@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.patronusstudio.kaydirkazan.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SoruActivityAdapterJ extends RecyclerView.Adapter<SoruActivityAdapterJ.viewHolderJ> {
@@ -20,9 +19,6 @@ public class SoruActivityAdapterJ extends RecyclerView.Adapter<SoruActivityAdapt
     public SoruActivityAdapterJ(List<soruModelJ> list,Context mContext){
         this.list=list;
         this.mContext=mContext;
-    }
-
-    public SoruActivityAdapterJ() {
     }
 
     @NonNull
@@ -48,11 +44,11 @@ public class SoruActivityAdapterJ extends RecyclerView.Adapter<SoruActivityAdapt
         return list.size();
     }
 
-    public class viewHolderJ extends RecyclerView.ViewHolder {
+    class viewHolderJ extends RecyclerView.ViewHolder {
 
         TextView soru_kartı_ana,soru_kartı_sol,soru_kartı_sag;
 
-        public viewHolderJ(@NonNull View itemView) {
+        viewHolderJ(@NonNull View itemView) {
             super(itemView);
             soru_kartı_ana=itemView.findViewById(R.id.soru_karti_tasarimi_ANA_SORU);
             soru_kartı_sol=itemView.findViewById(R.id.soru_karti_tasarimi_SOL_CEVAP);

@@ -3,14 +3,17 @@ package com.patronusstudio.kaydirkazan.Model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.io.Serializable;
 
 public class soruModelJ implements Parcelable {
 
-    String solCevap="";
-    String sagCevap="";
-    String soru="";
-    String dogruCevap="";
+    private String solCevap;
+    private String sagCevap;
+    private String soru;
+    private String dogruCevap;
+
+    public soruModelJ(){
+
+    }
 
     public soruModelJ(String solCevap, String sagCevap, String soru, String dogruCevap) {
         this.solCevap = solCevap;

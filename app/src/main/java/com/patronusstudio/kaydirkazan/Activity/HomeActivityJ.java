@@ -19,7 +19,6 @@ import com.patronusstudio.kaydirkazan.Model.IFirebaseDatabaseJ;
 import com.patronusstudio.kaydirkazan.Model.userModelJ;
 import com.patronusstudio.kaydirkazan.Presenter.HomeActivityPresenterJ;
 import com.patronusstudio.kaydirkazan.R;
-import maes.tech.intentanim.CustomIntent;
 
 public class HomeActivityJ extends AppCompatActivity implements HomeContractJ.View {
 
@@ -96,7 +95,6 @@ public class HomeActivityJ extends AppCompatActivity implements HomeContractJ.Vi
                 intent=new Intent(getApplicationContext(),UygulamaHakkindaJ.class);
                 intent.putExtra("kullanıcı bilgisi", mKullanici);
                 startActivity(intent);
-                CustomIntent.customType(getApplicationContext(), "left-to-right");
             }
         });
 
@@ -146,7 +144,6 @@ public class HomeActivityJ extends AppCompatActivity implements HomeContractJ.Vi
         intent=new Intent(this,SoruActivityJ.class);
         intent.putExtra("kullanıcı bilgisi", this.mKullanici);
         startActivity(intent);
-        CustomIntent.customType(this, "left-to-right");
     }
 
     @Override
@@ -157,8 +154,6 @@ public class HomeActivityJ extends AppCompatActivity implements HomeContractJ.Vi
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         mAuth.signOut();
-        CustomIntent.customType(this, "right-to-left");
-
     }
 
     @Override

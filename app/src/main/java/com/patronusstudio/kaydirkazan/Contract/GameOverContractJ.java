@@ -20,8 +20,6 @@ public interface GameOverContractJ {
 
         void videoluReklamYuklenemedi(String message);
 
-        void sesiOynat(int ses);
-
 
     }
 
@@ -38,8 +36,6 @@ public interface GameOverContractJ {
         void soruHatali(String soru);
 
         void reklam_yukle();
-
-        void sesiOynat(int ses);
 
     }
 

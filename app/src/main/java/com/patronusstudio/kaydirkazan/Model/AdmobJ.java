@@ -26,7 +26,7 @@ public class AdmobJ implements RewardedVideoAdListener {
 
         if(!mRewardedVideoAd.isLoaded()){
             mRewardedVideoAd.loadAd("ca-app-pub-1818679104699845/8480542597",
-                    new AdRequest.Builder().addTestDevice("F17BD0906D7EAE0C87C14E637D73D52C").build());
+                    new AdRequest.Builder().addTestDevice("CE663ADDC3692D228B135908B9082DED").build());
 
         }
     }
@@ -35,7 +35,7 @@ public class AdmobJ implements RewardedVideoAdListener {
         if (!mRewardedVideoAd.isLoaded()) {
             mRewardedVideoAd.loadAd(
                     "ca-app-pub-1818679104699845/8480542597",
-                    new AdRequest.Builder().addTestDevice("F17BD0906D7EAE0C87C14E637D73D52C").build()
+                    new AdRequest.Builder().addTestDevice("CE663ADDC3692D228B135908B9082DED").build()
             );
             reklamiGoster();
         }

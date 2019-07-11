@@ -1,8 +1,6 @@
 package com.patronusstudio.kaydirkazan.Activity;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.os.Build;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -25,7 +23,6 @@ import com.patronusstudio.kaydirkazan.Contract.LoginContractJ;
 import com.patronusstudio.kaydirkazan.Model.LoginActivityModelJ;
 import com.patronusstudio.kaydirkazan.Presenter.LoginActivityPresenterJ;
 import com.patronusstudio.kaydirkazan.R;
-import maes.tech.intentanim.CustomIntent;
 
 public class LoginActivityJ extends AppCompatActivity implements LoginContractJ.View {
 
@@ -176,7 +173,6 @@ public class LoginActivityJ extends AppCompatActivity implements LoginContractJ.
     public void navigationHome() {
 
         startActivity(new Intent(this,HomeActivityJ.class));
-        CustomIntent.customType(this, "left-to-right");
     }
 
     @Override
@@ -187,7 +183,6 @@ public class LoginActivityJ extends AppCompatActivity implements LoginContractJ.
 
         intent.putExtra("kullanici","baba");
         startActivity(intent);
-        CustomIntent.customType(this, "left-to-right");
     }
 
     @Override

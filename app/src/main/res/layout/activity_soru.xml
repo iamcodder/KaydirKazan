@@ -89,16 +89,6 @@
                                                 android:orientation="horizontal"
                                                 app:layout_constraintGuide_percent="0.1504788"/>
 
-    <com.airbnb.lottie.LottieAnimationView android:layout_width="0dp"
-                                           android:layout_height="0dp"
-                                           android:id="@+id/activity_soru_animasyon_sonucu"
-                                           android:visibility="invisible"
-                                           app:layout_constraintEnd_toEndOf="parent"
-                                           app:layout_constraintStart_toStartOf="parent"
-                                           app:layout_constraintBottom_toTopOf="@+id/guideline13"
-                                           android:layout_marginTop="0dp"
-                                           app:layout_constraintTop_toTopOf="@+id/activity_soru_cardStackView"/>
-
     <com.airbnb.lottie.LottieAnimationView android:layout_width="0dp" android:layout_height="0dp"
                                            app:lottie_autoPlay="true" app:lottie_rawRes="@raw/loadingbar"
                                            app:lottie_loop="true"
