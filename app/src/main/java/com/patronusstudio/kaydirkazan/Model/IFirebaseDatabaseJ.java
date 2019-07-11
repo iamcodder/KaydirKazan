@@ -2,27 +2,30 @@ package com.patronusstudio.kaydirkazan.Model;
 
 import android.util.Log;
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.ListAdapter;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.*;
 import com.patronusstudio.kaydirkazan.Constant.FirebaseKeyJ;
 import com.patronusstudio.kaydirkazan.Contract.FirebaseContractJ;
 import com.patronusstudio.kaydirkazan.Presenter.GameOverPresenterJ;
 
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
 
 public class IFirebaseDatabaseJ {
 
     private FirebaseAuth firebaseAuth;
+    private FirebaseUser firebaseUser;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference firebaseDatabase_kullanicilar;
     private DatabaseReference firebaseDatabase_sorular;
     private String kullanicinin_uuidsi;
+    ArrayList<userModelJ> tum_kullanicilar;
 
     public IFirebaseDatabaseJ() {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseUser=firebaseAuth.getCurrentUser();
         firebaseDatabase_kullanicilar = firebaseDatabase.getReference().child(FirebaseKeyJ.OYUN).child(FirebaseKeyJ.KULLANICILAR);
         firebaseDatabase_sorular = firebaseDatabase.getReference().child(FirebaseKeyJ.OYUN).child(FirebaseKeyJ.SORULAR);
 
@@ -31,6 +34,7 @@ public class IFirebaseDatabaseJ {
             kullanicinin_uuidsi = firebaseAuth.getCurrentUser().getUid();
         }
     }
+
 
     public void dbyeProfiliYaz(FirebaseContractJ.KullaniciIslemleri sonuc) {
 
@@ -254,17 +258,54 @@ public class IFirebaseDatabaseJ {
 
         sonuc.gelistiriciye_haber("Geliştiriciye haber verildi.Teşekkürler");
 
-
     }
-
-
     public void kullaniciBilgileri(FirebaseContractJ.KullaniciIslemleri.bilgileri sonuc) {
 
         if (firebaseAuth.getCurrentUser() != null) {
-            String displayName = firebaseAuth.getCurrentUser().getDisplayName();
+            String displayName = firebaseUser.getDisplayName();
             Long kayitOlmaTarihi = Objects.requireNonNull(firebaseAuth.getCurrentUser().getMetadata()).getCreationTimestamp();
             sonuc.kullaniciSonuclari(displayName, kayitOlmaTarihi);
         }
+    }
+
+    public void siralamaYapmayiDeniyorum(){
+
+        tum_kullanicilar=new ArrayList<>();
+
+        ValueEventListener valueEventListener=new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot ds : dataSnapshot.getChildren()){
+
+                    userModelJ newUser=ds.getValue(userModelJ.class);
+
+                    if(newUser!=null){
+                        tum_kullanicilar.add(newUser);
+                    }
+
+                }
+                yazdir();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.d("Sülo",databaseError.getMessage());
+            }
+        };
+        firebaseDatabase_kullanicilar.addValueEventListener(valueEventListener);
+
+    }
+
+    private void yazdir(){
+        Collections.sort(tum_kullanicilar, new Comparator<userModelJ>() {
+            @Override
+            public int compare(userModelJ userModelJ, userModelJ t1) {
+                Integer puan1=Integer.parseInt(userModelJ.getYuksekPuan());
+                Integer puan2=Integer.parseInt(t1.getYuksekPuan());
+                return puan2.compareTo(puan1);
+            }
+        });
+
 
     }
 }

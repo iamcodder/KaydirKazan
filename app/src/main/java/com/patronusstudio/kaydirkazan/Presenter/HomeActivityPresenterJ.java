@@ -30,6 +30,8 @@ public class HomeActivityPresenterJ implements HomeContractJ.Presenter,FirebaseC
     public void fetchData() {
         mView.loadingShow();
         firebaseDatabase.kullaniciVerileriniCek(this,this);
+        firebaseDatabase.siralamaYapmayiDeniyorum();
+
     }
 
     @Override
