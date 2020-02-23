@@ -15,28 +15,9 @@
 
 
 
-### Special Thanks
-```
-@airbnb-lottie / GitHub
-@yuyakaido / GitHub
-@hajiyevelnur92 / GitHub
-@Wee / LottieFiles
-@Paddy / LottieFiles
-@Lucas Nemo / LottieFiles
-@Penry Chen / LottieFiles
-@LottieFiles / LottieFiles
-@Donghwa Kang / LottieFiles
-@Jojo Lafrite / LottieFiles
-@Luca Rondine / LottieFiles
-@Victor Winnhed / LottieFiles
-@Ision Industries / LottieFiles
-@INGENIERIA INFORMÁTICA INTERACTIVA / LottieFiles\n
-
-```
-
 ## License
 ```
-Copyright [2019] [Süleyman Sezer]
+Copyright 2019 Süleyman Sezer
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
