@@ -1,19 +1,19 @@
-# KaydirKazan (Yeni Nesil Bilgi ve Tahmin Oyunu)
 
 ![full](https://user-images.githubusercontent.com/25854605/56577730-6e544780-65d4-11e9-87c3-bc14142c2fc6.jpg)
 
-
+## Detaylar
+- Yeni nesil bilgi ve tahmin oyunu mottosuyla yapıldı.
+- Oyunun amacı eğlenerek öğrenmektir.
+- Klasik olarak soruların 4 cevabı yerine 2 cevabı vardır.Bu sorular da sola veya sağa kaydırarak cevaplanır.
+- Ayrıca kullanıcıların bilgilerini , kaç soru cevapladığını,sıralamasını görebileceği ayrı bir kısım vardır.
+- Burada amaç bilgi oyunlarına farklı bir bakış açısı getirmektir.
 ## Kullanılanlar
+- Native olarak java diliyle kodlandı.
+- MVP Tasarım Mimarisi kullanıldı.
+- Kullanıcı kaydı için FirebaseAuth kullanıldı.
+- Oyun ve kullanıcı bilgileri FirebaseDatabase'de saklandı.
 
-#### -Java 
-#### -MVP Tasarım Mimarisi
-#### -FirebaseAuth 
-#### -FirebaseDatabase 
-#### -Google Sign Girişi
-
-#### https://play.google.com/store/apps/details?id=com.patronusstudio.kaydirkazan
-
-
+[![N|play_store](https://user-images.githubusercontent.com/25854605/67431801-b12bc200-f5ed-11e9-9475-4ad1202ec2f1.png)](https://play.google.com/store/apps/details?id=com.patronusstudio.kaydirkazan)
 
 ## License
 ```
@@ -30,3 +30,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.```
+
